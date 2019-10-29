@@ -7,11 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5d35203-7127-45a9-91d7-c59aded39552" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/RegistryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/create-registry.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/AdministratorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/AdministratorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/register-administrator.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/RegistryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/RegistryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/create-registry.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/registry/create-registry.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/create-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/user/create-user.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,6 +113,10 @@
   <component name="RecentsManager">
     <key name="DestinationChooserDialog.Package.RECENTS_KEY">
       <recent name="com.utm.models.entities" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/user" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/registry" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -257,7 +265,8 @@
       <workItem from="1572330260673" duration="465000" />
       <workItem from="1572331063247" duration="785000" />
       <workItem from="1572334074755" duration="204000" />
-      <workItem from="1572348026838" duration="4378000" />
+      <workItem from="1572348026838" duration="5707000" />
+      <workItem from="1572374061308" duration="6885000" />
     </task>
     <servers />
   </component>

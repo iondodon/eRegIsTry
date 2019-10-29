@@ -9,7 +9,7 @@ public class RegistryController {
     @RequestMapping("/create-registry")
     public String createUser() {
 
-        return "create-registry";
+        return "registry/create-registry";
     }
 
 }
