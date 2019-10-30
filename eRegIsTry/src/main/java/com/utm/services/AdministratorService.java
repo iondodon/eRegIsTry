@@ -6,7 +6,6 @@ import com.utm.entities.Role;
 import com.utm.entities.User;
 import org.hibernate.Session;
 
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -52,5 +51,23 @@ public class AdministratorService {
         } finally {
             session.close();
         }
+    }
+
+    public Administrator getAdministratorById(int id) {
+        Session session = this.sessionService.getSession();
+        Administrator administrator = null;
+
+        try {
+            session.beginTransaction();
+            administrator = session.get(Administrator.class, id);
+            System.out.println(administrator);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+
+        return administrator;
     }
 }

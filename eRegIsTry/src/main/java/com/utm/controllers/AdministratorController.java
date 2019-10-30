@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.utm.services.AdministratorService;
@@ -25,19 +24,40 @@ public class AdministratorController {
         this.administratorService = administratorService;
     }
 
-    @RequestMapping(value = "/register", method=RequestMethod.GET)
-    public String showCreateAdministratorForm(HttpServletRequest request, Model model) {
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String showCreateForm(Model model) {
         model.addAttribute("user", new User());
         return "administrator/register";
     }
 
-    @RequestMapping(value = "/register", method=RequestMethod.POST)
-    public String submitAdministrator(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String submit(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
         if(bindingResult.hasErrors()){
             return "administrator/register";
         }
 
         Administrator administrator = this.administratorService.createAdministrator(user);
+        this.administratorService.saveAdministrator(administrator);
+
+        return "home";
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.GET)
+    public String showUpdateForm(HttpServletRequest request, Model model) {
+        int administratorId = Integer.parseInt(request.getParameter("id"));
+        Administrator administrator = this.administratorService.getAdministratorById(administratorId);
+
+        model.addAttribute("administrator", administrator);
+
+        return "administrator/update";
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String update(@Valid @ModelAttribute("administrator") Administrator administrator, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
+            return "administrator/update";
+        }
+
         this.administratorService.saveAdministrator(administrator);
 
         return "home";

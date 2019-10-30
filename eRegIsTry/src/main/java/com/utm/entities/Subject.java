@@ -34,7 +34,6 @@ public class Subject implements Serializable {
 
 	public Subject() {
 		this.schedules = new ArrayList<>();
-		this.lessons = new ArrayList<>();
 	}
 
 	public int getId() {

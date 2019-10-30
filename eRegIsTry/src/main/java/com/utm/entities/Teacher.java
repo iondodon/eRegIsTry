@@ -2,6 +2,7 @@ package com.utm.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,6 +21,9 @@ public class Teacher implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
+	@Column(name="base_subject", length=45)
+	private String baseSubject;
+
 	//bi-directional many-to-one association to Group
 	@OneToMany(mappedBy="teacher")
 	private List<Group> groups;
@@ -28,12 +32,14 @@ public class Teacher implements Serializable {
 	@OneToMany(mappedBy="teacher")
 	private List<Lesson> lessons;
 
-	//bi-directional many-to-one association to User
-	@ManyToOne
-	@JoinColumn(name="id_user", nullable=false)
+	//bi-directional one-to-one association to User
+	@OneToOne
+	@JoinColumn(name = "id_user")
 	private User user;
 
 	public Teacher() {
+		this.groups = new ArrayList<>();
+		this.lessons = new ArrayList<>();
 	}
 
 	public int getId() {
@@ -42,6 +48,14 @@ public class Teacher implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getBaseSubject() {
+		return this.baseSubject;
+	}
+
+	public void setBaseSubject(String baseSubject) {
+		this.baseSubject = baseSubject;
 	}
 
 	public List<Group> getGroups() {
@@ -95,5 +109,4 @@ public class Teacher implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
 }

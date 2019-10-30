@@ -9,13 +9,13 @@ import java.util.List;
 @Component
 public class UserService {
 
-    public User createUser(String username, String password, String firstName, String secondName, List<Role> roles) {
+    public User createUser(String username, String password, String firstName, String lastName, List<Role> roles) {
         User user = new User();
 
         user.setUsername(username);
         user.setPassword(password);
         user.setFirstName(firstName);
-        user.setSecondName(secondName);
+        user.setLastName(lastName);
         user.setRoles(roles);
 
         return user;

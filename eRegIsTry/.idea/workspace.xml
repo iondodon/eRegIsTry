@@ -7,17 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5d35203-7127-45a9-91d7-c59aded39552" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/SessionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/administrator/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/AdministratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/AdministratorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/RegistryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/RegistryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/entities/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/Administrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/entities/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/entities/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/entities/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/entities/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/Teacher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/AdministratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/AdministratorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/register-administrator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/administrator/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/registry/create-registry.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/registry/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/user/create-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/user/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/administrator/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/administrator/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/registry/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/registry/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,8 +67,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="jsf" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -273,7 +279,8 @@
       <workItem from="1572348026838" duration="5707000" />
       <workItem from="1572374061308" duration="8175000" />
       <workItem from="1572428108234" duration="2144000" />
-      <workItem from="1572430297725" duration="14629000" />
+      <workItem from="1572430297725" duration="14829000" />
+      <workItem from="1572469073136" duration="9274000" />
     </task>
     <servers />
   </component>

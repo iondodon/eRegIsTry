@@ -1,12 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: ion
-  Date: 10/29/19
-  Time: 8:54 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -38,8 +32,8 @@
         <br/>
 
         second name:
-        <form:input path="secondName" type="text" name="second-name" placeholder="second name"/>
-        <form:errors path="secondName" cssClass="error" />
+        <form:input path="lastName" type="text" name="second-name" placeholder="second name"/>
+        <form:errors path="lastName" cssClass="error" />
         <br/>
 
 <%--            roles:--%>
