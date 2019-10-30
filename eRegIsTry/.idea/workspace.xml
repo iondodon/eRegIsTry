@@ -7,15 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5d35203-7127-45a9-91d7-c59aded39552" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/AdministratorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/AdministratorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/register-administrator.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/SessionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/AdministratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/AdministratorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/RegistryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/RegistryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/create-registry.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/registry/create-registry.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/create-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/user/create-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/AdministratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/AdministratorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/register-administrator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/administrator/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/registry/create-registry.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/registry/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/view/user/create-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/user/create.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,16 +107,19 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.23690476" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
     <key name="DestinationChooserDialog.Package.RECENTS_KEY">
       <recent name="com.utm.models.entities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/administrator" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view" />
       <recent name="$PROJECT_DIR$/web/WEB-INF/view/user" />
       <recent name="$PROJECT_DIR$/web/WEB-INF/view/registry" />
     </key>
@@ -266,7 +271,9 @@
       <workItem from="1572331063247" duration="785000" />
       <workItem from="1572334074755" duration="204000" />
       <workItem from="1572348026838" duration="5707000" />
-      <workItem from="1572374061308" duration="6885000" />
+      <workItem from="1572374061308" duration="8175000" />
+      <workItem from="1572428108234" duration="2144000" />
+      <workItem from="1572430297725" duration="14629000" />
     </task>
     <servers />
   </component>

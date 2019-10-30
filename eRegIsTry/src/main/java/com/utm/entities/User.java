@@ -2,6 +2,8 @@ package com.utm.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,17 +23,25 @@ public class User implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
-	@Column(name="first_name", nullable=false, length=45)
-	private String firstName;
+	@Size(min = 5, max = 20)
+	@NotNull(message = "is required")
+	@Column(nullable=false, length=45)
+	private String username;
 
+	@Size(min = 6, max = 100)
+	@NotNull(message = "is required")
 	@Column(nullable=false, length=100)
 	private String password;
 
+	@Size(min = 2, max = 20)
+	@NotNull(message = "is required")
+	@Column(name="first_name", nullable=false, length=45)
+	private String firstName;
+
+	@Size(min = 2, max = 20)
+	@NotNull(message = "is required")
 	@Column(name="second_name", nullable=false, length=45)
 	private String secondName;
-
-	@Column(nullable=false, length=45)
-	private String username;
 
 	//bi-directional many-to-one association to Administrator
 	@OneToMany(mappedBy="user")

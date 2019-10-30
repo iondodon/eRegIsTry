@@ -9,7 +9,7 @@ public class UserController {
     @RequestMapping("/create-user")
     public String createUser() {
 
-        return "user/create-user";
+        return "user/create";
     }
 
 }
