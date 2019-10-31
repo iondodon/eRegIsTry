@@ -33,7 +33,7 @@ public class Teacher implements Serializable {
 	private List<Lesson> lessons;
 
 	//bi-directional one-to-one association to User
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_user")
 	private User user;
 

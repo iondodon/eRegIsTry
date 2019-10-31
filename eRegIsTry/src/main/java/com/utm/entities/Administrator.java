@@ -2,6 +2,7 @@ package com.utm.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 
 /**
@@ -19,11 +20,12 @@ public class Administrator implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
+	@Size(min = 2, max = 45)
 	@Column(length=45)
 	private String department;
 
 	//bi-directional one-to-one association to User
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_user")
 	private User user;
 

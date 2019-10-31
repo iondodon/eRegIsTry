@@ -60,7 +60,6 @@ public class AdministratorService {
         try {
             session.beginTransaction();
             administrator = session.get(Administrator.class, id);
-            System.out.println(administrator);
             session.getTransaction().commit();
         } catch (Exception e) {
             System.out.println(e);
@@ -69,5 +68,27 @@ public class AdministratorService {
         }
 
         return administrator;
+    }
+
+    public void updateAdministrator(Administrator formAdministrator) {
+        Session session = this.sessionService.getSession();
+
+        try {
+            session.beginTransaction();
+
+            Administrator sessionAdministrator = session.get(Administrator.class, formAdministrator.getId());
+            this.copyAdministratorFields(sessionAdministrator, formAdministrator);
+            session.save(sessionAdministrator);
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
+
+    private void copyAdministratorFields(Administrator sessionAdministrator, Administrator formAdministrator) {
+        sessionAdministrator.setDepartment(formAdministrator.getDepartment());
     }
 }

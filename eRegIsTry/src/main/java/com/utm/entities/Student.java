@@ -30,7 +30,7 @@ public class Student implements Serializable {
 	private Group group;
 
 	//bi-directional one-to-one association to User
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_user")
 	private User user;
 

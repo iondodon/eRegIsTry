@@ -1,11 +1,15 @@
 package com.utm.controllers;
 
+import com.utm.editors.AdministratorEditor;
 import com.utm.entities.Administrator;
 import com.utm.entities.User;
+import com.utm.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.utm.services.AdministratorService;
@@ -18,10 +22,27 @@ import javax.validation.Valid;
 @RequestMapping("/administrator")
 public class AdministratorController {
     private AdministratorService administratorService;
+    private AdministratorEditor administratorEditor;
+    private UserService userService;
 
     @Autowired
     public void setAdministratorService(AdministratorService administratorService) {
         this.administratorService = administratorService;
+    }
+
+    @Autowired
+    public void setAdministratorEditor(AdministratorEditor administratorEditor) {
+        this.administratorEditor = administratorEditor;
+    }
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(Administrator.class, this.administratorEditor);
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -43,8 +64,8 @@ public class AdministratorController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
-    public String showUpdateForm(HttpServletRequest request, Model model) {
-        int administratorId = Integer.parseInt(request.getParameter("id"));
+    public String showUpdateAdministratorForm(HttpServletRequest request, Model model) {
+        int administratorId = Integer.parseInt(request.getParameter("administratorId"));
         Administrator administrator = this.administratorService.getAdministratorById(administratorId);
 
         model.addAttribute("administrator", administrator);
@@ -53,12 +74,33 @@ public class AdministratorController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String update(@Valid @ModelAttribute("administrator") Administrator administrator, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()) {
+    public String updateAdministrator(@Valid @ModelAttribute("administrator") Administrator administrator, BindingResult resultAdministrator) {
+        if(resultAdministrator.hasErrors()) {
             return "administrator/update";
         }
 
-        this.administratorService.saveAdministrator(administrator);
+        this.administratorService.updateAdministrator(administrator);
+
+        return "home";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String showDeleteAdministratorForm(HttpServletRequest request, Model model) {
+        int administratorId = Integer.parseInt(request.getParameter("administratorId"));
+        Administrator administrator = this.administratorService.getAdministratorById(administratorId);
+
+        model.addAttribute("user", administrator.getUser());
+
+        return "administrator/delete";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String deleteAdministrator(@ModelAttribute("user") User user, BindingResult resultUser) {
+        if(resultUser.hasErrors()) {
+            return "administrator/delete";
+        }
+
+        this.userService.deleteUser(user);
 
         return "home";
     }

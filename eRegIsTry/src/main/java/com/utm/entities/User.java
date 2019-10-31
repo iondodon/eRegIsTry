@@ -33,8 +33,6 @@ public class User implements Serializable {
 	@Column(name="last_name", nullable=false, length=45)
 	private String lastName;
 
-	@Size(min = 6, max = 100)
-	@NotNull(message = "is required")
 	@Column(nullable=false, length=100)
 	private String password;
 
@@ -44,15 +42,15 @@ public class User implements Serializable {
 	private String username;
 
 	//bi-directional one-to-one association to Administrator
-	@OneToOne(mappedBy = "user")
+	@OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
 	private Administrator administrator;
 
 	//bi-directional one-to-one association to Student
-	@OneToOne(mappedBy = "user")
+	@OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
 	private Student student;
 
 	//bi-directional one-to-one association to Teacher
-	@OneToOne(mappedBy = "user")
+	@OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
 	private Teacher teacher;
 
 	//bi-directional many-to-many association to Role
