@@ -46,13 +46,13 @@ public class AdministratorController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String showCreateForm(Model model) {
+    public String showCreateAdministratorForm(Model model) {
         model.addAttribute("user", new User());
         return "administrator/register";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String submit(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+    public String submitAdministrator(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
         if(bindingResult.hasErrors()){
             return "administrator/register";
         }
@@ -100,7 +100,7 @@ public class AdministratorController {
             return "administrator/delete";
         }
 
-        this.userService.deleteUser(user);
+        this.userService.deleteAdministratorUser(user);
 
         return "home";
     }
@@ -113,5 +113,26 @@ public class AdministratorController {
         model.addAttribute("administrator", administrator);
 
         return "administrator/show";
+    }
+
+    @RequestMapping(value = "/update-user-data", method = RequestMethod.GET)
+    public String showUpdateUserForm(HttpServletRequest request, Model model) {
+        int administratorId = Integer.parseInt(request.getParameter("administratorId"));
+        Administrator administrator = this.administratorService.getAdministratorById(administratorId);
+
+        model.addAttribute("user", administrator.getUser());
+
+        return "administrator/update-user-data";
+    }
+
+    @RequestMapping(value = "/update-user-data", method = RequestMethod.POST)
+    public String updateUser(@Valid @ModelAttribute("user") User user, BindingResult resultUser) {
+        if(resultUser.hasErrors()) {
+            return "administrator/update-user-data";
+        }
+
+        this.userService.updateUser(user);
+
+        return "home";
     }
 }

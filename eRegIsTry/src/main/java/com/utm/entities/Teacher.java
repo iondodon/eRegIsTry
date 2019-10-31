@@ -21,8 +21,9 @@ public class Teacher implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
-	@Column(name="base_subject", length=45)
-	private String baseSubject;
+	@OneToOne
+	@JoinColumn(name = "id_base_subject")
+	private Subject baseSubject;
 
 	//bi-directional many-to-one association to Group
 	@OneToMany(mappedBy="teacher")
@@ -50,11 +51,11 @@ public class Teacher implements Serializable {
 		this.id = id;
 	}
 
-	public String getBaseSubject() {
+	public Subject getBaseSubject() {
 		return this.baseSubject;
 	}
 
-	public void setBaseSubject(String baseSubject) {
+	public void setBaseSubject(Subject baseSubject) {
 		this.baseSubject = baseSubject;
 	}
 
