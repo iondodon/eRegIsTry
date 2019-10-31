@@ -104,4 +104,14 @@ public class AdministratorController {
 
         return "home";
     }
+
+    @RequestMapping(value = "/show", method = RequestMethod.GET)
+    public String showAdministrator(HttpServletRequest request, Model model) {
+        int administratorId = Integer.parseInt(request.getParameter("administratorId"));
+        Administrator administrator = this.administratorService.getAdministratorById(administratorId);
+
+        model.addAttribute("administrator", administrator);
+
+        return "administrator/show";
+    }
 }

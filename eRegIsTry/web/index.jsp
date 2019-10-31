@@ -9,6 +9,8 @@
     <br/>
     <a href="<c:url value="/administrator/register"/>">register administrator</a>
     <br/>
+    <a href="<c:url value="/administrator/show?administratorId=2"/>">show administrator</a>
+    <br/>
     <a href="<c:url value="/administrator/update-user-data?administratorId=2"/>">update administrator (user data)</a>
     <br/>
     <a href="<c:url value="/administrator/update?administratorId=2"/>">update administrator</a>
