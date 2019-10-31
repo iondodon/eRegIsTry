@@ -20,7 +20,7 @@
     <br/><br/>
     Teacher:
     <br/>
-    <a href="<c:url value="/teacher/create"/>">register teacher</a>
+    <a href="<c:url value="/teacher/create"/>">create teacher</a>
     <br/>
     <a href="<c:url value="/teacher/show?teacherId=1"/>">show teacher</a>
     <br/>
@@ -30,6 +30,18 @@
     <br/>
     <a href="<c:url value="/teacher/delete?teacherId=2"/>">delete teacher</a>
 
+    <br/><br/>
+    Student:
+    <br/>
+    <a href="<c:url value="/student/create"/>">create student</a>
+    <br/>
+    <a href="<c:url value="/student/show?studentId=3"/>">show student</a>
+    <br/>
+    <a href="<c:url value="/student/update-user-data?studentId=3"/>">update student (user data)</a>
+    <br/>
+    <a href="<c:url value="/student/update?studentId=3"/>">update student</a>
+    <br/>
+    <a href="<c:url value="/student/delete?studentId=3"/>">delete student</a>
 
   </body>
 </html>

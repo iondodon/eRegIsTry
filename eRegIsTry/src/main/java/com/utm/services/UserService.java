@@ -1,6 +1,7 @@
 package com.utm.services;
 
 import com.utm.entities.Administrator;
+import com.utm.entities.Student;
 import com.utm.entities.Teacher;
 import com.utm.entities.User;
 import org.hibernate.Session;
@@ -62,6 +63,25 @@ public class UserService {
             User sessionUser = session.get(User.class, user.getId());
             Teacher teacher = session.get(Teacher.class, sessionUser.getTeacher().getId());
             session.delete(teacher);
+            session.delete(sessionUser);
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
+
+    public void deleteStudentUser(User user) {
+        Session session = this.sessionService.getSession();
+
+        try {
+            session.beginTransaction();
+
+            User sessionUser = session.get(User.class, user.getId());
+            Student student = session.get(Student.class, sessionUser.getStudent().getId());
+            session.delete(student);
             session.delete(sessionUser);
 
             session.getTransaction().commit();
