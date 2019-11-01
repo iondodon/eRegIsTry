@@ -31,6 +31,23 @@ public class StudentService {
         this.groupService = groupService;
     }
 
+    public List getAllStudents() {
+        Session session = this.sessionService.getSession();
+        List students = null;
+
+        try {
+            session.beginTransaction();
+            students = session.createQuery("from Student").list();
+            session.getTransaction().commit();
+        } catch (Exception e){
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+
+        return students;
+    }
+
     public Student createStudent(User user) {
         Student student = new Student();
 

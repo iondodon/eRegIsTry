@@ -72,7 +72,6 @@ public class StudentController {
         return "home";
     }
 
-
     @RequestMapping(value = "/update", method = RequestMethod.GET)
     public String showUpdateStudentForm(HttpServletRequest request, Model model) {
         int studentId = Integer.parseInt(request.getParameter("studentId"));
@@ -94,7 +93,6 @@ public class StudentController {
 
         return "redirect:/";
     }
-
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String showDeleteStudentForm(HttpServletRequest request, Model model) {

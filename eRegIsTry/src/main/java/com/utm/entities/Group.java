@@ -2,6 +2,8 @@ package com.utm.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,20 +23,22 @@ public class Group implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
+	@NotNull
+	@Size(min = 1, max = 10)
 	@Column(nullable=false, length=45)
 	private String name;
 
 	//bi-directional many-to-one association to Teacher
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="id_master", nullable=false)
-	private Teacher teacher;
+	private Teacher master;
 
 	//bi-directional many-to-one association to Schedule
 	@OneToMany(mappedBy="group")
 	private List<Schedule> schedules;
 
 	//bi-directional many-to-one association to Student
-	@OneToMany(mappedBy="group")
+	@OneToMany(mappedBy="group", fetch = FetchType.EAGER)
 	private List<Student> students;
 
 	public Group() {
@@ -58,12 +62,12 @@ public class Group implements Serializable {
 		this.name = name;
 	}
 
-	public Teacher getTeacher() {
-		return this.teacher;
+	public Teacher getMaster() {
+		return this.master;
 	}
 
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
+	public void setMaster(Teacher master) {
+		this.master = master;
 	}
 
 	public List<Schedule> getSchedules() {

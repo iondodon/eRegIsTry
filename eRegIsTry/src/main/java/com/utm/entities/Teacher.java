@@ -26,7 +26,7 @@ public class Teacher implements Serializable {
 	private Subject baseSubject;
 
 	//bi-directional many-to-one association to Group
-	@OneToMany(mappedBy="teacher")
+	@OneToMany(mappedBy="master")
 	private List<Group> groups;
 
 	//bi-directional many-to-one association to Lesson
@@ -69,14 +69,14 @@ public class Teacher implements Serializable {
 
 	public Group addGroup(Group group) {
 		getGroups().add(group);
-		group.setTeacher(this);
+		group.setMaster(this);
 
 		return group;
 	}
 
 	public Group removeGroup(Group group) {
 		getGroups().remove(group);
-		group.setTeacher(null);
+		group.setMaster(null);
 
 		return group;
 	}

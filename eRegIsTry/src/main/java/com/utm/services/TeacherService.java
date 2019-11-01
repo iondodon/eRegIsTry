@@ -24,6 +24,23 @@ public class TeacherService {
         this.roleService = roleService;
     }
 
+    public List getAllTeachers() {
+        Session session = this.sessionService.getSession();
+        List teachers = null;
+
+        try {
+            session.beginTransaction();
+            teachers = session.createQuery("from Teacher").list();
+            session.getTransaction().commit();
+        } catch (Exception e){
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+
+        return teachers;
+    }
+
     public Teacher createTeacher(User user) {
         Teacher teacher = new Teacher();
 

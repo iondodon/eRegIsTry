@@ -43,5 +43,16 @@
     <br/>
     <a href="<c:url value="/student/delete?studentId=3"/>">delete student</a>
 
+    <br/><br/>
+    Group:
+    <br/>
+    <a href="<c:url value="/group/create"/>">create group</a>
+    <br/>
+    <a href="<c:url value="/group/show?groupId=2"/>">show group</a>
+    <br/>
+    <a href="<c:url value="/group/update?groupId=2"/>">update group</a>
+    <br/>
+    <a href="<c:url value="/group/delete?groupId=2"/>">delete group</a>
+
   </body>
 </html>
