@@ -19,6 +19,7 @@
         Group group = (Group) request.getAttribute("group");
         List<Student> students = group.getStudents();
 
+        //TODO: to lists students
         for (Student student: students) {
             student.getUser().getUsername();
         }

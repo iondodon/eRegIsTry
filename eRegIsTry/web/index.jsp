@@ -4,7 +4,6 @@
   <head>
     <title>Index page</title>
   </head>
-  <body>
     Administrator:
     <br/>
     <a href="<c:url value="/administrator/register"/>">register administrator</a>
@@ -54,5 +53,15 @@
     <br/>
     <a href="<c:url value="/group/delete?groupId=2"/>">delete group</a>
 
+    <br/><br/>
+    Subject:
+    <br/>
+    <a href="<c:url value="/subject/create" />">create subject </a>
+<%--    <br/>--%>
+<%--    <a href="<c:url value="/subject/show?subjectId=2"/>">show group</a>--%>
+    <br/>
+    <a href="<c:url value="/subject/update?subjectId=2"/>">update subject</a>
+    <%--    <br/>--%>
+    <%--    <a href="<c:url value="/subject/delete?subjectId=2"/>">delete group</a>--%>
   </body>
 </html>

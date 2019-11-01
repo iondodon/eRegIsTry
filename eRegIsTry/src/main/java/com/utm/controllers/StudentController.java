@@ -8,7 +8,7 @@ import com.utm.services.GroupService;
 import com.utm.services.StudentService;
 import com.utm.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-@Component
+@Controller
 @RequestMapping("/student")
 public class StudentController {
     private StudentService studentService;

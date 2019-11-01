@@ -2,6 +2,8 @@ package com.utm.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,8 @@ public class Subject implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
+	@NotNull(message = "is required")
+	@Size(min = 2, max = 45)
 	@Column(nullable=false, length=45)
 	private String subject;
 

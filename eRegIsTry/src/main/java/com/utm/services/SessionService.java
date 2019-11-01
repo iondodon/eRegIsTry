@@ -1,8 +1,6 @@
 package com.utm.services;
 
-import com.utm.entities.Administrator;
-import com.utm.entities.Role;
-import com.utm.entities.User;
+import com.utm.entities.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -16,6 +14,13 @@ class SessionService {
         this.sessionFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Administrator.class)
+                .addAnnotatedClass(Group.class)
+                .addAnnotatedClass(Lesson.class)
+                .addAnnotatedClass(Registry.class)
+                .addAnnotatedClass(Schedule.class)
+                .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Subject.class)
+                .addAnnotatedClass(Teacher.class)
                 .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Role.class)
                 .buildSessionFactory();

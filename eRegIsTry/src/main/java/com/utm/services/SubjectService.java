@@ -50,4 +50,36 @@ public class SubjectService {
 
         return subject;
     }
+
+    public void createSubject(Subject subject) {
+        Session session = this.sessionService.getSession();
+
+        try {
+            session.beginTransaction();
+            session.save(subject);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
+
+    public void updateSubject(Subject formSubject) {
+        Session session = this.sessionService.getSession();
+
+        try {
+            session.beginTransaction();
+
+            Subject sessionSubject = session.get(Subject.class, formSubject.getId());
+            sessionSubject.setSubject(formSubject.getSubject());
+            session.save(sessionSubject);
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
 }
