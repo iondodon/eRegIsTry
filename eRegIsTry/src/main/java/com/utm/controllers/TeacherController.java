@@ -68,7 +68,7 @@ public class TeacherController {
         Teacher teacher = this.teacherService.createTeacher(user);
         this.teacherService.saveTeacher(teacher);
 
-        return "home";
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -90,7 +90,7 @@ public class TeacherController {
 
         this.teacherService.updateTeacher(teacher);
 
-        return "home";
+        return "redirect:/";
     }
 
 
@@ -112,7 +112,7 @@ public class TeacherController {
 
         this.userService.deleteTeacherUser(user);
 
-        return "home";
+        return "redirect:/";
     }
 
 
@@ -145,6 +145,6 @@ public class TeacherController {
 
         this.userService.updateUser(user);
 
-        return "home";
+        return "redirect:/";
     }
 }

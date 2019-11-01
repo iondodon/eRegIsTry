@@ -92,7 +92,7 @@ public class StudentController {
 
         this.studentService.updateStudent(student);
 
-        return "home";
+        return "redirect:/";
     }
 
 
@@ -114,7 +114,7 @@ public class StudentController {
 
         this.userService.deleteStudentUser(user);
 
-        return "home";
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/show", method = RequestMethod.GET)
@@ -146,6 +146,6 @@ public class StudentController {
 
         this.userService.updateUser(user);
 
-        return "home";
+        return "redirect:/";
     }
 }

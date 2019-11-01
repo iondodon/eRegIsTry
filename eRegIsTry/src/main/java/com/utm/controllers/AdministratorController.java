@@ -60,7 +60,7 @@ public class AdministratorController {
         Administrator administrator = this.administratorService.createAdministrator(user);
         this.administratorService.saveAdministrator(administrator);
 
-        return "home";
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -81,7 +81,7 @@ public class AdministratorController {
 
         this.administratorService.updateAdministrator(administrator);
 
-        return "home";
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
@@ -102,7 +102,7 @@ public class AdministratorController {
 
         this.userService.deleteAdministratorUser(user);
 
-        return "home";
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/show", method = RequestMethod.GET)
@@ -133,6 +133,6 @@ public class AdministratorController {
 
         this.userService.updateUser(user);
 
-        return "home";
+        return "redirect:/";
     }
 }
