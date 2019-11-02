@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<%--@elvariable id="user" type="com.utm.entities.Group"--%>
+<%--@elvariable id="group" type="com.utm.entities.Group"--%>
 <form:form action="/group/delete" method="POST" modelAttribute="group">
     <input path="id" name="id" type="hidden"  value="${group.id}" />
     <input type="submit" value="Delete" name="deleteBtn" />

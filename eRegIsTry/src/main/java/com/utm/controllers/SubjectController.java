@@ -3,7 +3,6 @@ package com.utm.controllers;
 import com.utm.entities.Subject;
 import com.utm.services.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -60,5 +59,36 @@ public class SubjectController {
         this.subjectService.updateSubject(subject);
 
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String showDeleteSubjectForm(HttpServletRequest request, Model model) {
+        int subjectId = Integer.parseInt(request.getParameter("subjectId"));
+        Subject subject = this.subjectService.getSubjectById(subjectId);
+
+        model.addAttribute("subject", subject);
+
+        return "subject/delete";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String deleteSubject(@ModelAttribute("subject") Subject subject, BindingResult resultSubject) {
+        if(resultSubject.hasErrors()) {
+            return "subject/delete";
+        }
+
+        this.subjectService.deleteSubject(subject);
+
+        return "redirect:/";
+    }
+
+    @RequestMapping(value = "/show", method = RequestMethod.GET)
+    public String showSubject(HttpServletRequest request, Model model) {
+        int subjectId = Integer.parseInt(request.getParameter("subjectId"));
+        Subject subject = this.subjectService.getSubjectById(subjectId);
+
+        model.addAttribute("subject", subject);
+
+        return "subject/show";
     }
 }

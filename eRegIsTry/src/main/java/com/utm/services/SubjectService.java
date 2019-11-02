@@ -82,4 +82,21 @@ public class SubjectService {
             session.close();
         }
     }
+
+    public void deleteSubject(Subject subject) {
+        Session session = this.sessionService.getSession();
+
+        try {
+            session.beginTransaction();
+
+            Subject sessionSubject = session.get(Subject.class, subject.getId());
+            session.delete(sessionSubject);
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
 }

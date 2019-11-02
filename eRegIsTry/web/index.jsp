@@ -57,11 +57,12 @@
     Subject:
     <br/>
     <a href="<c:url value="/subject/create" />">create subject </a>
-<%--    <br/>--%>
-<%--    <a href="<c:url value="/subject/show?subjectId=2"/>">show group</a>--%>
+    <br/>
+    <a href="<c:url value="/subject/show?subjectId=2"/>">show subject</a>
     <br/>
     <a href="<c:url value="/subject/update?subjectId=2"/>">update subject</a>
-    <%--    <br/>--%>
-    <%--    <a href="<c:url value="/subject/delete?subjectId=2"/>">delete group</a>--%>
+    <br/>
+    <a href="<c:url value="/subject/delete?subjectId=2"/>">delete subject</a>
+
   </body>
 </html>
