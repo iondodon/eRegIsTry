@@ -1,7 +1,6 @@
 package com.utm.editors;
 
 import com.utm.entities.Group;
-import com.utm.entities.Subject;
 import com.utm.services.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

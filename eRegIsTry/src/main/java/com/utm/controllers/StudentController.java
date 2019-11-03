@@ -69,7 +69,7 @@ public class StudentController {
         Student student = this.studentService.createStudent(user);
         this.studentService.saveStudent(student);
 
-        return "home";
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
