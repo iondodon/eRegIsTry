@@ -73,4 +73,44 @@ public class LessonService {
             session.close();
         }
     }
+
+    public void updateLesson(Lesson formLesson) {
+        Session session = this.sessionService.getSession();
+
+        try {
+            session.beginTransaction();
+
+            Lesson sessionLesson = session.get(Lesson.class, formLesson.getId());
+            Subject sessionSubject = session.get(Subject.class, formLesson.getSubject().getId());
+            Teacher sessionTeacher = session.get(Teacher.class, formLesson.getTeacher().getId());
+
+            sessionLesson.setSubject(sessionSubject);
+            sessionLesson.setTeacher(sessionTeacher);
+
+            session.save(sessionLesson);
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
+
+    public void deleteLesson(Lesson lesson) {
+        Session session = this.sessionService.getSession();
+
+        try {
+            session.beginTransaction();
+
+            Lesson sessionLesson = session.get(Lesson.class, lesson.getId());
+            session.delete(sessionLesson);
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
 }

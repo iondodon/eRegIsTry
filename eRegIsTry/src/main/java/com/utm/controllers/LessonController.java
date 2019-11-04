@@ -20,8 +20,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping("/lesson")
@@ -86,6 +88,53 @@ public class LessonController {
         }
 
         this.lessonService.createLesson(lesson);
+
+        return "redirect:/";
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.GET)
+    public String showUpdateLessonForm(HttpServletRequest request, Model model) {
+        int lessonId = Integer.parseInt(request.getParameter("lessonId"));
+        Lesson lesson = this.lessonService.getLessonById(lessonId);
+
+        List subjects = this.subjectService.getAllSubjects();
+        List teachers = this.teacherService.getAllTeachers();
+
+        model.addAttribute("lesson", lesson);
+        model.addAttribute("subjects", subjects);
+        model.addAttribute("teachers", teachers);
+
+        return "lesson/update";
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String updateLesson(@Valid @ModelAttribute("lesson") Lesson lesson, BindingResult resultSubject) {
+        if(resultSubject.hasErrors()) {
+            return "lesson/update";
+        }
+
+        this.lessonService.updateLesson(lesson);
+
+        return "redirect:/";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String showDeleteLessonForm(HttpServletRequest request, Model model) {
+        int lessonId = Integer.parseInt(request.getParameter("lessonId"));
+        Lesson lesson = this.lessonService.getLessonById(lessonId);
+
+        model.addAttribute("lesson", lesson);
+
+        return "lesson/delete";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String deleteLesson(@ModelAttribute("lesson") Lesson lesson, BindingResult resultSubject) {
+        if(resultSubject.hasErrors()) {
+            return "lesson/delete";
+        }
+
+        this.lessonService.deleteLesson(lesson);
 
         return "redirect:/";
     }
