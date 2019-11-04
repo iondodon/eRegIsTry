@@ -84,8 +84,8 @@
         Lesson:
         <br/>
         <a href="<c:url value="/lesson/create" />">create lesson</a>
-<%--        <br/>--%>
-<%--        <a href="<c:url value="/lesson/show?lessonId=1"/>">show lesson</a>--%>
+        <br/>
+        <a href="<c:url value="/lesson/show?lessonId=1"/>">show lesson</a>
         <br/>
         <a href="<c:url value="/lesson/update?lessonId=3"/>">update lesson</a>
         <br/>

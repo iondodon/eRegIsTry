@@ -138,4 +138,14 @@ public class LessonController {
 
         return "redirect:/";
     }
+
+    @RequestMapping(value = "/show", method = RequestMethod.GET)
+    public String showLesson(HttpServletRequest request, Model model) {
+        int lessonId = Integer.parseInt(request.getParameter("lessonId"));
+        Lesson lesson = this.lessonService.getLessonById(lessonId);
+
+        model.addAttribute("lesson", lesson);
+
+        return "lesson/show";
+    }
 }
