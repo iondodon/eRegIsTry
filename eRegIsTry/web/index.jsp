@@ -72,12 +72,12 @@
         Registry:
         <br/>
         <a href="<c:url value="/registry/create" />">create registry </a>
-<%--        <br/>--%>
-<%--        <a href="<c:url value="/registry/show?registryId=1"/>">show registry</a>--%>
-<%--        <br/>--%>
-<%--        <a href="<c:url value="/registry/update?registryId=1"/>">update registry</a>--%>
-<%--        <br/>--%>
-<%--        <a href="<c:url value="/registry/delete?registryId=1"/>">delete registry</a>          --%>
+        <br/>
+        <a href="<c:url value="/registry/show?registryId=2"/>">show registry</a>
+        <br/>
+        <a href="<c:url value="/registry/update?registryId=2"/>">update registry</a>
+        <br/>
+        <a href="<c:url value="/registry/delete?registryId=2"/>">delete registry</a>
 
         <br/><br/>
 
