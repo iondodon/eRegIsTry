@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/administrator")
@@ -134,5 +135,15 @@ public class AdministratorController {
         this.userService.updateUser(user);
 
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String listAdministrators(HttpServletRequest request, Model model) {
+
+        List administrators = this.administratorService.getAllAdministrators();
+
+        model.addAttribute("administrators", administrators);
+
+        return "administrator/list";
     }
 }

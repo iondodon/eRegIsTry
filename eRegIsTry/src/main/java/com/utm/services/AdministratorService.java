@@ -91,4 +91,21 @@ public class AdministratorService {
     private void copyAdministratorFields(Administrator sessionAdministrator, Administrator formAdministrator) {
         sessionAdministrator.setDepartment(formAdministrator.getDepartment());
     }
+
+    public List getAllAdministrators() {
+        Session session = this.sessionService.getSession();
+        List administrators = null;
+
+        try {
+            session.beginTransaction();
+            administrators = session.createQuery("from Administrator").list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+
+        return administrators;
+    }
 }

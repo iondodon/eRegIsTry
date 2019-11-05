@@ -18,6 +18,8 @@
         <a href="<c:url value="/administrator/update?administratorId=1"/>">update administrator</a>
         <br/>
         <a href="<c:url value="/administrator/delete?administratorId=1"/>">delete administrator</a>
+        <br/>
+        <a href="<c:url value="/administrator/list"/>">list administrators</a>
 
         <br/><br/>
         Teacher:
