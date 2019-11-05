@@ -125,5 +125,4 @@ public class Lesson implements Serializable {
 
 		return registry;
 	}
-
 }

@@ -3,7 +3,6 @@ package com.utm.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Time;
-import java.util.ArrayList;
 
 
 /**
@@ -36,6 +35,7 @@ public class Schedule implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="id_subject", nullable=false)
 	private Subject subject;
+
 
 	public Schedule() {
 	}
@@ -79,5 +79,4 @@ public class Schedule implements Serializable {
 	public void setSubject(Subject subject) {
 		this.subject = subject;
 	}
-
 }

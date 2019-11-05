@@ -90,6 +90,18 @@
         <a href="<c:url value="/lesson/update?lessonId=3"/>">update lesson</a>
         <br/>
         <a href="<c:url value="/lesson/delete?lessonId=3"/>">delete lesson</a>
+
+        <br/><br/>
+
+        Schedule:
+        <br/>
+        <a href="<c:url value="/schedule/create" />">create schedule</a>
+        <br/>
+        <a href="<c:url value="/schedule/show?scheduleId=2"/>">show schedule</a>
+        <br/>
+        <a href="<c:url value="/schedule/update?scheduleId=2"/>">update schedule</a>
+        <br/>
+        <a href="<c:url value="/schedule/delete?scheduleId=2"/>">delete schedule</a>
     </div>
 
   </body>

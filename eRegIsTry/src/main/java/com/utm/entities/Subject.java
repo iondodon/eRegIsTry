@@ -99,5 +99,4 @@ public class Subject implements Serializable {
 
 		return schedule;
 	}
-
 }
