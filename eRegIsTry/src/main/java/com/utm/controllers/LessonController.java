@@ -148,4 +148,14 @@ public class LessonController {
 
         return "lesson/show";
     }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String listLessons(HttpServletRequest request, Model model) {
+
+        List lessons = this.lessonService.getAllLessons();
+
+        model.addAttribute("lessons", lessons);
+
+        return "lesson/list";
+    }
 }

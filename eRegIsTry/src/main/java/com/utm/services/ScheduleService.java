@@ -7,6 +7,8 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class ScheduleService {
     private SessionService sessionService;
@@ -49,7 +51,6 @@ public class ScheduleService {
         }
     }
 
-
     public Schedule getScheduleById(int id) {
         Session session = this.sessionService.getSession();
         Schedule schedule = null;
@@ -65,6 +66,23 @@ public class ScheduleService {
         }
 
         return schedule;
+    }
+
+    public List getAllScheduleRecords() {
+        Session session = this.sessionService.getSession();
+        List scheduleRecords = null;
+
+        try {
+            session.beginTransaction();
+            scheduleRecords = session.createQuery("from Schedule").list();
+            session.getTransaction().commit();
+        } catch (Exception e){
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+
+        return scheduleRecords;
     }
 
     public void updateSchedule(Schedule formSchedule) {

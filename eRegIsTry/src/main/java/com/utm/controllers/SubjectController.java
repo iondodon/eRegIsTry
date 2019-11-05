@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/subject")
@@ -90,5 +91,15 @@ public class SubjectController {
         model.addAttribute("subject", subject);
 
         return "subject/show";
+    }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String listAllSubjects(HttpServletRequest request, Model model) {
+
+        List subjects = this.subjectService.getAllSubjects();
+
+        model.addAttribute("subjects", subjects);
+
+        return "subject/list";
     }
 }

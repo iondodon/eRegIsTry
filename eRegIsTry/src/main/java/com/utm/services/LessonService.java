@@ -35,6 +35,23 @@ public class LessonService {
         return lessons;
     }
 
+    public List getAllLessons() {
+        Session session = this.sessionService.getSession();
+        List lessons = null;
+
+        try {
+            session.beginTransaction();
+            lessons = session.createQuery("from Lesson").list();
+            session.getTransaction().commit();
+        } catch (Exception e){
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+
+        return lessons;
+    }
+
     public Lesson getLessonById(int id) {
         Session session = this.sessionService.getSession();
         Lesson lesson = null;

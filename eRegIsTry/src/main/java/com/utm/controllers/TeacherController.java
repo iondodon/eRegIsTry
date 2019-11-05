@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/teacher")
@@ -146,5 +147,15 @@ public class TeacherController {
         this.userService.updateUser(user);
 
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String listAllTeachers(HttpServletRequest request, Model model) {
+
+        List teachers = this.teacherService.getAllTeachers();
+
+        model.addAttribute("teachers", teachers);
+
+        return "teacher/list";
     }
 }

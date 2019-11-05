@@ -149,4 +149,14 @@ public class RegistryController {
 
         return "registry/show";
     }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String listRegistries(HttpServletRequest request, Model model) {
+
+        List registries = this.registryService.getAllRegistries();
+
+        model.addAttribute("registries", registries);
+
+        return "registry/list";
+    }
 }

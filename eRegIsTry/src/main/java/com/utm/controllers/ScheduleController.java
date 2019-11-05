@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.sql.Time;
+import java.util.List;
 
 @Controller
 @RequestMapping("/schedule")
@@ -145,5 +146,15 @@ public class ScheduleController {
         model.addAttribute("schedule", schedule);
 
         return "schedule/show";
+    }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String listScheduleRecords(HttpServletRequest request, Model model) {
+
+        List scheduleRecords = this.scheduleService.getAllScheduleRecords();
+
+        model.addAttribute("scheduleRecords", scheduleRecords);
+
+        return "schedule/list";
     }
 }

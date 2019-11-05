@@ -23,7 +23,6 @@ public class SubjectService {
         try {
             session.beginTransaction();
             subjects = session.createQuery("from Subject").list();
-            System.out.println(subjects);
             session.getTransaction().commit();
         } catch (Exception e){
             System.out.println(e);

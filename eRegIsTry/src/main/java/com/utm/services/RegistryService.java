@@ -7,6 +7,8 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class RegistryService {
     private SessionService sessionService;
@@ -47,6 +49,23 @@ public class RegistryService {
         }
 
         return registry;
+    }
+
+    public List getAllRegistries() {
+        Session session = this.sessionService.getSession();
+        List registries = null;
+
+        try {
+            session.beginTransaction();
+            registries = session.createQuery("from Registry").list();
+            session.getTransaction().commit();
+        } catch (Exception e){
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+
+        return registries;
     }
 
     public void updateRegistry(Registry formRegistry) {

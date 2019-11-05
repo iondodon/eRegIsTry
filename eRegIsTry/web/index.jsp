@@ -22,19 +22,6 @@
         <a href="<c:url value="/administrator/list"/>">list administrators</a>
 
         <br/><br/>
-        Teacher:
-        <br/>
-        <a href="<c:url value="/teacher/create"/>">create teacher</a>
-        <br/>
-        <a href="<c:url value="/teacher/show?teacherId=1"/>">show teacher</a>
-        <br/>
-        <a href="<c:url value="/teacher/update-user-data?teacherId=1"/>">update teacher (user data)</a>
-        <br/>
-        <a href="<c:url value="/teacher/update?teacherId=1"/>">update teacher</a>
-        <br/>
-        <a href="<c:url value="/teacher/delete?teacherId=2"/>">delete teacher</a>
-
-        <br/><br/>
         Student:
         <br/>
         <a href="<c:url value="/student/create"/>">create student</a>
@@ -46,6 +33,8 @@
         <a href="<c:url value="/student/update?studentId=3"/>">update student</a>
         <br/>
         <a href="<c:url value="/student/delete?studentId=3"/>">delete student</a>
+        <br/>
+        <a href="<c:url value="/student/list"/>">list students</a>
 
         <br/><br/>
         Group:
@@ -57,6 +46,8 @@
         <a href="<c:url value="/group/update?groupId=2"/>">update group</a>
         <br/>
         <a href="<c:url value="/group/delete?groupId=2"/>">delete group</a>
+        <br/>
+        <a href="<c:url value="/group/list"/>">list groups</a>
 
         <br/><br/>
         Subject:
@@ -68,6 +59,8 @@
         <a href="<c:url value="/subject/update?subjectId=2"/>">update subject</a>
         <br/>
         <a href="<c:url value="/subject/delete?subjectId=2"/>">delete subject</a>
+        <br/>
+        <a href="<c:url value="/subject/list"/>">list subjects</a>
     </div>
 
     <div>
@@ -80,6 +73,8 @@
         <a href="<c:url value="/registry/update?registryId=2"/>">update registry</a>
         <br/>
         <a href="<c:url value="/registry/delete?registryId=2"/>">delete registry</a>
+        <br/>
+        <a href="<c:url value="/registry/list"/>">list registries</a>
 
         <br/><br/>
 
@@ -92,6 +87,8 @@
         <a href="<c:url value="/lesson/update?lessonId=3"/>">update lesson</a>
         <br/>
         <a href="<c:url value="/lesson/delete?lessonId=3"/>">delete lesson</a>
+        <br/>
+        <a href="<c:url value="/lesson/list"/>">list lessons</a>
 
         <br/><br/>
 
@@ -104,6 +101,23 @@
         <a href="<c:url value="/schedule/update?scheduleId=2"/>">update schedule</a>
         <br/>
         <a href="<c:url value="/schedule/delete?scheduleId=2"/>">delete schedule</a>
+        <br/>
+        <a href="<c:url value="/schedule/list"/>">list schedule</a>
+
+        <br/><br/>
+        Teacher:
+        <br/>
+        <a href="<c:url value="/teacher/create"/>">create teacher</a>
+        <br/>
+        <a href="<c:url value="/teacher/show?teacherId=1"/>">show teacher</a>
+        <br/>
+        <a href="<c:url value="/teacher/update-user-data?teacherId=1"/>">update teacher (user data)</a>
+        <br/>
+        <a href="<c:url value="/teacher/update?teacherId=1"/>">update teacher</a>
+        <br/>
+        <a href="<c:url value="/teacher/delete?teacherId=2"/>">delete teacher</a>
+        <br/>
+        <a href="<c:url value="/teacher/list"/>">list teachers</a>
     </div>
 
   </body>
