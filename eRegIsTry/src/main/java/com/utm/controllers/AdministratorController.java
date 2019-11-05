@@ -7,6 +7,7 @@ import com.utm.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.utm.services.AdministratorService;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -127,14 +129,16 @@ public class AdministratorController {
     }
 
     @RequestMapping(value = "/update-user-data", method = RequestMethod.POST)
-    public String updateUser(@Valid @ModelAttribute("user") User user, BindingResult resultUser) {
+    public ModelAndView updateUser(@Valid @ModelAttribute("user") User user, BindingResult resultUser) {
         if(resultUser.hasErrors()) {
-            return "administrator/update-user-data";
+            ModelMap model = new ModelMap();
+            model.addAttribute("user", user);
+            return new ModelAndView("administrator/update-user-data", model);
         }
 
         this.userService.updateUser(user);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)

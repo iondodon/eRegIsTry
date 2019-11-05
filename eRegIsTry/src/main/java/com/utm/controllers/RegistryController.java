@@ -12,12 +12,14 @@ import com.utm.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -83,14 +85,18 @@ public class RegistryController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String createRegistry(@Valid @ModelAttribute("registry") Registry registry, BindingResult bindingResult) {
+    public ModelAndView createRegistry(@Valid @ModelAttribute("registry") Registry registry, BindingResult bindingResult) {
         if (bindingResult.hasErrors()){
-            return "registry/create";
+            ModelMap model = new ModelMap();
+            model.addAttribute("registry", registry);
+            model.addAttribute("students", this.studentService.getAllStudents());
+            model.addAttribute("lessons", this.lessonService.getAllPastLessons());
+            return new ModelAndView("registry/create", model);
         }
 
         this.registryService.createRegistry(registry);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -98,25 +104,26 @@ public class RegistryController {
         int registryId = Integer.parseInt(request.getParameter("registryId"));
         Registry registry = this.registryService.getRegistryById(registryId);
 
-        List students = this.studentService.getAllStudents();
-        List lessons = this.lessonService.getAllPastLessons();
-
         model.addAttribute("registry", registry);
-        model.addAttribute("students", students);
-        model.addAttribute("lessons", lessons);
+        model.addAttribute("students", this.studentService.getAllStudents());
+        model.addAttribute("lessons", this.lessonService.getAllPastLessons());
 
         return "registry/update";
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String updateRegistry(@Valid @ModelAttribute("registry") Registry registry, BindingResult resultRegistry) {
+    public ModelAndView updateRegistry(@Valid @ModelAttribute("registry") Registry registry, BindingResult resultRegistry) {
         if(resultRegistry.hasErrors()) {
-            return "registry/update";
+            ModelMap model = new ModelMap();
+            model.addAttribute("registry", registry);
+            model.addAttribute("students", this.studentService.getAllStudents());
+            model.addAttribute("lessons", this.lessonService.getAllPastLessons());
+            return new ModelAndView("registry/update", model);
         }
 
         this.registryService.updateRegistry(registry);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)

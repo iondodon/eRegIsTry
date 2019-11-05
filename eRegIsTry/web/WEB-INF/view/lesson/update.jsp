@@ -50,8 +50,6 @@
     </form:select>
     <form:errors path="teacher" cssClass="error" />
 
-    <input type="submit" value="Submit" name="submitBtn">
-
     <input type="submit" value="Update" name="updateBtn">
 </form:form>
 

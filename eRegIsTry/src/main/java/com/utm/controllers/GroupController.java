@@ -11,13 +11,17 @@ import com.utm.services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/group")
@@ -68,14 +72,17 @@ public class GroupController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String createGroup(@Valid @ModelAttribute("group") Group group, BindingResult bindingResult) {
+    public ModelAndView createGroup(@Valid @ModelAttribute("group") Group group, BindingResult bindingResult) {
         if (bindingResult.hasErrors()){
-            return "group/create";
+            ModelMap modelMap = new ModelMap();
+            modelMap.addAttribute("teachers", this.teacherService.getAllTeachers());
+            modelMap.addAttribute("students", this.studentService.getAllStudents());
+            return new ModelAndView("/group/create", modelMap);
         }
 
         this.groupService.createGroup(group);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -90,14 +97,17 @@ public class GroupController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String updateGroup(@Valid @ModelAttribute("group") Group group, BindingResult resultGroup) {
+    public ModelAndView updateGroup(@Valid @ModelAttribute("group") Group group, BindingResult resultGroup) {
         if(resultGroup.hasErrors()) {
-            return "group/update";
+            ModelMap model = new ModelMap();
+            model.addAttribute("group", group);
+            model.addAttribute("teachers", this.teacherService.getAllTeachers());
+            return new ModelAndView("group/update", model);
         }
 
         this.groupService.updateGroup(group);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
 
@@ -126,8 +136,6 @@ public class GroupController {
     public String showGroup(HttpServletRequest request, Model model) {
         int groupId = Integer.parseInt(request.getParameter("groupId"));
         Group group = this.groupService.getGroupById(groupId);
-
-        System.out.println(group.getStudents().toString());
 
         model.addAttribute("group", group);
 

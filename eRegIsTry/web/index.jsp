@@ -30,7 +30,7 @@
         <br/>
         <a href="<c:url value="/student/update-user-data?studentId=3"/>">update student (user data)</a>
         <br/>
-        <a href="<c:url value="/student/update?studentId=3"/>">update student</a>
+        <a href="<c:url value="/student/update?studentId=1"/>">update student</a>
         <br/>
         <a href="<c:url value="/student/delete?studentId=3"/>">delete student</a>
         <br/>
@@ -43,7 +43,7 @@
         <br/>
         <a href="<c:url value="/group/show?groupId=2"/>">show group</a>
         <br/>
-        <a href="<c:url value="/group/update?groupId=2"/>">update group</a>
+        <a href="<c:url value="/group/update?groupId=1"/>">update group</a>
         <br/>
         <a href="<c:url value="/group/delete?groupId=2"/>">delete group</a>
         <br/>
@@ -54,11 +54,11 @@
         <br/>
         <a href="<c:url value="/subject/create" />">create subject </a>
         <br/>
-        <a href="<c:url value="/subject/show?subjectId=2"/>">show subject</a>
+        <a href="<c:url value="/subject/show?subjectId=1"/>">show subject</a>
         <br/>
-        <a href="<c:url value="/subject/update?subjectId=2"/>">update subject</a>
+        <a href="<c:url value="/subject/update?subjectId=1"/>">update subject</a>
         <br/>
-        <a href="<c:url value="/subject/delete?subjectId=2"/>">delete subject</a>
+        <a href="<c:url value="/subject/delete?subjectId=1"/>">delete subject</a>
         <br/>
         <a href="<c:url value="/subject/list"/>">list subjects</a>
     </div>
@@ -84,9 +84,9 @@
         <br/>
         <a href="<c:url value="/lesson/show?lessonId=1"/>">show lesson</a>
         <br/>
-        <a href="<c:url value="/lesson/update?lessonId=3"/>">update lesson</a>
+        <a href="<c:url value="/lesson/update?lessonId=1"/>">update lesson</a>
         <br/>
-        <a href="<c:url value="/lesson/delete?lessonId=3"/>">delete lesson</a>
+        <a href="<c:url value="/lesson/delete?lessonId=1"/>">delete lesson</a>
         <br/>
         <a href="<c:url value="/lesson/list"/>">list lessons</a>
 

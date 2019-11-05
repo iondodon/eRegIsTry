@@ -12,12 +12,14 @@ import com.utm.services.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -84,14 +86,18 @@ public class ScheduleController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String createSchedule(@Valid @ModelAttribute("schedule") Schedule schedule, BindingResult bindingResult) {
+    public ModelAndView createSchedule(@Valid @ModelAttribute("schedule") Schedule schedule, BindingResult bindingResult) {
         if (bindingResult.hasErrors()){
-            return "schedule/create";
+            ModelMap model = new ModelMap();
+            model.addAttribute("schedule", schedule);
+            model.addAttribute("subjects", this.subjectService.getAllSubjects());
+            model.addAttribute("groups", this.groupService.getAllGroups());
+            return new ModelAndView("schedule/create", model);
         }
 
         this.scheduleService.createSchedule(schedule);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -107,14 +113,18 @@ public class ScheduleController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String updateSchedule(@Valid @ModelAttribute("schedule") Schedule schedule, BindingResult resultSchedule) {
+    public ModelAndView updateSchedule(@Valid @ModelAttribute("schedule") Schedule schedule, BindingResult resultSchedule) {
         if(resultSchedule.hasErrors()) {
-            return "schedule/update";
+            ModelMap model = new ModelMap();
+            model.addAttribute("subjects", this.subjectService.getAllSubjects());
+            model.addAttribute("groups", this.groupService.getAllGroups());
+            model.addAttribute("schedule", schedule);
+            return new ModelAndView("schedule/update", model);
         }
 
         this.scheduleService.updateSchedule(schedule);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)

@@ -13,12 +13,14 @@ import com.utm.services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -82,14 +84,18 @@ public class LessonController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String createLesson(@Valid @ModelAttribute("lesson") Lesson lesson, BindingResult bindingResult) {
+    public ModelAndView createLesson(@Valid @ModelAttribute("lesson") Lesson lesson, BindingResult bindingResult) {
         if (bindingResult.hasErrors()){
-            return "lesson/create";
+            ModelMap model = new ModelMap();
+            model.addAttribute("lesson", new Lesson());
+            model.addAttribute("subjects", this.subjectService.getAllSubjects());
+            model.addAttribute("teachers", this.teacherService.getAllTeachers());
+            return new ModelAndView("lesson/create", model);
         }
 
         this.lessonService.createLesson(lesson);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -97,25 +103,26 @@ public class LessonController {
         int lessonId = Integer.parseInt(request.getParameter("lessonId"));
         Lesson lesson = this.lessonService.getLessonById(lessonId);
 
-        List subjects = this.subjectService.getAllSubjects();
-        List teachers = this.teacherService.getAllTeachers();
-
         model.addAttribute("lesson", lesson);
-        model.addAttribute("subjects", subjects);
-        model.addAttribute("teachers", teachers);
+        model.addAttribute("subjects", this.subjectService.getAllSubjects());
+        model.addAttribute("teachers", this.teacherService.getAllTeachers());
 
         return "lesson/update";
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String updateLesson(@Valid @ModelAttribute("lesson") Lesson lesson, BindingResult resultSubject) {
+    public ModelAndView updateLesson(@Valid @ModelAttribute("lesson") Lesson lesson, BindingResult resultSubject) {
         if(resultSubject.hasErrors()) {
-            return "lesson/update";
+            ModelMap model = new ModelMap();
+            model.addAttribute("lesson", lesson);
+            model.addAttribute("subjects", this.subjectService.getAllSubjects());
+            model.addAttribute("teachers", this.teacherService.getAllTeachers());
+            return new ModelAndView("lesson/update", model);
         }
 
         this.lessonService.updateLesson(lesson);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)

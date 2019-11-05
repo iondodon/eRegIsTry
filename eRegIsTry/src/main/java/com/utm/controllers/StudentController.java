@@ -10,12 +10,14 @@ import com.utm.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -62,15 +64,18 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String submitStudent(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+    public ModelAndView submitStudent(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
         if(bindingResult.hasErrors()){
-            return "student/create";
+            ModelMap model = new ModelMap();
+            model.addAttribute("user", user);
+            model.addAttribute("groups", this.groupService.getAllGroups());
+            return new ModelAndView("student/create", model);
         }
 
         Student student = this.studentService.createStudent(user);
         this.studentService.saveStudent(student);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -85,14 +90,17 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String updateStudent(@Valid @ModelAttribute("student") Student student, BindingResult resultStudent) {
+    public ModelAndView updateStudent(@Valid @ModelAttribute("student") Student student, BindingResult resultStudent) {
         if(resultStudent.hasErrors()) {
-            return "student/update";
+            ModelMap model = new ModelMap();
+            model.addAttribute("student", student);
+            model.addAttribute("groups", this.groupService.getAllGroups());
+            return new ModelAndView("student/update", model);
         }
 
         this.studentService.updateStudent(student);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
@@ -138,14 +146,16 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/update-user-data", method = RequestMethod.POST)
-    public String updateUser(@Valid @ModelAttribute("user") User user, BindingResult resultUser) {
+    public ModelAndView updateUser(@Valid @ModelAttribute("user") User user, BindingResult resultUser) {
         if(resultUser.hasErrors()) {
-            return "student/update-user-data";
+            ModelMap model = new ModelMap();
+            model.addAttribute("user", user);
+            return new ModelAndView("student/update-user-data", model);
         }
 
         this.userService.updateUser(user);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)

@@ -10,12 +10,14 @@ import com.utm.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -61,15 +63,17 @@ public class TeacherController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String createTeacher(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+    public ModelAndView createTeacher(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
         if(bindingResult.hasErrors()){
-            return "teacher/create";
+            ModelMap model = new ModelMap();
+            model.addAttribute("user", user);
+            return new ModelAndView("teacher/create", model);
         }
 
         Teacher teacher = this.teacherService.createTeacher(user);
         this.teacherService.saveTeacher(teacher);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -84,14 +88,17 @@ public class TeacherController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String updateTeacher(@Valid @ModelAttribute("teacher") Teacher teacher, BindingResult resultTeacher) {
+    public ModelAndView updateTeacher(@Valid @ModelAttribute("teacher") Teacher teacher, BindingResult resultTeacher) {
         if(resultTeacher.hasErrors()) {
-            return "teacher/update";
+            ModelMap model = new ModelMap();
+            model.addAttribute("teacher", teacher);
+            model.addAttribute("subjects", subjectService.getAllSubjects());
+            return new ModelAndView("teacher/update", model);
         }
 
         this.teacherService.updateTeacher(teacher);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
 
@@ -139,14 +146,16 @@ public class TeacherController {
     }
 
     @RequestMapping(value = "/update-user-data", method = RequestMethod.POST)
-    public String updateUser(@Valid @ModelAttribute("user") User user, BindingResult resultUser) {
+    public ModelAndView updateUser(@Valid @ModelAttribute("user") User user, BindingResult resultUser) {
         if(resultUser.hasErrors()) {
-            return "teacher/update-user-data";
+            ModelMap model = new ModelMap();
+            model.addAttribute("user", user);
+            return new ModelAndView("teacher/update-user-data", model);
         }
 
         this.userService.updateUser(user);
 
-        return "redirect:/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
