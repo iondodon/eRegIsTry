@@ -2,7 +2,6 @@ package com.utm.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -30,13 +29,13 @@ public class Student implements Serializable {
 	@JoinColumn(name="id_group", nullable=false)
 	private Group group;
 
-	//bi-directional many-to-one association to User
-	@ManyToOne
-	@JoinColumn(name="id_user", nullable=false)
+	//bi-directional one-to-one association to User
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_user")
 	private User user;
 
 	public Student() {
-		this.registries = new ArrayList<>();
+
 	}
 
 	public int getId() {
@@ -84,5 +83,4 @@ public class Student implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
 }

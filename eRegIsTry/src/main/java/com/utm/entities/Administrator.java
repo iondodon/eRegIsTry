@@ -2,6 +2,7 @@ package com.utm.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 
 /**
@@ -19,12 +20,17 @@ public class Administrator implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
-	//bi-directional many-to-one association to User
-	@ManyToOne
-	@JoinColumn(name="id_user", nullable=false)
+	@Size(min = 2, max = 45)
+	@Column(length=45)
+	private String department;
+
+	//bi-directional one-to-one association to User
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_user")
 	private User user;
 
 	public Administrator() {
+
 	}
 
 	public int getId() {
@@ -35,6 +41,14 @@ public class Administrator implements Serializable {
 		this.id = id;
 	}
 
+	public String getDepartment() {
+		return this.department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
 	public User getUser() {
 		return this.user;
 	}
@@ -42,5 +56,4 @@ public class Administrator implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
 }

@@ -2,6 +2,7 @@ package com.utm.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,20 +21,26 @@ public class Teacher implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
+	@OneToOne
+	@JoinColumn(name = "id_base_subject")
+	private Subject baseSubject;
+
 	//bi-directional many-to-one association to Group
-	@OneToMany(mappedBy="teacher")
+	@OneToMany(mappedBy="master")
 	private List<Group> groups;
 
 	//bi-directional many-to-one association to Lesson
 	@OneToMany(mappedBy="teacher")
 	private List<Lesson> lessons;
 
-	//bi-directional many-to-one association to User
-	@ManyToOne
-	@JoinColumn(name="id_user", nullable=false)
+	//bi-directional one-to-one association to User
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_user")
 	private User user;
 
 	public Teacher() {
+		this.groups = new ArrayList<>();
+		this.lessons = new ArrayList<>();
 	}
 
 	public int getId() {
@@ -42,6 +49,14 @@ public class Teacher implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public Subject getBaseSubject() {
+		return this.baseSubject;
+	}
+
+	public void setBaseSubject(Subject baseSubject) {
+		this.baseSubject = baseSubject;
 	}
 
 	public List<Group> getGroups() {
@@ -54,14 +69,14 @@ public class Teacher implements Serializable {
 
 	public Group addGroup(Group group) {
 		getGroups().add(group);
-		group.setTeacher(this);
+		group.setMaster(this);
 
 		return group;
 	}
 
 	public Group removeGroup(Group group) {
 		getGroups().remove(group);
-		group.setTeacher(null);
+		group.setMaster(null);
 
 		return group;
 	}
@@ -95,5 +110,4 @@ public class Teacher implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
 }

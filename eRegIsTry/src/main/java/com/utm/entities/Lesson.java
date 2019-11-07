@@ -1,7 +1,11 @@
 package com.utm.entities;
 
+import org.hibernate.type.TimeType;
+
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,9 +30,11 @@ public class Lesson implements Serializable {
 	@Column(nullable=false)
 	private Date datetime;
 
+	@Size(min = 5, max = 200)
 	@Column(length=200)
 	private String homework;
 
+	@Size(min = 5, max = 200)
 	@Column(length=200)
 	private String topic;
 
@@ -59,7 +65,7 @@ public class Lesson implements Serializable {
 	}
 
 	public Date getDatetime() {
-		return this.datetime;
+		return datetime;
 	}
 
 	public void setDatetime(Date datetime) {
@@ -119,5 +125,4 @@ public class Lesson implements Serializable {
 
 		return registry;
 	}
-
 }

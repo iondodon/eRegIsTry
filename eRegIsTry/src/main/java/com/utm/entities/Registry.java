@@ -2,6 +2,7 @@ package com.utm.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 
 /**
@@ -19,17 +20,20 @@ public class Registry implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
+	@NotNull
 	@Column(nullable=false)
-	private byte absent;
+	private boolean absent;
 
 	private byte mark;
 
 	//bi-directional many-to-one association to Lesson
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name="id_lesson", nullable=false)
 	private Lesson lesson;
 
 	//bi-directional many-to-one association to Student
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name="id_student", nullable=false)
 	private Student student;
@@ -45,11 +49,11 @@ public class Registry implements Serializable {
 		this.id = id;
 	}
 
-	public byte getAbsent() {
-		return this.absent;
+	public boolean isAbsent() {
+		return absent;
 	}
 
-	public void setAbsent(byte absent) {
+	public void setAbsent(boolean absent) {
 		this.absent = absent;
 	}
 
@@ -76,5 +80,4 @@ public class Registry implements Serializable {
 	public void setStudent(Student student) {
 		this.student = student;
 	}
-
 }

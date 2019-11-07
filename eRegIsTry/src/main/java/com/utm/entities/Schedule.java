@@ -36,6 +36,7 @@ public class Schedule implements Serializable {
 	@JoinColumn(name="id_subject", nullable=false)
 	private Subject subject;
 
+
 	public Schedule() {
 	}
 
@@ -78,5 +79,4 @@ public class Schedule implements Serializable {
 	public void setSubject(Subject subject) {
 		this.subject = subject;
 	}
-
 }

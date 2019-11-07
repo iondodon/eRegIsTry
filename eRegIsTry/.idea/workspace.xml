@@ -7,10 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5d35203-7127-45a9-91d7-c59aded39552" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/RegistryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/view/create-registry.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,16 +29,16 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mydb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mydb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mydb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="mydb: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
@@ -56,8 +52,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Jsp File" />
+        <option value="jsf" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -84,6 +81,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -101,14 +99,22 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.23690476" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
     <key name="DestinationChooserDialog.Package.RECENTS_KEY">
       <recent name="com.utm.models.entities" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/subject" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/teacher" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/administrator" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -201,9 +207,7 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="eRegIsTry:war exploded" />
-        </option>
+        <option name="BuildArtifacts" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
@@ -257,7 +261,34 @@
       <workItem from="1572330260673" duration="465000" />
       <workItem from="1572331063247" duration="785000" />
       <workItem from="1572334074755" duration="204000" />
-      <workItem from="1572348026838" duration="4378000" />
+      <workItem from="1572348026838" duration="5707000" />
+      <workItem from="1572374061308" duration="8175000" />
+      <workItem from="1572428108234" duration="2144000" />
+      <workItem from="1572430297725" duration="14829000" />
+      <workItem from="1572469073136" duration="9407000" />
+      <workItem from="1572517834753" duration="9035000" />
+      <workItem from="1572529679777" duration="14146000" />
+      <workItem from="1572543910077" duration="20001000" />
+      <workItem from="1572589012753" duration="14692000" />
+      <workItem from="1572607253639" duration="197000" />
+      <workItem from="1572629606773" duration="3535000" />
+      <workItem from="1572633229295" duration="1725000" />
+      <workItem from="1572634999533" duration="1997000" />
+      <workItem from="1572640609968" duration="269000" />
+      <workItem from="1572696071502" duration="11759000" />
+      <workItem from="1572707897956" duration="1623000" />
+      <workItem from="1572714258365" duration="3282000" />
+      <workItem from="1572787632684" duration="1792000" />
+      <workItem from="1572790966579" duration="10933000" />
+      <workItem from="1572851141065" duration="2710000" />
+      <workItem from="1572854877848" duration="108000" />
+      <workItem from="1572882612069" duration="6994000" />
+      <workItem from="1572892409961" duration="6776000" />
+      <workItem from="1572940165275" duration="6767000" />
+      <workItem from="1572957297372" duration="749000" />
+      <workItem from="1572964280356" duration="9084000" />
+      <workItem from="1572974592450" duration="3150000" />
+      <workItem from="1572980439379" duration="603000" />
     </task>
     <servers />
   </component>
