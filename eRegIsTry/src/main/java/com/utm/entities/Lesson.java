@@ -1,11 +1,8 @@
 package com.utm.entities;
 
-import org.hibernate.type.TimeType;
-
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
