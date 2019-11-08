@@ -4,7 +4,6 @@ import com.utm.editors.DateEditor;
 import com.utm.editors.SubjectEditor;
 import com.utm.editors.TeacherEditor;
 import com.utm.entities.Lesson;
-import com.utm.entities.Student;
 import com.utm.entities.Subject;
 import com.utm.entities.Teacher;
 import com.utm.services.LessonService;

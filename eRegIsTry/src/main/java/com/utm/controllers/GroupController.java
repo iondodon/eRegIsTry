@@ -19,9 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/group")
