@@ -2,22 +2,25 @@
 <html>
 <head>
     <title>Show registry</title>
+    <style> <%@include file="/WEB-INF/resource/style.css"%>
+    </style>
 </head>
 <body>
+<div>
+    <h3 align="center">Registry information</h3>
+    <div class="block" >
+        <label>Student Name</label>
+        <div class="sh">${registry.student.user.username} </div>
 
-student: ${registry.student.user.username}
+        <label>Lesson:</label>
+        <div class="sh">${registry.lesson.topic}</div>
 
-<br/>
+        <label>Lesson:</label>
+        <div class="sh">${registry.mark}</div>
 
-lesson: ${registry.lesson.topic}
-
-<br/>
-
-mark: ${registry.mark}
-
-<br/>
-
-absent: ${registry.absent}
-
+        <label>Lesson:</label>
+        <div class="sh">${registry.absent}</div>
+    </div>
+</div>
 </body>
 </html>

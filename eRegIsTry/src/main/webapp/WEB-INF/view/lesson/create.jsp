@@ -4,35 +4,28 @@
 <html>
 <head>
     <title>Create new lesson</title>
-
-    <style>
-        .error {
-            color: darkred;
-        }
+    <style> <%@include file="/WEB-INF/resource/style.css"%>
     </style>
 </head>
 <body>
-
+<div>
+    <h3 class="addS" align="center">Adding a new lesson ...</h3>
     <%--@elvariable id="subject" type="com.utm.entities.Subject"--%>
     <form:form action="/lesson/create" method="POST" modelAttribute="lesson" >
-        topic:
+    <div class="block" >
+        <label for="topic">Set topic:</label>
         <form:input path="topic" type="text" name="topic" placeholder="topic" />
         <form:errors path="topic" cssClass="error" />
 
-        <br/>
-
-        homework:
+        <label for="homework">Set homework:</label>
         <form:input path="homework" type="text" name="homework" placeholder="homework" />
         <form:errors path="homework" cssClass="error" />
 
-        <br/>
-
+        <label>Set date and time:</label>
         <form:input type="datetime-local" path="datetime"/>
         <form:errors path="datetime" cssClass="error" />
 
-        <br/>
-
-        subject:
+        <label for="subject">Select subject:</label>
         <form:select path="subject">
             <form:option value="-1" >Select subject</form:option>
             <%--@elvariable id="subjects" type="java.util.List"--%>
@@ -40,18 +33,16 @@
         </form:select>
         <form:errors path="subject" cssClass="error" />
 
-        <br/>
-
-        teacher:
+        <label for="teacher">Select teacher:</label>
         <form:select path="teacher">
             <form:option value="-1" >Select teacher</form:option>
             <%--@elvariable id="teachers" type="java.util.List"--%>
             <form:options items="${teachers}" itemLabel="user.username" itemValue="id" />
         </form:select>
         <form:errors path="teacher" cssClass="error" />
-
+    </div>
         <input type="submit" value="Submit" name="submitBtn">
     </form:form>
-
+</div>
 </body>
 </html>
