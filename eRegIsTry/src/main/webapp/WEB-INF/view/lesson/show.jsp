@@ -2,24 +2,29 @@
 <html>
 <head>
     <title>Show lesson</title>
+    <style> <%@include file="/WEB-INF/resource/style.css"%>
+    </style>
 </head>
 <body>
-    datetime: ${lesson.datetime.toString()}
+<div>
+    <h3 align="center">Information about lesson</h3>
+    <div class="block" >
+        <label>Date and time:</label>
+        <div class="sh">${lesson.datetime.toString()}</div>
 
-    <br/>
+        <label>Homework:</label>
+        <div class="sh">${lesson.homework}</div>
 
-    homework: ${lesson.homework}
+        <label>Topic:</label>
+        <div class="sh">${lesson.topic}</div>
 
-    <br/>
+        <label>Subject:</label>
+        <div class="sh">${lesson.subject.subject}</div>
 
-    topic: ${lesson.topic}
+        <label>Teacher:</label>
 
-    <br/>
-
-    subject: ${lesson.subject.subject}
-
-    <br/>
-
-    teacher: ${lesson.teacher.user.username}
+        <div class="sh"> ${lesson.teacher.user.username}</div>
+    </div>
+</div>
 </body>
 </html>

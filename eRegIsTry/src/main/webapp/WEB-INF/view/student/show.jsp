@@ -3,14 +3,25 @@
 <html>
 <head>
     <title>Show student</title>
+    <style> <%@include file="/WEB-INF/resource/style.css"%>
+    </style>
 </head>
 <body>
-username: ${student.user.username}
-<br/>
-first name: ${student.user.firstName}
-<br/>
-last name: ${student.user.lastName}
-<br/>
-group: ${student.group.name}
+<div>
+    <h3 align="center">Student information</h3>
+    <div class="block" >
+        <label>Username:</label>
+        <div class="sh">${student.user.username}</div>
+
+        <label>Fisrt Name:</label>
+        <div class="sh">${student.user.firstName}</div>
+
+        <label>Second Name:</label>
+        <div class="sh">${student.user.lastName}</div>
+
+        <label>Group:</label>
+        <div class="sh">${student.group.name}</div>
+    </div>
+</div>
 </body>
 </html>
