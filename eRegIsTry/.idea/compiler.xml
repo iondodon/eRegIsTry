@@ -9,8 +9,8 @@
         <module name="eregistry" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="eregistry" target="1.8" />
+    <bytecodeTargetLevel target="11">
+      <module name="eregistry" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

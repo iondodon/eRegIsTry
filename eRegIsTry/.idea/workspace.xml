@@ -7,10 +7,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5d35203-7127-45a9-91d7-c59aded39552" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/security/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/security/config/SecurityWebApplicationInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/eregistry.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/teacher.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/eregistry_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/eregistry_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/AdministratorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/AdministratorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/GroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/GroupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/LessonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/LessonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/RegistryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/RegistryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/ScheduleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/ScheduleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/StudentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/SubjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/SubjectController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/TeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/TeacherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/AdministratorEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/AdministratorEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/DateEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/DateEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/GroupEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/GroupEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/IntegerEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/IntegerEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/LessonEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/LessonEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/RegistryEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/RegistryEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/StudentEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/StudentEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/SubjectEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/SubjectEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/TeacherEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/TeacherEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/TimeEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/TimeEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Administrator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Group.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Lesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Lesson.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Registry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Registry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Schedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Schedule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Subject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Subject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Teacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/AdministratorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/AdministratorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/GroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/GroupService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/LessonService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/LessonService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/RegistryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/RegistryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/RoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/ScheduleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/ScheduleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/SessionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/SessionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/SubjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/SubjectService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/TeacherService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-security-demo/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-security-demo/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +93,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="mydb: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="mydb: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="administrators: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -58,6 +113,7 @@
         <option value="jsf" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -100,7 +156,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -110,10 +167,10 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.23690476" />
-    <property name="settings.editor.selected.configurable" value="spring.boot" />
+    <property name="project.structure.side.proportion" value="0.4070981" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="DestinationChooserDialog.Package.RECENTS_KEY">
@@ -216,11 +273,17 @@
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
+        <option name="contentProportion" value="0.1646175" />
         <treeState>
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@96ff3491" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@14a8cc12" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@14a8cc12" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@70fa0c3b" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -290,6 +353,10 @@
       <workItem from="1573207122647" duration="225000" />
       <workItem from="1573207388999" duration="1035000" />
       <workItem from="1573208459323" duration="2489000" />
+      <workItem from="1573384054087" duration="201000" />
+      <workItem from="1573384494467" duration="10204000" />
+      <workItem from="1573451959877" duration="165000" />
+      <workItem from="1573452305310" duration="8778000" />
     </task>
     <servers />
   </component>
