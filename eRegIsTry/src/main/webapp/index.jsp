@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -6,7 +7,14 @@
   </head>
 
   <body style="display: flex; flex-direction: row;">
-    <div>
+
+      <!-- Add a logout button -->
+      <form:form action="${pageContext.request.contextPath}/logout" method="POST">
+
+          <input type="submit" value="Logout" />
+
+      </form:form>
+        <div>
         Administrator:
         <br/>
         <a href="<c:url value="/administrator/register"/>">register administrator</a>
