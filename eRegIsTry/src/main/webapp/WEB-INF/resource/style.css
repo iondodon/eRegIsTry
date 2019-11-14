@@ -1,0 +1,162 @@
+.block input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid deepskyblue;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-decoration-style: solid;
+    font-family: Century, serif;
+    /*font-size: large;*/
+    align: left;
+}
+
+.sh{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid deepskyblue;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-decoration-style: solid;
+    font-family: Century, serif;
+    /*font-size: large;*/
+    align: left;
+}
+
+checkbox{
+    padding: 10px 2px;  /*pozitia continutului, adic distanta de la margine pan la continut*/
+    margin: 5px 5px;
+}
+
+input[type=time] {
+    width: 100%;
+    padding: 16px 20px;
+    border: deepskyblue;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+input[type=datetime-local]{
+    width: 100%;
+    padding: 16px 20px;
+    border: deepskyblue;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+input[type=time]:hover {
+    border: blue;
+    border-radius: 4px;
+    background-color: whitesmoke;
+}
+
+input[type=submit] {
+    /*align-self: center;*/
+    width: 30%;
+    background-color: dodgerblue;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-image: url('https://icon-library.net/images/all-done-icon/all-done-icon-7.jpg');
+    background-size: 20px 20px;  /*marimea imaginii*/
+    background-position: 175px 10px; /*pozitia imaginii(row, col)*/
+    background-repeat: no-repeat;
+    color: white;  /*text color*/
+    padding: 14px 20px;  /*pozitia continutului, adic distanta de la margine pan la continut*/
+    margin: 5px 550px; /*marginile L,l de la perete pan la acest div*/
+    cursor: pointer;
+    font-family: Serif, fantasy;
+    font-size: 16px;
+
+}
+
+input[type=submit]:hover {
+    background-color: blue;
+    border: navy;
+}
+
+.block label {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    font-family: Century, serif;
+    font-size: large;
+}​
+
+
+     /*select {*/
+     /*    width: 100%;*/
+     /*    padding: 16px 20px;*/
+     /*    border: none;*/
+     /*    border-radius: 4px;*/
+     /*    background-color: #f1f1f1;*/
+     /*}*/
+ div {
+     width: 100%;
+     border-radius: 10px;
+     background-color: white;
+     /*background-image: url("https://2.bp.blogspot.com/-nJfy_NbdKME/WWORq3xpwDI/AAAAAAAASDw/mE3KCPUHS8A8NS7Q8s2bATlXqx2CPSEdwCLcBGAs/s1600/internet-trends.png");*/
+     padding: 40px;
+     align-content: center;
+
+ }
+
+.block {
+    /*background-color: white;*/
+    display:grid;
+    align-content: center;
+    grid-template-columns: 600px 350px;  /*unde e prima coloana pozitionarea ei, si a 2-a*/
+    grid-gap:30px 50px;  /*pdistanta intre row si col*/
+}
+
+.sbmt {
+    align-content: center;
+    align-self: center;
+
+}
+/*.block label {text-align: right;}*/
+
+.add {
+    width: 100%;
+    background-image: url('http://cdn.onlinewebfonts.com/svg/img_27872.png');
+    background-size: 20px 23px;
+    background-position: 600px 10px;
+    background-repeat: no-repeat;
+    padding: 10px 10px;
+}
+
+.addS {
+    width: 100%;
+    background-image: url('https://cdn.onlinewebfonts.com/svg/img_376671.png');
+    background-size: 20px 25px;
+    background-position: 608px 10px;
+    background-repeat: no-repeat;
+    padding: 10px 10px;
+}
+
+h3 {
+    color: darkblue;
+}
+
+
+.error {
+    color: darkred;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: deepskyblue;
+    color: white;
+}

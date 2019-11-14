@@ -6,14 +6,12 @@
 <html>
 <head>
     <title>Update Administrator (user data)</title>
-
-    <style>
-        .error {
-            color: darkred;
-        }
+    <style> <%@include file="/WEB-INF/resource/style.css"%>
     </style>
 </head>
 <body>
+<div>
+    <h3 align="center">Update user data</h3>
 
     <%--@elvariable id="administrator" type="com.utm.entities.Administrator"--%>
     <%--@elvariable id="user" type="com.utm.entities.User"--%>
@@ -21,24 +19,21 @@
         <input path="id" name="id" type="hidden"  value="${user.id}" />
 <%--        <input path="administrator" name="administrator" type="hidden" value="${user.administrator.id}" />--%>
 
-        username:
-        <form:input path="username" type="text" name="username" placeholder="username"/>
-        <form:errors path="username" cssClass="error" />
+        <div class="block" >
+            <label for="username">Username:</label>
+            <form:input path="username" type="text" name="username" placeholder="username"/>
+            <form:errors path="username" cssClass="error" />
 
-        <br/>
+            <label for="firstName">First Name:</label>
+            <form:input path="firstName" type="text" name="first-name" placeholder="first name"/>
+            <form:errors path="firstName" cssClass="error" />
 
-        first name:
-        <form:input path="firstName" type="text" name="first-name" placeholder="first name"/>
-        <form:errors path="firstName" cssClass="error" />
-        <br/>
-
-        second name:
-        <form:input path="lastName" type="text" name="second-name" placeholder="second name"/>
-        <form:errors path="lastName" cssClass="error" />
-        <br/>
-
-        <input type="submit" value="Update" name="submitBtn" />
+            <label for="lastName">Second Name:</label>
+            <form:input path="lastName" type="text" name="second-name" placeholder="second name"/>
+            <form:errors path="lastName" cssClass="error" />
+        </div>
+            <input type="submit" value="Update" name="submitBtn" />
     </form:form>
-
+</div>
 </body>
 </html>
