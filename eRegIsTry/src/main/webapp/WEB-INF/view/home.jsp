@@ -8,13 +8,8 @@
     home page
 
     <!-- Add a logout button -->
-    <form:form action="${pageContext.request.contextPath}/logout"
-               method="POST">
-
-        <div align="right">
-            <input type="button" value="Logout" />
-        </div>
-
+    <form:form action="${pageContext.request.contextPath}/logout" method="POST">
+            <input type="submit" value="Logout" />
     </form:form>
 </body>
 </html>

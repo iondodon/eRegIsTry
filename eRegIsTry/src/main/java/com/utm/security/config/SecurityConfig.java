@@ -17,21 +17,29 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         User.UserBuilder users = User.withDefaultPasswordEncoder();
 
         auth.inMemoryAuthentication()
-                .withUser(users.username("john").password("test123").roles("STUDENT"));
+                .withUser(users.username("john").password("test123").roles("USER", "STUDENT"))
+                .withUser(users.username("ana").password("test123").roles("USER", "TEACHER"))
+                .withUser(users.username("maria").password("test123").roles("USER", "ADMINISTRATOR"));
     }
 
     @Override
     protected  void configure(HttpSecurity http) throws Exception {
-
         http.authorizeRequests()
-                .anyRequest().authenticated()
+                .antMatchers("/").hasRole("USER")
+                .antMatchers("/home").hasRole("USER")
+                .antMatchers("/my-account").hasRole("USER")
+                .antMatchers("/administrator/delete**").hasRole("ADMINISTRATOR")
+                .antMatchers("/administrator/register").hasRole("ADMINISTRATOR")
+                .antMatchers("/administrator/update**").hasRole("ADMINISTRATOR")
+                .antMatchers("/administrator/update-user-data**").hasRole("ADMINISTRATOR")
+
             .and()
             .formLogin()
                 .loginPage("/showLoginPage")
                 .loginProcessingUrl("/authenticateTheUser")
                 .permitAll()
             .and()
-            .logout().permitAll();
-
+            .logout().permitAll()
+                .and().exceptionHandling().accessDeniedPage("/access-denied");
     }
 }
