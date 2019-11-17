@@ -8,7 +8,7 @@
 </head>
 <body>
 <div>
-    <h3 align="center">Update department</h3>
+    <h3 align="center">Update Teacher</h3>
     <%--@elvariable id="teacher" type="com.utm.entities.Teacher"--%>
     <%--@elvariable id="user" type="com.utm.entities.User"--%>
     <form:form action="/teacher/update" method="POST" modelAttribute="teacher">

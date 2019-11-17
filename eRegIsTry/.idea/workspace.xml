@@ -7,12 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5d35203-7127-45a9-91d7-c59aded39552" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/lesson/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/lesson/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/schedule/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/schedule/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fancy-login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fancy-login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/plain-login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/plain-login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/update-user-data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/update-user-data.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-security-demo/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-security-demo/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,13 +110,6 @@
     <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/web/WEB-INF/view/subject" />
-      <recent name="$PROJECT_DIR$/web/WEB-INF/view/teacher" />
-      <recent name="$PROJECT_DIR$/web/WEB-INF/view/administrator" />
-      <recent name="$PROJECT_DIR$/web/WEB-INF/view" />
-    </key>
     <key name="DestinationChooserDialog.Package.RECENTS_KEY">
       <recent name="com.utm.models.entities" />
     </key>
@@ -125,6 +117,13 @@
       <recent name="C:\Users\vaseo\eregistry\eRegIsTry\src\main\webapp\WEB-INF\pages" />
       <recent name="C:\Users\vaseo\eregistry\eRegIsTry\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\vaseo\eregistry\eRegIsTry\src\main\webapp\WEB-INF\view" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/subject" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/teacher" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view/administrator" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF/view" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -296,7 +295,7 @@
       <workItem from="1573207388999" duration="1035000" />
       <workItem from="1573208459323" duration="2489000" />
       <workItem from="1573626745256" duration="8722000" />
-      <workItem from="1574005266978" duration="603000" />
+      <workItem from="1574005266978" duration="3861000" />
     </task>
     <servers />
   </component>
