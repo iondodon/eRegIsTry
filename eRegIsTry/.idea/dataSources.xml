@@ -9,7 +9,7 @@
 
 /home/ion/Documents/UTM/Sem(V)/Team/eregistry/eRegIsTry/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/mydb?useSSL=false&amp;serverTimezone=UTC</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/?useSSL=false&amp;serverTimezone=UTC</jdbc-url>
     </data-source>
   </component>
 </project>
