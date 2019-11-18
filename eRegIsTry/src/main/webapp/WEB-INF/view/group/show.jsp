@@ -8,21 +8,31 @@
 <html>
 <head>
     <title>Show group</title>
+    <style> <%@include file="/WEB-INF/resource/style.css"%>
+    </style>
 </head>
 <body>
-    group name: ${group.name}
-    <br/>
-    master: ${group.master.user.username}
-    <br/>
-    students:
-    <%
-        Group group = (Group) request.getAttribute("group");
-        List<Student> students = group.getStudents();
+<div>
+    <h3 align="center">Information about group</h3>
+    <div class="block" >
+        <label>Group Name:</label>
+        <div class="sh">${group.name} </div>
 
-        //TODO: to lists students
-        for (Student student: students) {
-            student.getUser().getUsername();
-        }
-    %>
+        <label>Master:</label>
+        <div class="sh">${group.master.user.username}</div>
+
+        <label>Students:</label>
+        <div class="sh"> To add students in group!!!
+<%--    <%--%>
+<%--        Group group = (Group) request.getAttribute("group");--%>
+<%--        List<Student> students = group.getStudents();--%>
+
+<%--        //TODO: to lists students--%>
+<%--        for (Student student: students) {--%>
+<%--            student.getUser().getUsername();--%>
+<%--        }--%>
+<%--    %>--%>
+        </div>
+    </div>
 </body>
 </html>

@@ -7,58 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5d35203-7127-45a9-91d7-c59aded39552" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/eregistry.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/teacher.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/eregistry_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/eregistry_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/AdministratorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/AdministratorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/GroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/GroupController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/LessonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/LessonController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/RegistryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/RegistryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/ScheduleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/ScheduleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/StudentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/SubjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/SubjectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/TeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/TeacherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/AdministratorEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/AdministratorEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/DateEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/DateEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/GroupEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/GroupEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/IntegerEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/IntegerEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/LessonEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/LessonEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/RegistryEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/RegistryEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/StudentEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/StudentEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/SubjectEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/SubjectEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/TeacherEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/TeacherEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/editors/TimeEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/editors/TimeEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Administrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Group.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Lesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Lesson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Registry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Registry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Schedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Schedule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Subject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Subject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/Teacher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/AdministratorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/AdministratorService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/GroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/GroupService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/LessonService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/LessonService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/RegistryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/RegistryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/RoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/ScheduleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/ScheduleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/SessionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/SessionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/StudentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/SubjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/SubjectService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/TeacherService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-security-demo/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-security-demo/META-INF/MANIFEST.MF" afterDir="false" />
+ <change beforePath="$PROJECT_DIR$/target/spring-security-demo/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-security-demo/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +147,6 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="eregistry:war exploded">
           <settings>
@@ -357,6 +305,10 @@
       <workItem from="1573384494467" duration="10204000" />
       <workItem from="1573451959877" duration="165000" />
       <workItem from="1573452305310" duration="8778000" />
+<<<<<<< HEAD
+=======
+      <workItem from="1574027151941" duration="4908000" />
+>>>>>>> 759e43facea904221ebd65f2a008624b757580bc
     </task>
     <servers />
   </component>

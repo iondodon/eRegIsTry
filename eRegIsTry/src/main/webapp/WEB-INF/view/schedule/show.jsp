@@ -2,22 +2,26 @@
 <html>
 <head>
     <title>Show schedule</title>
+    <style> <%@include file="/WEB-INF/resource/style.css"%>
+    </style>
 </head>
 <body>
+<div>
+    <h3 align="center">Schedule information</h3>
+    <div class="block" >
+        <label>Day:</label>
+        <div class="sh">${schedule.day}</div>
 
-day: ${schedule.day}
+        <label>Time:</label>
+        <div class="sh">${schedule.day}</div>
 
-<br/>
+        <label>Day:</label>
+        <div class="sh">${schedule.group.name}</div>
 
-time: ${schedule.day}
-
-<br/>
-
-group: ${schedule.group.name}
-
-<br/>
-
-subject: ${schedule.subject.subject}
+        <label>Subject:</label>
+        <div class="sh">${schedule.subject.subject}</div>
+    </div>
+</div>
 
 </body>
 </html>

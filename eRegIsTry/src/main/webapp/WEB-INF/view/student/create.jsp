@@ -6,43 +6,38 @@
 <head>
     <title>Create Student</title>
 
-    <style>
-        .error {
-            color: darkred;
-        }
+    <style> <%@include file="/WEB-INF/resource/style.css"%>
     </style>
 </head>
 <body>
+<div>
+    <h3 class="add" align="center">Adding a new student ...</h3>
     <%--@elvariable id="user" type="com.utm.entities.User"--%>
     <form:form action="/student/create" method="POST" modelAttribute="user">
-        username:
+    <div class="block" >
+        <label for="username">Username:</label>
         <form:input path="username" type="text" name="username" placeholder="username"/>
         <form:errors path="username" cssClass="error" />
 
-        <br/>
-
-        password:
+        <label for="password">Password:</label>
         <form:input path="password" type="text" name="password" placeholder="password"/>
         <form:errors path="password" cssClass="error" />
-        <br/>
 
-        first name:
+        <label for="firstName">First Name:</label>
         <form:input path="firstName" type="text" name="first-name" placeholder="first name"/>
         <form:errors path="firstName" cssClass="error" />
-        <br/>
 
-        second name:
+        <label for="lastName">Second Name:</label>
         <form:input path="lastName" type="text" name="second-name" placeholder="second name"/>
         <form:errors path="lastName" cssClass="error" />
-        <br/>
 
-        group:
+        <label>Group:</label>
         <form:select path="student.group">
             <form:option value="-1">Select group</form:option>
             <%--@elvariable id="groups" type="java.util.List"--%>
             <form:options items="${groups}" itemLabel="name" itemValue="id" />
         </form:select>
-        <br/>
+    </div>
 
         <%--            roles:--%>
         <%--            &lt;%&ndash;@elvariable id="roles" type="java.util.List"&ndash;%&gt;--%>
@@ -50,6 +45,6 @@
 
         <input type="submit" value="Submit" name="submitBtn" />
     </form:form>
-
+</div>
 </body>
 </html>
