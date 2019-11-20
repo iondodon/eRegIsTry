@@ -1,10 +1,15 @@
 package com.utm.entities;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -15,7 +20,7 @@ import java.util.List;
 @Entity
 @Table(name="users")
 @NamedQuery(name="User.findAll", query="SELECT u FROM User u")
-public class User implements Serializable {
+public class User implements Serializable, UserDetails {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -54,7 +59,7 @@ public class User implements Serializable {
 	private Teacher teacher;
 
 	//bi-directional many-to-many association to Role
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 		name="users_roles"
 		, joinColumns={
@@ -94,18 +99,6 @@ public class User implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getUsername() {
-		return this.username;
-	}
-
 	public void setUsername(String username) {
 		this.username = username;
 	}
@@ -142,4 +135,44 @@ public class User implements Serializable {
 		this.roles = roles;
 	}
 
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUsername() {
+		return this.username;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		List<SimpleGrantedAuthority> grantedAuthorities = new ArrayList<>();
+		for (Role role: roles) {
+			grantedAuthorities.add(new SimpleGrantedAuthority(role.getRole()));
+		}
+		return grantedAuthorities;
+	}
 }
