@@ -1,0 +1,88 @@
+.logo {
+    height: 100px;
+    width: 200px;
+    position: fixed;
+    left: 650px;
+    top: 30px;
+}
+
+h5 {
+    font-family: Verdana;
+}
+
+.login {
+    height: 100px; width: 200px; position: fixed; left: 700px; top: 200px; color: black
+}
+
+.username {
+    height: 100px; width: 200px; position: fixed; left: 610px; top: 250px; color: black
+}
+
+.usernameField{
+    height: 100px; width: 200px; position: fixed; left: 695px; top: 270px; color: black; class: "input-group"
+}
+
+.password {
+    height: 100px; width: 200px; position: fixed; left: 610px; top: 300px; color: black
+}
+
+.passwordField {
+    height: 100px; width: 200px; position: fixed; left: 695px; top: 320px; color: black; class: "input-group"
+}
+
+.forgotLink {
+    height: 100px; width: 200px; position: fixed; left: 695px; top: 350px; color: black
+}
+
+.register {
+    height: 100px; width: 200px; position: fixed; left: 695px; top: 380px; color: black
+}
+
+.teacher {
+    height: 100px; width: 200px; position: fixed; left: 700px; top: 450px;
+}
+
+.teacherText {
+    height: 100px; width: 200px; position: fixed; left: 705px; top: 500px; color: black
+}
+
+.student {
+    height: 100px; width: 200px; position: fixed; left: 500px; top: 450px;
+}
+
+.studentText {
+    height: 100px; width: 200px; position: fixed; left: 505px; top: 500px; color: black
+}
+
+.admin {
+    height: 100px; width: 200px; position: fixed; left: 900px; top: 450px;
+}
+
+.adminText {
+    height: 100px; width: 200px; position: fixed; left: 880px; top: 500px; color: black
+}
+
+.loginBtn {
+    height: 100px; width: 200px; position: fixed; left: 700px; top: 600px; color: black; class: "form-group"
+}
+
+.vertical-menu {
+    width: 200px; /* Set a width if you like */
+}
+
+.vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    color: white;
+}
