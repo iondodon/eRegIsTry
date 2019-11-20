@@ -30,7 +30,6 @@
         <label for="lastName">Second Name:</label>
         <form:input path="lastName" type="text" name="second-name" placeholder="second name"/>
         <form:errors path="lastName" cssClass="error" />
-        <br/>
 
         <label>Group:</label>
         <form:select path="student.group">
