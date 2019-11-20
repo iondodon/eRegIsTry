@@ -26,9 +26,10 @@
         <form:input path="firstName" type="text" name="first-name" placeholder="first name"/>
         <form:errors path="firstName" cssClass="error" />
 
-        <label for="lastName">Second Name:</label>
+        <label for="lastName">Last Name:</label>
         <form:input path="lastName" type="text" name="second-name" placeholder="second name"/>
         <form:errors path="lastName" cssClass="error" />
+
     </div>
 
 <%--            roles:--%>
