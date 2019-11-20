@@ -10,6 +10,6 @@ public class LoginController {
 
         //return "plain-login";
 
-        return "fancy-login";
+        return "login";
     }
 }
