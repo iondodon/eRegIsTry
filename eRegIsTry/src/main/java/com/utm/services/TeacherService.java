@@ -5,6 +5,7 @@ import com.utm.entities.Teacher;
 import com.utm.entities.User;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -44,10 +45,14 @@ public class TeacherService {
     public Teacher createTeacher(User user) {
         Teacher teacher = new Teacher();
 
-        Role teacherRole = this.roleService.getRoleByRoleName("TEACHER");
+        Role teacherRole = this.roleService.getRoleByRoleName("ROLE_TEACHER");
+        Role userRole = this.roleService.getRoleByRoleName("ROLE_USER");
         List<Role> roles = user.getRoles();
         roles.add(teacherRole);
+        roles.add(userRole);
         user.setRoles(roles);
+
+        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 
         teacher.setUser(user);
         return teacher;

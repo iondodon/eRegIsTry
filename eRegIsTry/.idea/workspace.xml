@@ -7,14 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f7f1b21-80fa-4017-b15d-038cce023752" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/UserDetailsServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eregistry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/eregistry.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/security/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/AdministratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/AdministratorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/TeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/AdministratorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/AdministratorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/services/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/services/TeacherService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
