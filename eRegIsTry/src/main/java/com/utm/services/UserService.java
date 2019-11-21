@@ -6,6 +6,7 @@ import com.utm.entities.Teacher;
 import com.utm.entities.User;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 
@@ -16,6 +17,28 @@ public class UserService {
     @Autowired
     public void setSessionService(SessionService sessionService) {
         this.sessionService = sessionService;
+    }
+
+    public User getUserByUsername(String username) {
+        Session session = this.sessionService.getSession();
+        User user = null;
+
+        try {
+            session.beginTransaction();
+
+            user = (User) session
+                    .createQuery("from User u where u.username = :username")
+                    .setParameter("username", username)
+                    .uniqueResult();
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+
+        return user;
     }
 
     public void updateUser(User formUser) {
