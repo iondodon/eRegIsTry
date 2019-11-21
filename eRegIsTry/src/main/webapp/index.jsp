@@ -128,5 +128,9 @@
         <a href="<c:url value="/teacher/list"/>">list teachers</a>
     </div>
 
+    <div>
+        <a href="<c:url value="/my-account"/>">my account</a>
+    </div>
+
   </body>
 </html>

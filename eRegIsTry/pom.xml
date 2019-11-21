@@ -88,6 +88,13 @@
 		</dependency>
 
 
+		<!-- Add Spring Security Taglibs support -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${springsecurity.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<!-- TO DO: Add support for Maven WAR Plugin -->
