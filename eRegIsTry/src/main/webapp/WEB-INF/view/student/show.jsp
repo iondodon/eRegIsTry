@@ -13,10 +13,10 @@
         <label>Username:</label>
         <div class="sh">${student.user.username}</div>
 
-        <label>Fisrt Name:</label>
+        <label>First Name:</label>
         <div class="sh">${student.user.firstName}</div>
 
-        <label>Second Name:</label>
+        <label>Last Name:</label>
         <div class="sh">${student.user.lastName}</div>
 
         <label>Group:</label>

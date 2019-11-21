@@ -29,13 +29,6 @@
         <label for="lastName">Last Name:</label>
         <form:input path="lastName" type="text" name="second-name" placeholder="second name"/>
         <form:errors path="lastName" cssClass="error" />
-
-<<<<<<< HEAD
-
-
-        
-=======
->>>>>>> 759e43facea904221ebd65f2a008624b757580bc
     </div>
 
 <%--            roles:--%>

@@ -34,13 +34,13 @@
         <br/>
         <a href="<c:url value="/student/create"/>">create student</a>
         <br/>
-        <a href="<c:url value="/student/show?studentId=3"/>">show student</a>
+        <a href="<c:url value="/student/show?studentId=1"/>">show student</a>
         <br/>
-        <a href="<c:url value="/student/update-user-data?studentId=3"/>">update student (user data)</a>
+        <a href="<c:url value="/student/update-user-data?studentId=1"/>">update student (user data)</a>
         <br/>
         <a href="<c:url value="/student/update?studentId=1"/>">update student</a>
         <br/>
-        <a href="<c:url value="/student/delete?studentId=3"/>">delete student</a>
+        <a href="<c:url value="/student/delete?studentId=1"/>">delete student</a>
         <br/>
         <a href="<c:url value="/student/list"/>">list students</a>
 
@@ -90,7 +90,7 @@
         <br/>
         <a href="<c:url value="/lesson/create" />">create lesson</a>
         <br/>
-        <a href="<c:url value="/lesson/show?lessonId=1"/>">show lesson</a>
+        <a href="<c:url value="/lesson/show?lessonId=3"/>">show lesson</a>
         <br/>
         <a href="<c:url value="/lesson/update?lessonId=1"/>">update lesson</a>
         <br/>
