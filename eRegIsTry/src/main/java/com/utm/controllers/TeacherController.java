@@ -64,6 +64,10 @@ public class TeacherController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public ModelAndView createTeacher(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+        if(!user.getPassword().equals(user.getPasswordConfirmation())) {
+            bindingResult.rejectValue("passwordConfirmation", "password", "Passwords don't match.");
+        }
+
         if(bindingResult.hasErrors()){
             ModelMap model = new ModelMap();
             model.addAttribute("user", user);
