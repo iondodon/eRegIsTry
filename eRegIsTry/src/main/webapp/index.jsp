@@ -40,7 +40,7 @@
         <br/>
         <a href="<c:url value="/student/update?studentId=1"/>">update student</a>
         <br/>
-        <a href="<c:url value="/student/delete?studentId=3"/>">delete student</a>
+        <a href="<c:url value="/student/delete?studentId=1"/>">delete student</a>
         <br/>
         <a href="<c:url value="/student/list"/>">list students</a>
 
