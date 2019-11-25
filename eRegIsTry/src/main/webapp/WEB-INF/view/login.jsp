@@ -29,7 +29,7 @@
 </div>
 
 <div class="register">
-    <h5 >Register as:</h5>
+    <h5 >Join as:</h5>
 </div>
 <div class="teacher">
     <input type="image" src="http://icons.iconarchive.com/icons/hopstarter/soft-scraps/256/User-Executive-Green-icon.png" name="myImageButton" alt="Submit" width="70" height="70">

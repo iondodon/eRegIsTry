@@ -9,10 +9,16 @@
 
   <body style="display: flex; flex-direction: row;">
   <ul>
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a class="active" href="<c:url value="index.jsp"/>">Home</a></li>
+      <li><a href="<c:url value="/my-account"/>">My account</a></li>
+      <li><a href="<c:url value="/schedule/show"/>">Schedule</a></li>
+      <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Utilities</a>
+          <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+          </div>
+      </li>
       <li style="float: right"><a href="/showLoginPage">Logout</a></li>
   </ul>
   <div class="menu">

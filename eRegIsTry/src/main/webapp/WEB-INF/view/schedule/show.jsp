@@ -7,10 +7,18 @@
 <style> <%@ include file= "assets/js/main.js"%></style>
     <style> <%@ include file= "assets/js/doc.js"%></style>
 <%--     document.getElementsByTagName("html")[0].className += " js";--%>
-
+    <style><%@include file="/WEB-INF/resource/stil.css"%></style>
     <title>Schedule Template | CodyHouse</title>
-    </head>
-    <body>
+</head>
+<body>
+<ul>
+    <li><a class="active" href="<c:url value="index.jsp"/>">Home</a></li>
+    <li><a href="<c:url value="/my-account"/>">My account</a></li>
+    <li><a href="<c:url value="/schedule/show"/>">Schedule</a></li>
+    <li><a href="#contact">Utilities</a></li>
+    <li style="float: right"><a href="login.jsp">Logout</a></li>
+</ul>
+<div class="menu">
     <header class="cd-main-header text-center flex flex-column flex-center">
         <!--    <p class="margin-top-md margin-bottom-xl">👈 <a class="cd-article-link" href="https://codyhouse.co/gem/schedule-template">Article &amp; Download</a></p>-->
 
@@ -202,7 +210,7 @@
         <div class="cd-schedule__cover-layer"></div>
     </div> <!-- .cd-schedule -->
 
-
+</div>
     </body>
 
 </html>
