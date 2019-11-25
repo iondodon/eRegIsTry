@@ -41,6 +41,9 @@ public class User implements Serializable, UserDetails {
 	@Column(nullable=false, length=100)
 	private String password;
 
+	@Transient
+	private String passwordConfirmation;
+
 	@Size(min = 5, max = 45)
 	@NotNull(message = "is required")
 	@Column(nullable=false, length=45)
@@ -174,5 +177,13 @@ public class User implements Serializable, UserDetails {
 			grantedAuthorities.add(new SimpleGrantedAuthority(role.getRole()));
 		}
 		return grantedAuthorities;
+	}
+
+	public String getPasswordConfirmation() {
+		return passwordConfirmation;
+	}
+
+	public void setPasswordConfirmation(String passwordConfirmation) {
+		this.passwordConfirmation = passwordConfirmation;
 	}
 }

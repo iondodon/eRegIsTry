@@ -22,6 +22,10 @@
         <form:input path="password" type="text" name="password" placeholder="password"/>
         <form:errors path="password" cssClass="error" />
 
+        <label for="passwordConfirmation">Confirm Password:</label>
+        <form:input path="passwordConfirmation" type="text" name="password-confirmation" placeholder="retype password"/>
+        <form:errors path="passwordConfirmation" cssClass="error" />
+
         <label for="firstName">First Name:</label>
         <form:input path="firstName" type="text" name="first-name" placeholder="first name"/>
         <form:errors path="firstName" cssClass="error" />
