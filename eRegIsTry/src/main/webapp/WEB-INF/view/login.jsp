@@ -6,6 +6,7 @@
     <title>Login</title>
     <style> <%@include file="/cssresource/style.css"%>
     </style>
+    <style><%@include file="/WEB-INF/resource/style.css"%></style>
 </head>
 <body>
 <div class="logo">
@@ -97,9 +98,8 @@
 
     <!-- Login/Submit Button -->
     <div class="loginBtn">
-        <div class="col-sm-6 controls">
-            <button type="submit" class="btn btn-success">Login</button>
-        </div>
+            <input type="submit" value="Login" name="logBtn" style="text-align: center">
+
     </div>
 
 </form:form>

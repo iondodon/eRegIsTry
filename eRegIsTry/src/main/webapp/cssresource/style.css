@@ -63,7 +63,8 @@ h5 {
 }
 
 .loginBtn {
-    height: 100px; width: 200px; position: fixed; left: 700px; top: 600px; color: black; class: "form-group"
+    height: 100px; width: 300px; text-align: center;position: center; margin-top: 600px; margin-left: 150px; color: black; class: "form-group"
+
 }
 
 .vertical-menu {

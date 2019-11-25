@@ -4,16 +4,24 @@
 <html>
   <head>
     <title>Index page</title>
+      <style><%@include file="/WEB-INF/resource/stil.css"%></style>
   </head>
 
   <body style="display: flex; flex-direction: row;">
+  <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+      <li style="float: right"><a href="/showLoginPage">Logout</a></li>
+  </ul>
+  <div class="menu">
+<%--      <!-- Add a logout button -->--%>
+<%--      <form:form action="${pageContext.request.contextPath}/logout" method="POST">--%>
 
-      <!-- Add a logout button -->
-      <form:form action="${pageContext.request.contextPath}/logout" method="POST">
+<%--          <input type="submit" value="Logout" />--%>
 
-          <input type="submit" value="Logout" />
-
-      </form:form>
+<%--      </form:form>--%>
         <div>
         Administrator:
         <br/>
@@ -92,7 +100,7 @@
         <br/>
         <a href="<c:url value="/lesson/show?lessonId=3"/>">show lesson</a>
         <br/>
-        <a href="<c:url value="/lesson/update?lessonId=1"/>">update lesson</a>
+        <a href="<c:url value="/lesson/update?lessonId=2"/>">update lesson</a>
         <br/>
         <a href="<c:url value="/lesson/delete?lessonId=1"/>">delete lesson</a>
         <br/>
@@ -131,6 +139,6 @@
     <div>
         <a href="<c:url value="/my-account"/>">my account</a>
     </div>
-
+  </div>
   </body>
 </html>

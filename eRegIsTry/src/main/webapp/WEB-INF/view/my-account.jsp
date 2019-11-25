@@ -4,23 +4,20 @@
 <html>
 <head>
     <title>My account</title>
+<%--    <style><%@include file="/WEB-INF/resource/style.css"%></style>--%>
 </head>
 <body>
-    My account page
+<h3 align="center">My account page</h3>
 
-    <br/>
+
 
     <!-- display user name and role -->
-
-    <p>
+    <div class="block">
         User: <security:authentication property="principal.username" />
-        <br><br>
         Role(s): <security:authentication property="principal.authorities" />
-    </p>
 
 
-    <br/>
-
+</div>>
     <!-- Add a logout button -->
     <form:form action="${pageContext.request.contextPath}/logout" method="POST">
             <input type="submit" value="Logout" />

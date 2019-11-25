@@ -7,6 +7,7 @@
 </head>
 <body>
 <div>
+
     <h3 align="center">Information about administrator</h3>
     <div class="block" >
         <label>Username:</label>
@@ -21,6 +22,7 @@
         <label>Department:</label>
         <div class="sh"> ${administrator.department}</div>
     </div>
+</c:forEach>
 </div>
 </body>
 </html>

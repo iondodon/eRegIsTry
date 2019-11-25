@@ -46,6 +46,12 @@
 		    <artifactId>spring-security-config</artifactId>
 		    <version>${springsecurity.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>5.0.10.RELEASE</version>
+		</dependency>
 		
 		<!-- Servlet, JSP and JSTL support -->
 		<dependency>
@@ -87,13 +93,8 @@
 			<version>8.0.18</version>
 		</dependency>
 
-
 		<!-- Add Spring Security Taglibs support -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
-			<version>${springsecurity.version}</version>
-		</dependency>
+
 
 	</dependencies>
 

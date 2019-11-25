@@ -3,9 +3,10 @@
 <html>
 <head>
     <title>Access denied</title>
+<%--    <style><%@include file="/WEB-INF/resource/style.css"%></style>--%>
 </head>
 <body>
-    Access denied
-    <a href="<c:url value="/"/>">back to home page</a>
+Access denied
+    <a href="<c:url value="/"/>">Back to home page</a>
 </body>
 </html>
