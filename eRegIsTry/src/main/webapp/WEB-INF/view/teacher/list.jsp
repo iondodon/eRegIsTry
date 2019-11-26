@@ -26,14 +26,14 @@
                 <th width="30%">Main Subject</th>
             </tr>
         </table>
-        <%--@elvariable id="student" type="com.utm.entities.Student"--%>
-        <%--@elvariable id="students" type="java.util.List"--%>
+        <%--@elvariable id="teacher" type="com.utm.entities.Teacher"--%>
+        <%--@elvariable id="teachers" type="java.util.List"--%>
         <c:forEach items="${teachers}" var="teacher">
             <table style="width:80%" align="center">
                 <tr>
                     <th width="30%" onclick="location.href ='<c:url value="/teacher/show?teacherId=${teacher.user.id}"/>';">${teacher.user.firstName}</th>
                     <th width="30%" onclick="location.href ='<c:url value="/teacher/show?teacherId=${teacher.user.id}"/>';">${teacher.user.lastName}</th>
-                    <th width="30%">${teacher.baseSubject}</th>
+                    <th width="30%">${teacher.baseSubject.subject}</th>
                 </tr>
             </table>
         </c:forEach>
