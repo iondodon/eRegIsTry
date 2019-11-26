@@ -6,6 +6,7 @@ import com.utm.entities.Student;
 import com.utm.entities.User;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -51,10 +52,14 @@ public class StudentService {
     public Student createStudent(User user) {
         Student student = new Student();
 
-        Role studentRole = this.roleService.getRoleByRoleName("STUDENT");
+        Role studentRole = this.roleService.getRoleByRoleName("ROLE_STUDENT");
+        Role userRole = this.roleService.getRoleByRoleName("ROLE_USER");
         List<Role> roles = user.getRoles();
         roles.add(studentRole);
+        roles.add(userRole);
         user.setRoles(roles);
+
+        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 
         Group group = this.groupService.getGroupById(user.getStudent().getGroup().getId());
         student.setGroup(group);
