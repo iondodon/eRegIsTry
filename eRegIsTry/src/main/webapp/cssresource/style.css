@@ -66,6 +66,27 @@ h5 {
     height: 100px; width: 300px; text-align: center;position: center; margin-top: 600px; margin-left: 150px; color: black; class: "form-group"
 
 }
+.loginBtn {
+    height: 100px;
+    width: 300px;
+    text-align: center;
+    position: center;
+    margin-top: 600px;
+    margin-left: 150px;
+    color: black;
+    class: "form-group"
+
+}
+
+.err {
+    height: 100px;
+    width: 300px;
+    text-align: center;
+    position: center;
+    margin-top: 50px;
+    margin-left: 150px;
+
+}
 
 .vertical-menu {
     width: 200px; /* Set a width if you like */

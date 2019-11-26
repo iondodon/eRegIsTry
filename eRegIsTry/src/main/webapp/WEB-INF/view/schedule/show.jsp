@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
 <html>
 <head>
@@ -6,19 +7,26 @@
     <style> <%@ include file="assets/js/util.js" %></style>
 <style> <%@ include file= "assets/js/main.js"%></style>
     <style> <%@ include file= "assets/js/doc.js"%></style>
-<%--     document.getElementsByTagName("html")[0].className += " js";--%>
     <style><%@include file="/WEB-INF/resource/stil.css"%></style>
+<%--     document.getElementsByTagName("html")[0].className += " js";--%>
+
     <title>Schedule Template | CodyHouse</title>
-</head>
-<body>
-<ul>
-    <li><a class="active" href="<c:url value="index.jsp"/>">Home</a></li>
-    <li><a href="<c:url value="/my-account"/>">My account</a></li>
-    <li><a href="<c:url value="/schedule/show"/>">Schedule</a></li>
-    <li><a href="#contact">Utilities</a></li>
-    <li style="float: right"><a href="login.jsp">Logout</a></li>
-</ul>
-<div class="menu">
+    </head>
+    <body>
+    <ul class="ul">
+        <li class="li"><a class="active" href="../../../index.jsp">Home</a></li>
+        <li class="li"><a class="a" href="<c:url value="my-account"/>">My account</a></li>
+        <li class="li"><a class="a" href="<c:url value="/schedule/show?scheduleId=2"/>">Schedule</a></li>
+        <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Utilities</a>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </li>
+        <li class="li" style="float: right"><a class="a" href="/showLoginPage">Logout</a></li>
+    </ul>
+
     <header class="cd-main-header text-center flex flex-column flex-center">
         <!--    <p class="margin-top-md margin-bottom-xl">👈 <a class="cd-article-link" href="https://codyhouse.co/gem/schedule-template">Article &amp; Download</a></p>-->
 
@@ -44,30 +52,40 @@
                     <div class="cd-schedule__top-info"><span>Monday</span></div>
 
                     <ul>
+
                         <li class="cd-schedule__event">
                             <ul>
                                 <li>
-                            <a data-start="08:00" data-end="09:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                <em class="cd-schedule__name">Abs Circuit</em>
-                            </a>
+                                    <a data-start="08:00" data-end="09:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                        <em class="cd-schedule__name">Network Programming</em>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a data-start="08:00" data-end="09:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                        <em class="cd-schedule__name">Abs Circuit</em>
+                                    <a data-start="09:45" data-end="11:15" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                        <em class="cd-schedule__name">Project</em>
                                     </a>
                                 </li>
                             </ul>
                         </li>
 
                         <li class="cd-schedule__event">
-                            <a data-start="11:30" data-end="13:00" data-content="event-rowing-workout" data-event="event-2" href="#0">
-                                <em class="cd-schedule__name">Rowing Workout</em>
-                            </a>
+                            <ul>
+                                <li>
+                                    <a data-start="08:00" data-end="09:30" data-content="event-rowing-workout" data-event="event-2" href="#0">
+                                        <em class="cd-schedule__name">Programming</em>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-start="15:15" data-end="16:45" data-content="event-rowing-workout" data-event="event-2" href="#0">
+                                        <em class="cd-schedule__name">Project</em>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="13:30" data-end="15:00"  data-content="event-yoga-1" data-event="event-3" href="#0">
-                                <em class="cd-schedule__name">Yoga Level 1</em>
+                                <em class="cd-schedule__name">Design Patterns</em>
                             </a>
                         </li>
                     </ul>
@@ -78,26 +96,26 @@
 
                     <ul>
                         <li class="cd-schedule__event">
-                            <a data-start="09:45:00" data-end="11:15"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                                <em class="cd-schedule__name">Rowing Workout</em>
+                            <a data-start="09:45" data-end="11:15"  data-content="event-rowing-workout" data-event="event-2" href="#0">
+                                <em class="cd-schedule__name">Graphics</em>
                             </a>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="11:30" data-end="13:00"  data-content="event-restorative-yoga" data-event="event-4" href="#0">
-                                <em class="cd-schedule__name">Restorative Yoga</em>
+                                <em class="cd-schedule__name">Object Oriented Programming</em>
                             </a>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="13:30" data-end="15:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                <em class="cd-schedule__name">Abs Circuit</em>
+                                <em class="cd-schedule__name">Circuits</em>
                             </a>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="15:15" data-end="16:45"  data-content="event-yoga-1" data-event="event-3" href="#0">
-                                <em class="cd-schedule__name">Yoga Level 1</em>
+                                <em class="cd-schedule__name">Programming</em>
                             </a>
                         </li>
                     </ul>
@@ -109,25 +127,25 @@
                     <ul>
                         <li class="cd-schedule__event">
                             <a data-start="09:00" data-end="10:15" data-content="event-restorative-yoga" data-event="event-4" href="#0">
-                                <em class="cd-schedule__name">Restorative Yoga</em>
+                                <em class="cd-schedule__name">Law</em>
                             </a>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="09:45" data-end="11:15" data-content="event-yoga-1" data-event="event-3" href="#0">
-                                <em class="cd-schedule__name">Yoga Level 1</em>
+                                <em class="cd-schedule__name">English Language</em>
                             </a>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="08:00" data-end="09:30"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                                <em class="cd-schedule__name">Rowing Workout</em>
+                                <em class="cd-schedule__name">Data Bases</em>
                             </a>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="13:30" data-end="15:00" data-content="event-yoga-1" data-event="event-3" href="#0">
-                                <em class="cd-schedule__name">Yoga Level 1</em>
+                                <em class="cd-schedule__name">Data Bases</em>
                             </a>
                         </li>
                     </ul>
@@ -139,25 +157,25 @@
                     <ul>
                         <li class="cd-schedule__event">
                             <a data-start="09:45" data-end="11:15" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                <em class="cd-schedule__name">Abs Circuit</em>
+                                <em class="cd-schedule__name">Circuits</em>
                             </a>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="15:15" data-end="16:45" data-content="event-restorative-yoga" data-event="event-4" href="#0">
-                                <em class="cd-schedule__name">Restorative Yoga</em>
+                                <em class="cd-schedule__name">Project</em>
                             </a>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="15:15" data-end="16:45" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                <em class="cd-schedule__name">Abs Circuit</em>
+                                <em class="cd-schedule__name">Circuits</em>
                             </a>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="17:00" data-end="18:30"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                                <em class="cd-schedule__name">Rowing Workout</em>
+                                <em class="cd-schedule__name">Design Patterns</em>
                             </a>
                         </li>
                     </ul>
@@ -169,19 +187,19 @@
                     <ul>
                         <li class="cd-schedule__event">
                             <a data-start="08:00" data-end="09:30"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                                <em class="cd-schedule__name">Rowing Workout</em>
+                                <em class="cd-schedule__name">Cryptography</em>
                             </a>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="11:30" data-end="13:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                <em class="cd-schedule__name">Abs Circuit</em>
+                                <em class="cd-schedule__name">Circuits</em>
                             </a>
                         </li>
 
                         <li class="cd-schedule__event">
                             <a data-start="15:15" data-end="16:45"  data-content="event-yoga-1" data-event="event-3" href="#0">
-                                <em class="cd-schedule__name">Yoga Level 1</em>
+                                <em class="cd-schedule__name">Project</em>
                             </a>
                         </li>
                     </ul>
@@ -210,7 +228,6 @@
         <div class="cd-schedule__cover-layer"></div>
     </div> <!-- .cd-schedule -->
 
-</div>
     </body>
 
 </html>

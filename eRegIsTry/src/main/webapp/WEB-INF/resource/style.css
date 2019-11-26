@@ -205,3 +205,19 @@ input[type=submit-buttonU]{
     height: 5%;
 
 }
+
+.alert{
+    /*width: min-content;*/
+    height: 10px;
+    /*margin-bottom: 30px;*/
+    /*margin-left: 50px;*/
+    padding-bottom: 5px;
+    /*background-position: center;*/
+    background-size: auto;
+    text-align: center;
+    font-family: "Berlin Sans FB", 'Source Sans Pro', sans-serif;
+    color: firebrick;
+    /*padding-left:30px;*/
+    font-size:15px;
+    margin-top: 1px;
+}

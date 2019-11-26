@@ -1,6 +1,6 @@
 body {margin:0;}
 
-ul {
+.ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -11,11 +11,11 @@ ul {
     width: 100%;
 }
 
-li {
+.li {
     float: left;
 }
 
-li a {
+.li .a {
     display: block;
     color: white;
     text-align: center;
@@ -23,7 +23,7 @@ li a {
     text-decoration: none;
 }
 
-li a:hover:not(.active) {
+.li .a:hover:not(.active) {
     background-color: #111;
 }
 
@@ -37,7 +37,7 @@ li a:hover:not(.active) {
 
 }
 
-li.dropdown {
+.li.dropdown {
     display: inline-block;
 }
 
