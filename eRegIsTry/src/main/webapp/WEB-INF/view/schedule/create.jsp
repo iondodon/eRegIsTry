@@ -9,7 +9,7 @@
 </head>
 <body>
 <div>
-    <h3 class="addS" align="center">Adding schedule ...</h3>
+    <h3 class="addS" align="center">Adding a record in schedule ...</h3>
     <%--@elvariable id="schedule" type="com.utm.entities.Schedule"--%>
     <form:form action="/schedule/create" method="POST" modelAttribute="schedule" >
     <div class="block" >

@@ -1,33 +1,37 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
     <title>Index page</title>
       <style><%@include file="/WEB-INF/resource/stil.css"%></style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
-  <body style="display: flex; flex-direction: row;">
-  <ul class="ul">
-      <li class="li"><a class="a" class="active" href="/index.jsp">Home</a></li>
-      <li class="li"><a class="a" href="<c:url value="/my-account"/>">My account</a></li>
-      <li class="li"><a class="a" href="<c:url value="/schedule/show?scheduleId=2"/>">Schedule</a></li>
-      <li class="li" class="dropdown"><a class="a" href="javascript:void(0)" class="dropbtn">Utilities</a>
-          <div class="dropdown-content">
-              <a   href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+  <body>
+  <div class="navbar">
+      <a class="active"  href="index.jsp">Home</a>
+      <a href="<c:url value="/schedule/show?scheduleId=2"/>">Schedule</a>
+      <div class="subnav">
+          <button class="subnavbtn">Utilities <i class="fa fa-caret-down"></i></button>
+          <div class="subnav-content">
+              <a href="/administrator/list">Admin</a>
+              <a href="/teacher/list">Teachers</a>
+              <a href="/student/list">Students</a>
+              <a href="/group/list">Groups</a>
+              <a href="/subject/list">Subjects</a>
+              <a href="/lesson/list">Lessons</a>
+              <a href="/registry/list">Registry</a>
           </div>
-      </li>
-      <li class="li" style="float: right"><a class="a" href="/showLoginPage">Logout</a></li>
-  </ul>
-  <div class="menu">
-<%--      <!-- Add a logout button -->--%>
-<%--      <form:form action="${pageContext.request.contextPath}/logout" method="POST">--%>
+      </div>
+      <a class="a" style="float: right" href="/showLoginPage">Logout</a>
+      <a href="#" style="float: right; color: aqua">
+                    User: <security:authentication property="principal.username" /> </a>
 
-<%--          <input type="submit" value="Logout" />--%>
+  </div>
 
-<%--      </form:form>--%>
+
         <div>
         Administrator:
         <br/>
@@ -145,6 +149,6 @@
     <div>
         <a href="<c:url value="/my-account"/>">my account</a>
     </div>
-  </div>
+
   </body>
 </html>

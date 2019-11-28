@@ -43,8 +43,7 @@
             <h1> 28.11.2019 – ANNOUNCEMENT of the preliminary results</h1>
 <br>
             <h1>28.11.2019 – TRANSMISSION of the files to Białystok University of Technology for final evaluation.</h1>
-        </h1>
-    </div>
+</div>
 </div>
 </body>
 </html>

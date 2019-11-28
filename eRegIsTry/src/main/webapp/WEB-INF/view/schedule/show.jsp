@@ -17,7 +17,7 @@
         <li class="li"><a class="active" href="../../../index.jsp">Home</a></li>
         <li class="li"><a class="a" href="<c:url value="my-account"/>">My account</a></li>
         <li class="li"><a class="a" href="<c:url value="/schedule/show?scheduleId=2"/>">Schedule</a></li>
-        <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Utilities</a>
+        <li class="li" class="dropdown"><a class="a" href="javascript:void(0)" class="dropbtn">Utilities</a>
             <div class="dropdown-content">
                 <a href="#">Link 1</a>
                 <a href="#">Link 2</a>
