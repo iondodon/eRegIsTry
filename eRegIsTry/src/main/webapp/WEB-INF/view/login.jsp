@@ -6,6 +6,7 @@
     <title>Login</title>
     <style> <%@include file="/cssresource/style.css"%>
     </style>
+    <style><%@include file="/WEB-INF/resource/style.css"%></style>
 </head>
 <body>
 <div class="logo">
@@ -28,7 +29,7 @@
 </div>
 
 <div class="register">
-    <h5 >Register as:</h5>
+    <h5 >Join as:</h5>
 </div>
 <div class="teacher">
     <input type="image" src="http://icons.iconarchive.com/icons/hopstarter/soft-scraps/256/User-Executive-Green-icon.png" name="myImageButton" alt="Submit" width="70" height="70">
@@ -54,32 +55,16 @@
            method="POST" class="form-horizontal">
 
     <!-- Place for messages: error, alert etc ... -->
-    <div class="form-group">
-        <div class="col-xs-15">
-            <div>
+<%--    <div class="form-group">--%>
+<%--        <div class="col-xs-15">--%>
+
 
                 <!-- Check for login error -->
 
-                <c:if test="${param.error != null}">
 
-                    <div class="alert alert-danger col-xs-offset-1 col-xs-10">
-                        Invalid username and password.
-                    </div>
-                </c:if>
 
-                <!-- Check for logout -->
-
-                <c:if test="${param.logout != null}">
-
-                    <div class="alert alert-success col-xs-offset-1 col-xs-10">
-                        You have been logged out.
-                    </div>
-
-                </c:if>
-
-            </div>
-        </div>
-    </div>
+<%--        </div>--%>
+<%--    </div>--%>
 
     <!-- User name -->
     <div class="usernameField">
@@ -96,12 +81,33 @@
     </div>
 
     <!-- Login/Submit Button -->
+
+    <div>
+        <c:if test="${param.logout != null}">
+
+            <div class="alert">
+                You have been logged out.
+            </div>
+
+        </c:if>
+    </div>
     <div class="loginBtn">
-        <div class="col-sm-6 controls">
-            <button type="submit" class="btn btn-success">Login</button>
-        </div>
+            <input type="submit" value="Login" name="logBtn" style="text-align: center">
+
     </div>
 
+<div>
+        <c:if test="${param.error != null}">
+
+        <div class="alert">
+            Invalid username and password.
+        </div>
+        </c:if>
+
+        <!-- Check for logout -->
+
+
+</div>
 </form:form>
 
 </body>

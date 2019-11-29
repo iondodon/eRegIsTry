@@ -19,6 +19,8 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+
+
     <!-- Step 2: Set up URL mapping for Spring MVC Dispatcher Servlet -->
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
@@ -33,5 +35,6 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
 
 </web-app>

@@ -130,6 +130,7 @@ public class StudentController {
 
     @RequestMapping(value = "/show", method = RequestMethod.GET)
     public String showStudent(HttpServletRequest request, Model model) {
+        System.out.println("Entered in student");
         int studentId = Integer.parseInt(request.getParameter("studentId"));
         Student student = this.studentService.getStudentById(studentId);
 
