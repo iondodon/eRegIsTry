@@ -77,15 +77,15 @@ body {
 .acasa{
     background-image: url("https://utm.md/wp-content/uploads/2016/03/Ne_inspira_banner.jpg");
     width: 100%;
-    height: 30%;
-    padding: 10px 10px;
-    margin: 10px 10px;
+    height: 60%;
+    padding: 1px 1px;
+    margin: 1px 1px;
 }
 
 p{
     text-align: center;
     color: midnightblue;
-    font-size: larger;
+    /*font-size: larger;*/
     font-family: Castellar, serif, sans-serif;
 }
 h1{
@@ -95,7 +95,7 @@ h1{
 }
 h2{
     color: #111111;
-    font-size: medium;
+    /*font-size: medium;*/
     font-family: Cambria, serif, sans-serif;
 }
 
