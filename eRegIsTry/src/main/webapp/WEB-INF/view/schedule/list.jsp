@@ -5,6 +5,7 @@
 <head>
     <title>List schedule records</title>
     <style> <%@include file="/WEB-INF/resource/stil.css"%></style>
+    <style> <%@include file="/WEB-INF/resource/style.css"%></style>
 </head>
 <body>
 <%--  ADMIN MENU--%>
@@ -94,9 +95,21 @@
     </div>
 </security:authorize>
 
+<table class="blueTable">
+    <thead>
+    <tr>
+        <td>Group name}</td>
+        <td>Subject}</td>
+        <td>Day}</td>
+        <td>Time</td>
+    </tr>
+    </thead>
+</table>
 <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
 <%--@elvariable id="scheduleRecords" type="java.util.List"--%>
 <c:forEach items="${scheduleRecords}" var="scheduleRecord">
+<table class="blueTable">
+    <tbody>
     <tr>
         <td>${scheduleRecord.group.name}</td>
         <td>${scheduleRecord.subject.subject}</td>
@@ -104,6 +117,8 @@
         <td>${scheduleRecord.time.toString()}</td>
         <td>....</td>
     </tr>
+    </tbody>
+</table>
 </c:forEach>
 
 </body>

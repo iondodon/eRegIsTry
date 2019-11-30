@@ -4,16 +4,7 @@
 <html>
 <head>
     <title>List of Subjects</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: center;
-        }
-    </style>
+    <style> <%@include file="/WEB-INF/resource/style.css"%></style>
     <style> <%@include file="/WEB-INF/resource/stil.css"%></style>
 </head>
 <body>
@@ -108,21 +99,25 @@
     <div style="height:100%;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
         <div>
             <h3 align="center">List of Subject</h3>
-                <table style="width:50%" align="center">
+            <table class="blueTable">
+                <thead>
                     <tr>
                         <th width="50%">Subject</th>
                         <th width="50%">Subject ID</th>
                     </tr>
+                </thead>
                 </table>
 
             <%--@elvariable id="subject" type="com.utm.entities.Subject"--%>
             <%--@elvariable id="subjects" type="java.util.List"--%>
             <c:forEach items="${subjects}" var="subject">
-                <table style="width:50%" align="center">
+                <table class="blueTable">
+                    <tbody>
                     <tr>
                         <th width="50%" onclick="location.href ='<c:url value="/subject/show?subjectId=${subject.subject}"/>';">${subject.subject}</th>
                         <th width="50%" onclick="location.href ='<c:url value="/subject/show?subjectId=${subject.id}"/>';">${subject.id}</th>
                     </tr>
+                    </tbody>
                 </table>
             </c:forEach>
         </div>

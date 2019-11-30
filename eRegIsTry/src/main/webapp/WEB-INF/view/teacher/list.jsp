@@ -5,16 +5,7 @@
 <head>
     <title>List Teachers </title>
 
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: center;
-        }
-    </style>
+    <style> <%@include file="/WEB-INF/resource/style.css"%></style>
     <style> <%@include file="/WEB-INF/resource/stil.css"%></style>
 </head>
 <body>
@@ -107,22 +98,26 @@
 <div style="height:100%;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
     <div>
         <h3 align="center">List of Teachers</h3>
-        <table style="width:80%" align="center">
+        <table class="blueTable">
+            <thead>
             <tr>
                 <th width="30%">First Name</th>
                 <th width="30%">Last Name</th>
                 <th width="30%">Main Subject</th>
             </tr>
+            </thead>
         </table>
         <%--@elvariable id="teacher" type="com.utm.entities.Teacher"--%>
         <%--@elvariable id="teachers" type="java.util.List"--%>
         <c:forEach items="${teachers}" var="teacher">
-            <table style="width:80%" align="center">
+            <table class="blueTable">
+                <tbody>
                 <tr>
                     <th width="30%" onclick="location.href ='<c:url value="/teacher/show?teacherId=${teacher.user.id}"/>';">${teacher.user.firstName}</th>
                     <th width="30%" onclick="location.href ='<c:url value="/teacher/show?teacherId=${teacher.user.id}"/>';">${teacher.user.lastName}</th>
                     <th width="30%">${teacher.baseSubject.subject}</th>
                 </tr>
+                </tbody>
             </table>
         </c:forEach>
     </div>
