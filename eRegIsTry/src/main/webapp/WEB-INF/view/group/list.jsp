@@ -4,6 +4,16 @@
 <html>
 <head>
     <title>List groups</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
     <style> <%@include file="/WEB-INF/resource/stil.css"%></style>
 </head>
 <body>
@@ -94,13 +104,27 @@
     </div>
 </security:authorize>
 
-<%--@elvariable id="group" type="com.utm.entities.Group"--%>
-<c:forEach items="${groups}" var="group">
-    <tr>
-        <td>${group.name}</td>
-        <td>${group.master.user.username}</td>
-    </tr>
-</c:forEach>
-
+<div class="menu">
+    <div>
+        <h3 align="center">List of Groups</h3>
+        <table style="width:62%" align="center">
+            <tr>
+                <th width="50%">Group</th>
+                <th width="50%">Master</th>
+                <%--                <th width="30%">Department Name</th>--%>
+            </tr>
+        </table>
+        <%--@elvariable id="group" type="com.utm.entities.Group"--%>
+        <%--@elvariable id="groups" type="java.util.List"--%>
+        <c:forEach items="${groups}" var="group">
+        <table style="width:60%" align="center">
+            <tr>
+                <th width="50%">${group.name}</th>
+                <th width="50%">${group.master.user.username}</th>
+            </tr>
+        </table>
+        </c:forEach>
+    </div>
+</div>
 </body>
 </html>

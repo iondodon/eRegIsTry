@@ -103,25 +103,32 @@
 
     </div>
 </security:authorize>
-<div>
-    <h3 align="center">List of Topics</h3>
-    <table style="width:50%" align="center">
-        <tr>
-            <th width="20%">Topic</th>
-        </tr>
-    </table>
-    <%--${administrators}--%>
 
-    <%--@elvariable id="administrator" type="com.utm.entities.Administrator"--%>
-    <c:forEach items="${lessons}" var="lesson">
 
-        <table style="width:50%" align="center">
-            <tr>
-                <th width="20%">${lesson.topic}</th>
+<div class="menu">
+    <div style="height:100%;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
+        <div>
+            <h3 align="center">List of Topics</h3>
+            <table style="width:50%" align="center">
+                <tr>
+                    <th width="50%">Lesson</th>
+                    <th width="50%">Teacher</th>
+                </tr>
+            </table>
+            <%--${lessons}--%>
 
-            </tr>
-        </table>
-    </c:forEach>
+            <%--@elvariable id="lesson" type="com.utm.entities.Lesson"--%>
+            <%--@elvariable id="lessons" type="java.util.List"--%>
+            <c:forEach items="${lessons}" var="lesson">
+                <table style="width:50%" align="center">
+                    <tr>
+                        <th width="50%" onclick="location.href ='<c:url value="/lesson/show?lessonId=${lesson.topic}"/>';">${lesson.topic}</th>
+                        <th width="50%" onclick="location.href ='<c:url value="/lesson/show?lessonId=${lesson.id}"/>';">${lesson.id}</th>
+                    </tr>
+                </table>
+            </c:forEach>
+        </div>
+    </div>
 </div>
 </body>
 </html>

@@ -103,28 +103,31 @@
 
     </div>
 </security:authorize>
-<div>
-    <h3 align="center">List of Administrators</h3>
-    <table style="width:80%" align="center">
-        <tr>
-            <th width="30%">First Name</th>
-            <th width="30%">Last Name</th>
-            <th width="30%">Department Name</th>
-        </tr>
-    </table>
-<%--${administrators}--%>
 
-<%--@elvariable id="administrator" type="com.utm.entities.Administrator"--%>
-<c:forEach items="${administrators}" var="administrator">
+<div class="menu">
+    <div>
+        <h3 align="center">List of Administrators</h3>
+        <table style="width:62%" align="center">
+            <tr>
+                <th width="50%">First Name</th>
+                <th width="50%">Last Name</th>
+<%--                <th width="30%">Department Name</th>--%>
+            </tr>
+        </table>
+    <%--${administrators}--%>
 
-    <table style="width:80%" align="center">
-        <tr>
-            <th width="30%">${administrator.user.firstName}</th>
-            <th width="30%">${administrator.user.lastName}</th>
-            <th width="30%">${administrator.department}</th>
-        </tr>
-    </table>
-</c:forEach>
+    <%--@elvariable id="administrator" type="com.utm.entities.Administrator"--%>
+    <c:forEach items="${administrators}" var="administrator">
 
+        <table style="width:60%" align="center">
+            <tr>
+                <th width="50%">${administrator.user.firstName}</th>
+                <th width="50%">${administrator.user.lastName}</th>
+<%--                <th width="30%">${administrator.department}</th>--%>
+            </tr>
+        </table>
+    </c:forEach>
+    </div>
+</div>
 </body>
 </html>
