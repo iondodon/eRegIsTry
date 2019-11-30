@@ -3,7 +3,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>List subjects</title>
+    <title>List of Subjects</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
     <style> <%@include file="/WEB-INF/resource/stil.css"%></style>
 </head>
 <body>
@@ -94,14 +104,29 @@
     </div>
 </security:authorize>
 
-<%--@elvariable id="subject" type="com.utm.entities.Subject"--%>
-<%--@elvariable id="subjects" type="java.util.List"--%>
-<c:forEach items="${subjects}" var="subject">
-    <tr>
-        <td>${subject.subject}</td>
-        <td>....</td>
-    </tr>
-</c:forEach>
+<div class="menu">
+    <div style="height:100%;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
+        <div>
+            <h3 align="center">List of Subject</h3>
+                <table style="width:50%" align="center">
+                    <tr>
+                        <th width="50%">Subject</th>
+                        <th width="50%">Subject ID</th>
+                    </tr>
+                </table>
 
+            <%--@elvariable id="subject" type="com.utm.entities.Subject"--%>
+            <%--@elvariable id="subjects" type="java.util.List"--%>
+            <c:forEach items="${subjects}" var="subject">
+                <table style="width:50%" align="center">
+                    <tr>
+                        <th width="50%" onclick="location.href ='<c:url value="/subject/show?subjectId=${subject.subject}"/>';">${subject.subject}</th>
+                        <th width="50%" onclick="location.href ='<c:url value="/subject/show?subjectId=${subject.id}"/>';">${subject.id}</th>
+                    </tr>
+                </table>
+            </c:forEach>
+        </div>
+    </div>
+</div>
 </body>
 </html>
