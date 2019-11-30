@@ -8,7 +8,7 @@
     <style> <%@ include file="assets/js/util.js" %></style>
 <style> <%@ include file= "assets/js/main.js"%></style>
     <style> <%@ include file= "assets/js/doc.js"%></style>
-    <style><%@include file="/WEB-INF/resource/stil.css"%></style>
+<%--    <style><%@include file="/WEB-INF/resource/stil.css"%></style>--%>
 <%--     document.getElementsByTagName("html")[0].className += " js";--%>
 
     <title>Schedule Template | CodyHouse</title>

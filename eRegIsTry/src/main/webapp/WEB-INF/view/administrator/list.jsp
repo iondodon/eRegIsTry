@@ -4,16 +4,7 @@
 <html>
 <head>
     <title>List administrator</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: center;
-        }
-    </style>
+    <style> <%@include file="/WEB-INF/resource/style.css"%></style>
     <style> <%@include file="/WEB-INF/resource/stil.css"%></style>
 </head>
 <body>
@@ -107,24 +98,28 @@
 <div class="menu">
     <div>
         <h3 align="center">List of Administrators</h3>
-        <table style="width:62%" align="center">
+        <table class="blueTable">
+            <thead>
             <tr>
                 <th width="50%">First Name</th>
                 <th width="50%">Last Name</th>
 <%--                <th width="30%">Department Name</th>--%>
             </tr>
+            </thead>
         </table>
     <%--${administrators}--%>
 
     <%--@elvariable id="administrator" type="com.utm.entities.Administrator"--%>
     <c:forEach items="${administrators}" var="administrator">
 
-        <table style="width:60%" align="center">
+        <table class="blueTable">
+            <tbody>
             <tr>
                 <th width="50%">${administrator.user.firstName}</th>
                 <th width="50%">${administrator.user.lastName}</th>
 <%--                <th width="30%">${administrator.department}</th>--%>
             </tr>
+            </tbody>
         </table>
     </c:forEach>
     </div>

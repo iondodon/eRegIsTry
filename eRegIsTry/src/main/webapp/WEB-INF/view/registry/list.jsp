@@ -5,6 +5,7 @@
 <head>
     <title>List registries</title>
     <style> <%@include file="/WEB-INF/resource/stil.css"%></style>
+    <style> <%@include file="/WEB-INF/resource/style.css"%></style>
 </head>
 <body>
 <%--  ADMIN MENU--%>
@@ -96,14 +97,28 @@
 
 <%--@elvariable id="registry" type="com.utm.entities.Registry"--%>
 <%--@elvariable id="registries" type="java.util.List"--%>
+<table class="blueTable">
+    <thead>
+    <tr>
+        <td>Topic</td>
+        <td>Student Username</td>
+        <td>Mark</td>
+        <td>Absent</td>
+    </tr>
+    </thead>
+</table>
+
 <c:forEach items="${registries}" var="registry">
+<table class="blueTable">
+    <tbody>
     <tr>
         <td>${registry.lesson.topic}</td>
         <td>${registry.student.user.username}</td>
         <td>${registry.mark}</td>
         <td>${registry.absent}</td>
-        <td>....</td>
     </tr>
+    </tbody>
+</table>
 </c:forEach>
 
 </body>

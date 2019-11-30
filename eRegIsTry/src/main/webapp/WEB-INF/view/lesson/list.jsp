@@ -4,17 +4,8 @@
 <html>
 <head>
     <title>List Topics</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: center;
-        }
-    </style>
     <style> <%@include file="/WEB-INF/resource/stil.css"%></style>
+    <style> <%@include file="/WEB-INF/resource/style.css"%></style>
 </head>
 <body>
 <%--  ADMIN MENU--%>
@@ -109,22 +100,26 @@
     <div style="height:100%;overflow:scroll;overflow-y:scroll;overflow-x:hidden;">
         <div>
             <h3 align="center">List of Topics</h3>
-            <table style="width:50%" align="center">
+            <table class="blueTable">
+                <thead>
                 <tr>
                     <th width="50%">Lesson</th>
                     <th width="50%">Teacher</th>
                 </tr>
+                </thead>
             </table>
             <%--${lessons}--%>
 
             <%--@elvariable id="lesson" type="com.utm.entities.Lesson"--%>
             <%--@elvariable id="lessons" type="java.util.List"--%>
             <c:forEach items="${lessons}" var="lesson">
-                <table style="width:50%" align="center">
+                <table class="blueTable">
+                    <tbody>
                     <tr>
                         <th width="50%" onclick="location.href ='<c:url value="/lesson/show?lessonId=${lesson.topic}"/>';">${lesson.topic}</th>
                         <th width="50%" onclick="location.href ='<c:url value="/lesson/show?lessonId=${lesson.id}"/>';">${lesson.id}</th>
                     </tr>
+                    </tbody>
                 </table>
             </c:forEach>
         </div>
