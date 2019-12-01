@@ -114,6 +114,12 @@
 
         <div class="sh"> ${lesson.teacher.user.username}</div>
     </div>
+
+    <div class="align" align="center">
+        <input type="submit-button" value="Delete" name="deleteBtn" readonly="readonly" onclick="location.href ='<c:url value="/lesson/delete?lessonId=${lesson.id}"/>';"/>
+        <input type="submit-buttonU" value="Update" name="updateBtn" readonly="readonly" onclick="location.href ='<c:url value="/lesson/update?lessonId=${lesson.id}"/>';"/>
+    </div>
+
 </div>
 </body>
 </html>

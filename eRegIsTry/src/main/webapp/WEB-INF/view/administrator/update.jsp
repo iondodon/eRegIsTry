@@ -97,7 +97,7 @@
     </div>
 </security:authorize>
 <div>
-    <h3 align="center">Update department</h3>
+    <h3 align="center">Update Administrator</h3>
 <%--@elvariable id="administrator" type="com.utm.entities.Administrator"--%>
 <%--@elvariable id="user" type="com.utm.entities.User"--%>
     <form:form action="/administrator/update" method="POST" modelAttribute="administrator">
