@@ -100,26 +100,34 @@
 <table class="blueTable">
     <thead>
     <tr>
-        <td>Topic</td>
-        <td>Student Username</td>
-        <td>Mark</td>
-        <td>Absent</td>
+        <td width="16.6%">Date/Time</td>
+        <td width="16.6%">Subject</td>
+        <td width="16.6%">Topic</td>
+        <td width="16.6%">Name/Surname</td>
+        <td width="16.6%">Mark</td>
+        <td width="16.6%">Absent</td>
     </tr>
     </thead>
 </table>
 
-<c:forEach items="${registries}" var="registry">
-<table class="blueTable">
-    <tbody>
-    <tr>
-        <td>${registry.lesson.topic}</td>
-        <td>${registry.student.user.username}</td>
-        <td>${registry.mark}</td>
-        <td>${registry.absent}</td>
-    </tr>
-    </tbody>
-</table>
-</c:forEach>
+
+    <%--@elvariable id="registry" type="com.utm.entities.Registry"--%>
+    <%--@elvariable id="registries" type="java.util.List"--%>
+
+    <c:forEach items="${registries}" var="registry">
+    <table class="blueTable">
+        <tbody>
+        <tr>
+            <th width="16.6%">${registry.lesson.datetime}</th>
+            <th width="16.6%">${registry.lesson.subject.subject}</th>
+            <th width="16.6%">${registry.lesson.topic}</th>
+            <th width="16.6%">${registry.student.user.username}</th>
+            <th width="16.6%">${registry.mark}</th>
+            <th width="16.6%">${registry.absent}</th>
+        </tr>
+        </tbody>
+    </table>
+    </c:forEach>
 
 </body>
 </html>
