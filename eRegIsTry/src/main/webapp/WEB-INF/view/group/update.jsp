@@ -97,7 +97,7 @@
     </div>
 </security:authorize>
 <div>
-    <h3 align="center">Update group</h3>
+    <h3 align="center">Update Group</h3>
     <%--@elvariable id="group" type="com.utm.entities.Group"--%>
     <form:form action="/group/update" modelAttribute="group" method="POST" >
         <input path="id" name="id" type="hidden"  value="${group.id}" />

@@ -101,9 +101,9 @@
         <table class="blueTable">
             <thead>
             <tr>
-                <th width="50%">First Name</th>
-                <th width="50%">Last Name</th>
-<%--                <th width="30%">Department Name</th>--%>
+                <th width="30%">First Name</th>
+                <th width="30%">Last Name</th>
+                <th width="30%">Department Name</th>
             </tr>
             </thead>
         </table>
@@ -115,9 +115,9 @@
         <table class="blueTable">
             <tbody>
             <tr>
-                <th width="50%">${administrator.user.firstName}</th>
-                <th width="50%">${administrator.user.lastName}</th>
-<%--                <th width="30%">${administrator.department}</th>--%>
+                <th width="30%" onclick="location.href ='<c:url value="/administrator/show?administratorId=${administrator.id}"/>';">${administrator.user.firstName}</th>
+                <th width="30%" onclick="location.href ='<c:url value="/administrator/show?administratorId=${administrator.id}"/>';">${administrator.user.lastName}</th>
+                <th width="30%">${administrator.department}</th>
             </tr>
             </tbody>
         </table>
