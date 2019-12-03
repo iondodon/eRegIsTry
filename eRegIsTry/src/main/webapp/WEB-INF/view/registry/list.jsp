@@ -121,7 +121,7 @@
             <th width="16.6%">${registry.lesson.datetime}</th>
             <th width="16.6%">${registry.lesson.subject.subject}</th>
             <th width="16.6%">${registry.lesson.topic}</th>
-            <th width="16.6%">${registry.student.user.username}</th>
+            <th width="16.6%">${registry.student.user.firstName} ${registry.student.user.lastName} </th>
             <th width="16.6%">${registry.mark}</th>
             <th width="16.6%">${registry.absent}</th>
         </tr>
