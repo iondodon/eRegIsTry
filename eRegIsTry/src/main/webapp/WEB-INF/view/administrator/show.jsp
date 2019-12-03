@@ -111,7 +111,11 @@
         <label>Department:</label>
         <div class="sh"> ${administrator.department}</div>
     </div>
-</c:forEach>
+
+    <div class="align" align="center">
+        <input type="submit-button" value="Delete" name="deleteBtn" readonly="readonly" onclick="location.href ='<c:url value="/administrator/delete?administratorId=${administrator.id}"/>';"/>
+        <input type="submit-buttonU" value="Update" name="updateBtn" readonly="readonly" onclick="location.href ='<c:url value="/administrator/update?administratorId=${administrator.id}"/>';"/>
+    </div>
 </div>
 </body>
 </html>

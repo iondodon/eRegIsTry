@@ -123,5 +123,11 @@
 <%--    %>--%>
         </div>
     </div>
+
+    <div class="align" align="center">
+        <input type="submit-button" value="Delete" name="deleteBtn" readonly="readonly" onclick="location.href ='<c:url value="/group/delete?groupId=${group.id}"/>';"/>
+        <input type="submit-buttonU" value="Update" name="updateBtn" readonly="readonly" onclick="location.href ='<c:url value="/group/update?groupId=${group.id}"/>';"/>
+    </div>
+</div>
 </body>
 </html>

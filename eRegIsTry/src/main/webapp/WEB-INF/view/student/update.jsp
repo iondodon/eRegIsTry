@@ -103,7 +103,7 @@
     </div>
 </security:authorize>
 <div>
-    <h3 align="center">Select group</h3>
+    <h3 align="center">Update Student</h3>
 <%--@elvariable id="student" type="com.utm.entities.Student"--%>
 <%--@elvariable id="user" type="com.utm.entities.User"--%>
 <form:form action="/student/update" method="POST" modelAttribute="student">
@@ -117,7 +117,7 @@
         <form:options items="${groups}" itemLabel="name" itemValue="id" />
     </form:select>
 
-    <input type="submit" value="Update group" name="submitBtn" />
+    <input type="submit" value="Update student" name="submitBtn" />
     </div>
 </form:form>
 </div>

@@ -113,8 +113,8 @@
             <table class="blueTable">
                 <tbody>
                 <tr>
-                    <th width="30%" onclick="location.href ='<c:url value="/teacher/show?teacherId=${teacher.user.id}"/>';">${teacher.user.firstName}</th>
-                    <th width="30%" onclick="location.href ='<c:url value="/teacher/show?teacherId=${teacher.user.id}"/>';">${teacher.user.lastName}</th>
+                    <th width="30%" onclick="location.href ='<c:url value="/teacher/show?teacherId=${teacher.id}"/>';">${teacher.user.firstName}</th>
+                    <th width="30%" onclick="location.href ='<c:url value="/teacher/show?teacherId=${teacher.id}"/>';">${teacher.user.lastName}</th>
                     <th width="30%">${teacher.baseSubject.subject}</th>
                 </tr>
                 </tbody>

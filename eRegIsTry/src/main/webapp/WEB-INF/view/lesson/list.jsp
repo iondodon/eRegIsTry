@@ -116,7 +116,7 @@
                 <table class="blueTable">
                     <tbody>
                     <tr>
-                        <th width="50%" onclick="location.href ='<c:url value="/lesson/show?lessonId=${lesson.topic}"/>';">${lesson.topic}</th>
+                        <th width="50%" onclick="location.href ='<c:url value="/lesson/show?lessonId=${lesson.id}"/>';">${lesson.topic}</th>
                         <th width="50%" onclick="location.href ='<c:url value="/lesson/show?lessonId=${lesson.id}"/>';">${lesson.id}</th>
                     </tr>
                     </tbody>

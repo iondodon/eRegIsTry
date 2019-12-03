@@ -8,6 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="adc7b768-9283-4e23-a2c4-a1938d5f4e88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registry/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registry/list.jsp" afterDir="false" />
+
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,10 +45,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="mydb: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
-      </path>
     </expand>
     <select />
   </component>
@@ -67,7 +66,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ToDo" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3678161" />
@@ -170,8 +169,12 @@
       <updated>1574973138360</updated>
       <workItem from="1574973140071" duration="8702000" />
       <workItem from="1575013345482" duration="15913000" />
+
       <workItem from="1575220282413" duration="471000" />
       <workItem from="1575270976589" duration="583000" />
+
+      <workItem from="1575218309713" duration="17642000" />
+
     </task>
     <servers />
   </component>

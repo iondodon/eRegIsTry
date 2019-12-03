@@ -111,15 +111,17 @@
         <%--@elvariable id="groups" type="java.util.List"--%>
         <c:forEach items="${groups}" var="group">
             <table class="blueTable">
-                <tbody>
+                <body>
             <tr>
-                <th width="50%">${group.name}</th>
-                <th width="50%">${group.master.user.username}</th>
+                <th width="50%" onclick="location.href ='<c:url value="/group/show?groupId=${group.id}"/>';">${group.name}</th>
+                <th width="50%">${group.master.user.firstName}   ${group.master.user.lastName} </th>
+
             </tr>
-                </tbody>
+                </body>
         </table>
         </c:forEach>
     </div>
+
 </div>
 </body>
 </html>
