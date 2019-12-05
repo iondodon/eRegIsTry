@@ -10,6 +10,18 @@
     /*font-size: large;*/
     align: left;
 }
+.block input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid deepskyblue;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-decoration-style: solid;
+    font-family: Century, serif;
+    /*font-size: large;*/
+    align: left;
+}
 
 .sh{
     width: 100%;

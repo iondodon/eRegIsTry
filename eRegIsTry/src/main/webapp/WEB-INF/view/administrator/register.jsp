@@ -107,11 +107,11 @@
         <form:errors path="username" cssClass="error" />
 
         <label for="password">Password:</label>
-        <form:input path="password" type="text" name="password" placeholder="password"/>
+        <form:input path="password" type="password" name="password" placeholder="password"/>
         <form:errors path="password" cssClass="error" />
 
         <label for="passwordConfirmation">Confirm Password:</label>
-        <form:input path="passwordConfirmation" type="text" name="password-confirmation" placeholder="retype password"/>
+        <form:input path="passwordConfirmation" type="password" name="password-confirmation" placeholder="retype password"/>
 
 
         <label for="firstName">First Name:</label>
