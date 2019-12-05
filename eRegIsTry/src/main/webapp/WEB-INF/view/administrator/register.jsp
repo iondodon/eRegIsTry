@@ -122,6 +122,9 @@
         <form:input path="lastName" type="text" name="second-name" placeholder="second name"/>
         <form:errors path="lastName" cssClass="error" />
 
+        <label for="email">Email:</label>
+        <form:input path="email" type="text" name="email" placeholder="email"/>
+        <form:errors path="email" cssClass="error" />
     </div>
 
 <%--            roles:--%>

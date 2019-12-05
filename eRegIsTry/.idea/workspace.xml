@@ -7,8 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37705de2-a110-4def-8d9d-d5a38f038e2e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/PasswordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/GenericResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/PasswordResetToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/PasswordResetTokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/forgotPassword.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resource/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resource/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eregistry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/eregistry.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/administrator/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/administrator/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/student/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/student/create.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/create.jsp" afterDir="false" />
@@ -33,21 +45,6 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mydb: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
@@ -64,6 +61,14 @@
     </expand>
     <select />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -77,17 +82,14 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="PropertiesComponent">
+    <property name="last.edited.regexp" value="ion@gmail.com" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.30114943" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -162,10 +164,107 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.1368736" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:hibernate.cfg.xml/Hibernate" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="283" y="33" width="800" height="680" key="#Assign_Data_Sources" timestamp="1575572022215">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="283" y="33" width="800" height="680" key="#Assign_Data_Sources/0.0.1366.742@0.0.1366.742" timestamp="1575572022215" />
+    <state x="471" y="129" key="FileChooserDialogImpl" timestamp="1575575149476">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="471" y="129" key="FileChooserDialogImpl/0.0.1366.742@0.0.1366.742" timestamp="1575575149476" />
+    <state width="1113" height="419" key="GridCell.Tab.0.bottom" timestamp="1575569185626">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.0.bottom/0.0.1366.742@0.0.1366.742" timestamp="1575569185626" />
+    <state width="1113" height="419" key="GridCell.Tab.0.center" timestamp="1575569185625">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.0.center/0.0.1366.742@0.0.1366.742" timestamp="1575569185625" />
+    <state width="1113" height="419" key="GridCell.Tab.0.left" timestamp="1575569185624">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.0.left/0.0.1366.742@0.0.1366.742" timestamp="1575569185624" />
+    <state width="1113" height="419" key="GridCell.Tab.0.right" timestamp="1575569185626">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.0.right/0.0.1366.742@0.0.1366.742" timestamp="1575569185626" />
+    <state width="1113" height="419" key="GridCell.Tab.1.bottom" timestamp="1575569185628">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.1.bottom/0.0.1366.742@0.0.1366.742" timestamp="1575569185628" />
+    <state width="1113" height="419" key="GridCell.Tab.1.center" timestamp="1575569185627">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.1.center/0.0.1366.742@0.0.1366.742" timestamp="1575569185627" />
+    <state width="1113" height="419" key="GridCell.Tab.1.left" timestamp="1575569185627">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.1.left/0.0.1366.742@0.0.1366.742" timestamp="1575569185627" />
+    <state width="1113" height="419" key="GridCell.Tab.1.right" timestamp="1575569185628">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.1.right/0.0.1366.742@0.0.1366.742" timestamp="1575569185628" />
+    <state width="1113" height="419" key="GridCell.Tab.2.bottom" timestamp="1575569185629">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.2.bottom/0.0.1366.742@0.0.1366.742" timestamp="1575569185629" />
+    <state width="1113" height="419" key="GridCell.Tab.2.center" timestamp="1575569185628">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.2.center/0.0.1366.742@0.0.1366.742" timestamp="1575569185628" />
+    <state width="1113" height="419" key="GridCell.Tab.2.left" timestamp="1575569185628">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.2.left/0.0.1366.742@0.0.1366.742" timestamp="1575569185628" />
+    <state width="1113" height="419" key="GridCell.Tab.2.right" timestamp="1575569185629">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state width="1113" height="419" key="GridCell.Tab.2.right/0.0.1366.742@0.0.1366.742" timestamp="1575569185629" />
+    <state x="221" y="29" key="Maven.ArtifactSearchDialog" timestamp="1575575135687">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="221" y="29" key="Maven.ArtifactSearchDialog/0.0.1366.742@0.0.1366.742" timestamp="1575575135687" />
+    <state x="171" y="0" width="1024" height="738" key="SettingsEditor" timestamp="1575575172665">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="171" y="0" width="1024" height="738" key="SettingsEditor/0.0.1366.742@0.0.1366.742" timestamp="1575575172665" />
+    <state x="563" y="89" width="319" height="564" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1575571934000">
+      <screen x="0" y="0" width="1366" height="742" />
+    </state>
+    <state x="563" y="89" width="319" height="564" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.742@0.0.1366.742" timestamp="1575571934000" />
   </component>
 </project>

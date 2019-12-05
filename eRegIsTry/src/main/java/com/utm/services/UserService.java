@@ -1,9 +1,6 @@
 package com.utm.services;
 
-import com.utm.entities.Administrator;
-import com.utm.entities.Student;
-import com.utm.entities.Teacher;
-import com.utm.entities.User;
+import com.utm.entities.*;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,10 +10,43 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserService {
     private SessionService sessionService;
+    private PasswordResetTokenService passwordResetTokenService;
 
     @Autowired
     public void setSessionService(SessionService sessionService) {
         this.sessionService = sessionService;
+    }
+
+    @Autowired
+    public void setPasswordResetTokenService(PasswordResetTokenService passwordResetTokenService) {
+        this.passwordResetTokenService = passwordResetTokenService;
+    }
+
+    public void createPasswordResetTokenForUser(User user, String token) {
+        PasswordResetToken myToken = new PasswordResetToken(token, user);
+        passwordResetTokenService.save(myToken);
+    }
+
+    public User findUserByEmail(String email) {
+        Session session = this.sessionService.getSession();
+        User user = null;
+
+        try {
+            session.beginTransaction();
+
+            user = (User) session
+                    .createQuery("from User u where u.email = :email")
+                    .setParameter("email", email)
+                    .uniqueResult();
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+
+        return user;
     }
 
     public User getUserByUsername(String username) {
