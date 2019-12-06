@@ -1,14 +1,18 @@
 package com.utm.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class PasswordResetToken {
-    private static final int EXPIRATION = 60 * 24;
+@Table(name="password_reset_token")
+public class PasswordResetToken implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private static final int EXPIRATION = 24*60*60*1000; // one day
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
 
     private String token;
@@ -19,7 +23,12 @@ public class PasswordResetToken {
 
     private Date expiryDate;
 
+    public PasswordResetToken() {
+        expiryDate = new Date(new Date().getTime() + EXPIRATION);
+    }
+
     public PasswordResetToken(String token, User user) {
+        expiryDate = new Date(new Date().getTime() + EXPIRATION);
         this.user = user;
         this.token = token;
     }
