@@ -27,6 +27,24 @@ public class UserService {
         savePasswordResetToken(myToken);
     }
 
+    public void changeUserPassword(User user, String newPassword) {
+        Session session = this.sessionService.getSession();
+
+        try {
+            session.beginTransaction();
+
+            User sessionUser = session.get(User.class, user.getId());
+            sessionUser.setPassword(newPassword);
+            session.save(sessionUser);
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
+
     public void savePasswordResetToken(PasswordResetToken token) {
         Session session = this.sessionService.getSession();
 
@@ -50,7 +68,8 @@ public class UserService {
 
             passwordResetToken = (PasswordResetToken) session
                     .createQuery("from PasswordResetToken prs where prs.token=:token")
-                    .setParameter("token", token);
+                    .setParameter("token", token)
+                    .uniqueResult();
 
             session.getTransaction().commit();
         } catch (Exception e) {
@@ -64,6 +83,7 @@ public class UserService {
 
     public String validatePasswordResetToken(long id, String token) {
         PasswordResetToken passToken = findByToken(token);
+        System.out.println(passToken);
         if ((passToken == null) || (passToken.getUser().getId() != id)) {
             return "invalidToken";
         }
@@ -75,8 +95,7 @@ public class UserService {
 
         User user = passToken.getUser();
         Authentication auth = new UsernamePasswordAuthenticationToken(
-                user, null, Arrays.asList(
-                new SimpleGrantedAuthority("CHANGE_PASSWORD_PRIVILEGE"))
+                user, null, Arrays.asList(new SimpleGrantedAuthority("CHANGE_PASSWORD_PRIVILEGE"))
         );
         SecurityContextHolder.getContext().setAuthentication(auth);
         return null;
