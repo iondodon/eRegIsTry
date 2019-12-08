@@ -1,5 +1,6 @@
 package com.utm.services;
 
+import com.utm.dtos.PasswordDto;
 import com.utm.entities.*;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -244,6 +245,44 @@ public class UserService {
             Administrator administrator = session.get(Administrator.class, sessionUser.getAdministrator().getId());
             session.delete(administrator);
             session.delete(sessionUser);
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
+
+    public void deleteActivateAccountToken(String token) {
+        Session session = this.sessionService.getSession();
+        try {
+            session.beginTransaction();
+
+            ActivateAccountToken activateAccountToken = (ActivateAccountToken) session
+                    .createQuery("from ActivateAccountToken aat where aat.token=:token")
+                    .setParameter("token", token)
+                    .uniqueResult();
+            session.remove(activateAccountToken);
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
+
+    public void deleteResetPasswordToken(String token) {
+        Session session = this.sessionService.getSession();
+        try {
+            session.beginTransaction();
+
+            PasswordResetToken passwordResetToken = (PasswordResetToken) session
+                    .createQuery("from PasswordResetToken prt where prt.token=:token")
+                    .setParameter("token", token)
+                    .uniqueResult();
+            session.remove(passwordResetToken);
 
             session.getTransaction().commit();
         } catch (Exception e) {

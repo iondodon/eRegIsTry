@@ -64,6 +64,8 @@ public class UserController {
             return "redirect:/showLoginPage";
         }
 
+        userService.deleteResetPasswordToken(token);
+
         model.addAttribute("passwordDto", new PasswordDto());
         return "/updatePassword";
     }
@@ -76,6 +78,7 @@ public class UserController {
         }
 
         userService.activateAccount((int)id);
+        userService.deleteActivateAccountToken(token);
 
         return "/accountActivated";
     }
