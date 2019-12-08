@@ -38,6 +38,7 @@ public class AdministratorService {
         user.setRoles(roles);
 
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+        user.setActive(false);
 
         administrator.setUser(user);
         return administrator;

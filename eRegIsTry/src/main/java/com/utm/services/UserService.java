@@ -27,6 +27,11 @@ public class UserService {
         savePasswordResetToken(myToken);
     }
 
+    public void createActivateAccountTokenForUser(User user, String token) {
+        ActivateAccountToken myToken = new ActivateAccountToken(token, user);
+        saveActivateAccountToken(myToken);
+    }
+
     public void changeUserPassword(User user, String newPassword) {
         Session session = this.sessionService.getSession();
 
@@ -37,6 +42,38 @@ public class UserService {
             sessionUser.setPassword(newPassword);
             session.save(sessionUser);
 
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
+
+    public void activateAccount(int id) {
+        Session session = this.sessionService.getSession();
+
+        try {
+            session.beginTransaction();
+
+            User sessionUser = session.get(User.class, id);
+            sessionUser.setActive(true);
+            session.save(sessionUser);
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+    }
+
+    public void saveActivateAccountToken(ActivateAccountToken token) {
+        Session session = this.sessionService.getSession();
+
+        try {
+            session.beginTransaction();
+            session.save(token);
             session.getTransaction().commit();
         } catch (Exception e) {
             System.out.println(e);
@@ -59,7 +96,7 @@ public class UserService {
         }
     }
 
-    public PasswordResetToken findByToken(String token) {
+    public PasswordResetToken findByPasswordResetToken(String token) {
         Session session = this.sessionService.getSession();
         PasswordResetToken passwordResetToken = null;
 
@@ -81,9 +118,30 @@ public class UserService {
         return passwordResetToken;
     }
 
+    public ActivateAccountToken findByActivateAccountToken(String token) {
+        Session session = this.sessionService.getSession();
+        ActivateAccountToken activateAccountToken = null;
+
+        try {
+            session.beginTransaction();
+
+            activateAccountToken = (ActivateAccountToken) session
+                    .createQuery("from ActivateAccountToken aat where aat.token=:token")
+                    .setParameter("token", token)
+                    .uniqueResult();
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            session.close();
+        }
+
+        return activateAccountToken;
+    }
+
     public String validatePasswordResetToken(long id, String token) {
-        PasswordResetToken passToken = findByToken(token);
-        System.out.println(passToken);
+        PasswordResetToken passToken = findByPasswordResetToken(token);
         if ((passToken == null) || (passToken.getUser().getId() != id)) {
             return "invalidToken";
         }
@@ -98,6 +156,20 @@ public class UserService {
                 user, null, Arrays.asList(new SimpleGrantedAuthority("CHANGE_PASSWORD_PRIVILEGE"))
         );
         SecurityContextHolder.getContext().setAuthentication(auth);
+        return null;
+    }
+
+    public String validateActivateAccountToken(long id, String token) {
+        ActivateAccountToken activateAccountToken = findByActivateAccountToken(token);
+        if ((activateAccountToken == null) || (activateAccountToken.getUser().getId() != id)) {
+            return "invalidToken";
+        }
+
+        Calendar cal = Calendar.getInstance();
+        if ((activateAccountToken.getExpiryDate().getTime() - cal.getTime().getTime()) <= 0) {
+            return "expired";
+        }
+
         return null;
     }
 

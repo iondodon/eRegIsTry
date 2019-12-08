@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`users` (
                                               `first_name` VARCHAR(45) NOT NULL,
                                               `last_name` VARCHAR(45) NOT NULL,
                                               `email` VARCHAR(100) NOT NULL,
+                                              `active` TINYINT(1) NOT NULL,
                                               PRIMARY KEY (`id`),
                                               UNIQUE INDEX `username_UNIQUE` (`username` ASC))
     ENGINE = InnoDB;
@@ -244,6 +245,25 @@ CREATE TABLE IF NOT EXISTS `mydb`.`password_reset_token` (
                                                                      REFERENCES `mydb`.`users` (`id`)
                                                                      ON DELETE NO ACTION
                                                                      ON UPDATE NO ACTION)
+    ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`activate_account_token`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`activate_account_token` (
+                                                               `id` INT NOT NULL AUTO_INCREMENT,
+                                                               `token` VARCHAR(200) NOT NULL,
+                                                               `user_id` INT NOT NULL,
+                                                               `expiryDate` DATE NOT NULL,
+                                                               PRIMARY KEY (`id`),
+                                                               UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+                                                               INDEX `fk_activate_account_token_user_idx` (`user_id` ASC),
+                                                               CONSTRAINT `fk_activate_account_token_user`
+                                                                   FOREIGN KEY (`user_id`)
+                                                                       REFERENCES `mydb`.`users` (`id`)
+                                                                       ON DELETE NO ACTION
+                                                                       ON UPDATE NO ACTION)
     ENGINE = InnoDB;
 
 

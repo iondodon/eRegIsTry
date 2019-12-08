@@ -53,6 +53,7 @@ public class TeacherService {
         user.setRoles(roles);
 
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+        user.setActive(false);
 
         teacher.setUser(user);
         return teacher;

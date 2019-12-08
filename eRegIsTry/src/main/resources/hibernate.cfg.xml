@@ -36,6 +36,7 @@
         <mapping class="com.utm.entities.Student"/>
         <mapping class="com.utm.entities.Teacher"/>
         <mapping class="com.utm.entities.PasswordResetToken"/>
+        <mapping class="com.utm.entities.ActivateAccountToken"/>
     </session-factory>
 
 </hibernate-configuration>

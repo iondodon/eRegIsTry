@@ -80,6 +80,10 @@ public class User implements Serializable, UserDetails {
 		)
 	private List<Role> roles;
 
+	@NotNull
+	@Column(nullable=false)
+	private boolean active;
+
 	public User() {
 		this.roles = new ArrayList<>();
 	}
@@ -199,5 +203,13 @@ public class User implements Serializable, UserDetails {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 }

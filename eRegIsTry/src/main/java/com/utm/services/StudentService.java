@@ -60,6 +60,7 @@ public class StudentService {
         user.setRoles(roles);
 
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+        user.setActive(false);
 
         Group group = this.groupService.getGroupById(user.getStudent().getGroup().getId());
         student.setGroup(group);

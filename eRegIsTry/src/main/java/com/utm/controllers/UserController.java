@@ -2,11 +2,10 @@ package com.utm.controllers;
 
 import com.utm.dtos.PasswordDto;
 import com.utm.entities.User;
+import com.utm.services.MailService;
 import com.utm.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -21,7 +20,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.Properties;
 import java.util.UUID;
 
 
@@ -29,42 +27,16 @@ import java.util.UUID;
 @RequestMapping("/user")
 public class UserController {
     private UserService userService;
+    private MailService mailService;
+
+    @Autowired
+    public void setMailService(MailService mailService) {
+        this.mailService = mailService;
+    }
 
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
-    }
-
-    public JavaMailSender getJavaMailSender() {
-        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        mailSender.setHost("smtp.gmail.com");
-        mailSender.setPort(587);
-
-        mailSender.setUsername("eregistry.utm@gmail.com");
-        mailSender.setPassword("eronat98");
-
-        Properties props = mailSender.getJavaMailProperties();
-        props.put("mail.transport.protocol", "smtp");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.debug", "true");
-
-        return mailSender;
-    }
-
-    private SimpleMailMessage constructResetTokenEmail(String contextPath, String token, User user) {
-        String url = "http://localhost:8080" + "/user/checkForgotPasswordToken?id=" + user.getId() + "&token=" + token;
-        System.out.println(url);
-        return constructEmail("Reset Password", url, user);
-    }
-
-    private SimpleMailMessage constructEmail(String subject, String body, User user) {
-        SimpleMailMessage email = new SimpleMailMessage();
-        email.setSubject(subject);
-        email.setText(body);
-        email.setTo(user.getEmail());
-        email.setFrom("eregistry.utm@gmail.com");
-        return email;
     }
 
     @RequestMapping(value = "/forgotPassword", method = RequestMethod.GET)
@@ -80,13 +52,13 @@ public class UserController {
         }
         String token = UUID.randomUUID().toString();
         userService.createPasswordResetTokenForUser(user, token);
-        JavaMailSender mailSender = getJavaMailSender();
-        mailSender.send(constructResetTokenEmail(request.getContextPath(), token, user));
+        JavaMailSender mailSender = mailService.getJavaMailSender();
+        mailSender.send(mailService.constructResetPasswordTokenEmail(request.getContextPath(), token, user));
         return "redirect:/";
     }
 
     @RequestMapping(value = "/checkForgotPasswordToken", method = RequestMethod.GET)
-    public String showChangePasswordPage(Model model, @RequestParam("id") long id, @RequestParam("token") String token) {
+    public String checkForgotPasswordToken(Model model, @RequestParam("id") long id, @RequestParam("token") String token) {
         String result = userService.validatePasswordResetToken(id, token);
         if (result != null) {
             return "redirect:/showLoginPage";
@@ -94,6 +66,18 @@ public class UserController {
 
         model.addAttribute("passwordDto", new PasswordDto());
         return "/updatePassword";
+    }
+
+    @RequestMapping(value = "/checkActivateAccountToken", method = RequestMethod.GET)
+    public String checkActivateAccountToken(Model model, @RequestParam("id") long id, @RequestParam("token") String token) {
+        String result = userService.validateActivateAccountToken(id, token);
+        if (result != null) {
+            return "redirect:/showLoginPage";
+        }
+
+        userService.activateAccount((int)id);
+
+        return "/accountActivated";
     }
 
     @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
