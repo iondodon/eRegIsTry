@@ -40,8 +40,8 @@ public class UserController {
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("iondodon2@gmail.com");
-        mailSender.setPassword("Eronat98.");
+        mailSender.setUsername("eregistry.utm@gmail.com");
+        mailSender.setPassword("eronat98");
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
@@ -53,7 +53,7 @@ public class UserController {
     }
 
     private SimpleMailMessage constructResetTokenEmail(String contextPath, String token, User user) {
-        String url = "http://localhost:8080" + "/user/checkToken?id=" + user.getId() + "&token=" + token;
+        String url = "http://localhost:8080" + "/user/checkForgotPasswordToken?id=" + user.getId() + "&token=" + token;
         System.out.println(url);
         return constructEmail("Reset Password", url, user);
     }
@@ -63,7 +63,7 @@ public class UserController {
         email.setSubject(subject);
         email.setText(body);
         email.setTo(user.getEmail());
-        email.setFrom("eregistry@gmail.com");
+        email.setFrom("eregistry.utm@gmail.com");
         return email;
     }
 
@@ -85,7 +85,7 @@ public class UserController {
         return "redirect:/";
     }
 
-    @RequestMapping(value = "/checkToken", method = RequestMethod.GET)
+    @RequestMapping(value = "/checkForgotPasswordToken", method = RequestMethod.GET)
     public String showChangePasswordPage(Model model, @RequestParam("id") long id, @RequestParam("token") String token) {
         String result = userService.validatePasswordResetToken(id, token);
         if (result != null) {

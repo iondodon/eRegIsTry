@@ -223,6 +223,11 @@
     <div>
         <a href="<c:url value="/my-account"/>">my account</a>
     </div>
+
+    <div>
+        <a href="<c:url value="/user/forgotPassword"/>">forgot password</a>
+    </div>
+
   <div>
       <div class="acasa">
 
