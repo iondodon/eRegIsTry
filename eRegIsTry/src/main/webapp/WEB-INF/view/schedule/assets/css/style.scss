@@ -116,7 +116,7 @@ a {
 .cd-schedule__events {
 	position: relative;
 	z-index: 1;
-  
+
   .js & {
   	@include breakpoint(md) {
   		width: 100%;
@@ -136,7 +136,7 @@ a {
 
 .cd-schedule__group { // group of same day events
   margin-bottom: var(--space-lg);
-  
+
   .js & {
     @include breakpoint(md) {
       flex-basis: 0;
@@ -166,7 +166,7 @@ a {
     opacity: 0;
     color: transparent;
   }
-  
+
   .js & {
     @include breakpoint(md) {
       height: calc(var(--schedule-rows-height)*var(--schedule-rows-number));

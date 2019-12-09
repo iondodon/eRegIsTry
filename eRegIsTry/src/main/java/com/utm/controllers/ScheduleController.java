@@ -165,6 +165,12 @@ public class ScheduleController {
 
         model.addAttribute("scheduleRecords", scheduleRecords);
 
+        List groupRecords = this.groupService.getAllGroups();
+        System.out.println(groupRecords);
+
+        model.addAttribute("groupRecords", groupRecords);
+
+
         return "schedule/list";
     }
 }
