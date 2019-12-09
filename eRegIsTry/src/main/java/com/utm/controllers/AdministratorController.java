@@ -3,8 +3,10 @@ package com.utm.controllers;
 import com.utm.editors.AdministratorEditor;
 import com.utm.entities.Administrator;
 import com.utm.entities.User;
+import com.utm.services.MailService;
 import com.utm.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -21,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/administrator")
@@ -28,6 +31,12 @@ public class AdministratorController {
     private AdministratorService administratorService;
     private AdministratorEditor administratorEditor;
     private UserService userService;
+    private MailService mailService;
+
+    @Autowired
+    public void setMailService(MailService mailService) {
+        this.mailService = mailService;
+    }
 
     @Autowired
     public void setAdministratorService(AdministratorService administratorService) {
@@ -67,6 +76,11 @@ public class AdministratorController {
 
         Administrator administrator = this.administratorService.createAdministrator(user);
         this.administratorService.saveAdministrator(administrator);
+
+        String token = UUID.randomUUID().toString();
+        userService.createActivateAccountTokenForUser(user, token);
+        JavaMailSender mailSender = mailService.getJavaMailSender();
+        mailSender.send(mailService.constructActivateAccountTokenEmail(token, user));
 
         return "redirect:/";
     }

@@ -5,9 +5,11 @@ import com.utm.entities.Group;
 import com.utm.entities.Student;
 import com.utm.entities.User;
 import com.utm.services.GroupService;
+import com.utm.services.MailService;
 import com.utm.services.StudentService;
 import com.utm.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -22,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/student")
@@ -30,6 +33,13 @@ public class StudentController {
     private GroupService groupService;
     private GroupEditor groupEditor;
     private UserService userService;
+    private MailService mailService;
+
+    @Autowired
+    public void setMailService(MailService mailService) {
+        this.mailService = mailService;
+    }
+
 
     @Autowired
     public void setStudentService(StudentService studentService) {
@@ -78,6 +88,11 @@ public class StudentController {
 
         Student student = this.studentService.createStudent(user);
         this.studentService.saveStudent(student);
+
+        String token = UUID.randomUUID().toString();
+        userService.createActivateAccountTokenForUser(user, token);
+        JavaMailSender mailSender = mailService.getJavaMailSender();
+        mailSender.send(mailService.constructActivateAccountTokenEmail(token, user));
 
         return new ModelAndView("redirect:/");
     }
