@@ -118,33 +118,32 @@
 <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
 <%--@elvariable id="scheduleRecords" type="java.util.List"--%>
 <div class="cd-schedule__top-info"><span>Monday</span></div>
-    <ul>
-        <li class="cd-schedule__group">
-            <ul>
-                <c:forEach items="${groupRecords}" var="groupRecord">
-                    <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
-                    <li class="cd-schedule__event">
-                            ${groupRecord.name}
-                        <ul style="display: flex; flex-direction: column">
-                            <c:forEach items="${scheduleRecords}" var="scheduleRecord">
-                                <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
-                                <c:if test="${scheduleRecord.day.toLowerCase() == 'monday'}">
-                                    <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
-                                    <c:if test="${scheduleRecord.group.name == groupRecord.name}">
-                                        <li>
-                                            <a data-start="${scheduleRecord.time.toString()}" data-end="9:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                                <em class="cd-schedule__name">${scheduleRecord.subject.subject}</em>
-                                            </a>
-                                        </li>
-                                    </c:if>
+<ul>
+    <li class="cd-schedule__group">
+        <ul>
+            <c:forEach items="${groupRecords}" var="groupRecord">
+                <li class="cd-schedule__event">
+                    ${groupRecord.name}
+                    <ul>
+                        <c:forEach items="${scheduleRecords}" var="scheduleRecord">
+                            <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
+                            <c:if test="${scheduleRecord.day.toLowerCase() == 'monday'}">
+                                <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
+                                <c:if test="${scheduleRecord.group.name == groupRecord.name}">
+                                    <li>
+                                        <a data-start="${scheduleRecord.time.toString()}" data-end="9:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject}</em>
+                                        </a>
+                                    </li>
                                 </c:if>
-                            </c:forEach>
-                        </ul>
-                    </li>
-                </c:forEach>
-            </ul>
-        </li>
-    </ul>
+                            </c:if>
+                        </c:forEach>
+                    </ul>
+                </li>
+            </c:forEach>
+        </ul>
+    </li>
+</ul>
 
 <div class="cd-schedule__top-info"><span>Tuesday</span></div>
 <ul>
@@ -253,6 +252,5 @@
         </ul>
     </li>
 </ul>
-
 </body>
 </html>
