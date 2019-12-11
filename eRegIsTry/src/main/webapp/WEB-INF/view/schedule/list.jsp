@@ -132,36 +132,50 @@
 <div class="cd-schedule__top-info"><span>Monday</span></div>
 </div>
 <ul>
-    <li class="cd-schedule__group">
-        <ul>
-            <c:forEach items="${groupRecords}" var="groupRecord">
-                <li class="cd-schedule__event">
-                    <ul>
-                        <div class="sticky"> ${groupRecord.name}</div>
-                        <c:forEach items="${scheduleRecords}" var="scheduleRecord">
-                            <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
-                            <c:if test="${scheduleRecord.day.toLowerCase() == 'monday'}">
-                                <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
-                                <c:if test="${scheduleRecord.group.name == groupRecord.name}">
-                                    <li>
-                                        <a data-start="${scheduleRecord.time.toString()}" data-end="${scheduleRecord.time.toString()}" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject}</em>
-                                        </a>
-                                    </li>
-                                </c:if>
-                            </c:if>
-                        </c:forEach>
-                    </ul>
-                </li>
-            </c:forEach>
-        </ul>
-    </li>
-</ul>
+    <c:if test="${groupRecords.size() > 4}">
+        <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} )">
+            </c:if>
+                <c:if test="${groupRecords.size() <= 4}">
+                    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} * 4)">
+                        </c:if>
+                            <ul>
+                                ${scheduleRecord.subject.teachers}
+                                    <c:forEach items="${groupRecords}" var="groupRecord">
+                                        <li class="cd-schedule__event">
+                                            <ul>
+                                                <div class="sticky"> ${groupRecord.name}</div>
+                                                <c:forEach items="${scheduleRecords}" var="scheduleRecord">
+                                                    <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
+                                                    <c:if test="${scheduleRecord.day.toLowerCase() == 'monday'}">
+                                                        <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
+                                                        <c:if test="${scheduleRecord.group.name == groupRecord.name}">
+                                                            <li>
+                                                                <a data-start="${scheduleRecord.time.toString()}" data-end="${scheduleRecord.time.hours + 1}:${scheduleRecord.time.minutes+30}:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                                                    <em class="cd-schedule__name">${scheduleRecord.subject.subject} <br/> ${scheduleRecord.teacher.user.firstName} ${scheduleRecord.teacher.user.lastName}</em>
+                                                                </a>
+                                                            </li>
+                                                        </c:if>
+                                                    </c:if>
+                                                </c:forEach>
+                                            </ul>
+                                        </li>
+                                    </c:forEach>
+                                </ul>
+                            </li>
+                        </ul>
 
-<div class="cd-schedule__top-info"><span>Tuesday</span></div>
+<div style=" position:static; padding-top:100px">
+    <div class="cd-schedule__top-info"><span>Tuesday</span></div>
+</div>
 <ul>
-    <li class="cd-schedule__group">
+    <c:if test="${groupRecords.size() > 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} )">
+        </c:if>
+        <c:if test="${groupRecords.size() <= 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} * 4)">
+        </c:if>
         <ul>
+            ${scheduleRecord.subject.teachers}
             <c:forEach items="${groupRecords}" var="groupRecord">
                 <li class="cd-schedule__event">
                     <ul>
@@ -172,8 +186,8 @@
                                 <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
                                 <c:if test="${scheduleRecord.group.name == groupRecord.name}">
                                     <li>
-                                        <a data-start="${scheduleRecord.time.toString()}" data-end="9:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject}</em>
+                                        <a data-start="${scheduleRecord.time.toString()}" data-end="${scheduleRecord.time.hours + 1}:${scheduleRecord.time.minutes+30}:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject} <br/> ${scheduleRecord.teacher.user.firstName} ${scheduleRecord.teacher.user.lastName}</em>
                                         </a>
                                     </li>
                                 </c:if>
@@ -186,10 +200,18 @@
     </li>
 </ul>
 
-<div class="cd-schedule__top-info"><span>Wednesday</span></div>
+<div style=" position:static; padding-top:100px">
+    <div class="cd-schedule__top-info"><span>Wednesday</span></div>
+</div>
 <ul>
-    <li class="cd-schedule__group">
+    <c:if test="${groupRecords.size() > 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} )">
+        </c:if>
+        <c:if test="${groupRecords.size() <= 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} * 4)">
+        </c:if>
         <ul>
+            ${scheduleRecord.subject.teachers}
             <c:forEach items="${groupRecords}" var="groupRecord">
                 <li class="cd-schedule__event">
                     <ul>
@@ -200,8 +222,8 @@
                                 <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
                                 <c:if test="${scheduleRecord.group.name == groupRecord.name}">
                                     <li>
-                                        <a data-start="${scheduleRecord.time.toString()}" data-end="9:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject}</em>
+                                        <a data-start="${scheduleRecord.time.toString()}" data-end="${scheduleRecord.time.hours + 1}:${scheduleRecord.time.minutes+30}:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject} <br/> ${scheduleRecord.teacher.user.firstName} ${scheduleRecord.teacher.user.lastName}</em>
                                         </a>
                                     </li>
                                 </c:if>
@@ -214,10 +236,18 @@
     </li>
 </ul>
 
-<div class="cd-schedule__top-info"><span>Thursday</span></div>
+<div style=" position:static; padding-top:100px">
+    <div class="cd-schedule__top-info"><span>Thursday</span></div>
+</div>
 <ul>
-    <li class="cd-schedule__group">
+    <c:if test="${groupRecords.size() > 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} )">
+        </c:if>
+        <c:if test="${groupRecords.size() <= 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} * 4)">
+        </c:if>
         <ul>
+            ${scheduleRecord.subject.teachers}
             <c:forEach items="${groupRecords}" var="groupRecord">
                 <li class="cd-schedule__event">
                     <ul>
@@ -228,8 +258,8 @@
                                 <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
                                 <c:if test="${scheduleRecord.group.name == groupRecord.name}">
                                     <li>
-                                        <a data-start="${scheduleRecord.time.toString()}" data-end="9:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject}</em>
+                                        <a data-start="${scheduleRecord.time.toString()}" data-end="${scheduleRecord.time.hours + 1}:${scheduleRecord.time.minutes+30}:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject} <br/> ${scheduleRecord.teacher.user.firstName} ${scheduleRecord.teacher.user.lastName}</em>
                                         </a>
                                     </li>
                                 </c:if>
@@ -242,22 +272,30 @@
     </li>
 </ul>
 
-<div class="cd-schedule__top-info"><span>Friday</span></div>
+<div style=" position:static; padding-top:100px">
+    <div class="cd-schedule__top-info"><span>Friday</span></div>
+</div>
 <ul>
-    <li class="cd-schedule__group">
+    <c:if test="${groupRecords.size() > 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} )">
+        </c:if>
+        <c:if test="${groupRecords.size() <= 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} * 4)">
+        </c:if>
         <ul>
+            ${scheduleRecord.subject.teachers}
             <c:forEach items="${groupRecords}" var="groupRecord">
                 <li class="cd-schedule__event">
                     <ul>
-                        <div class="sticky">${groupRecord.name}</div>
+                        <div class="sticky"> ${groupRecord.name}</div>
                         <c:forEach items="${scheduleRecords}" var="scheduleRecord">
                             <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
                             <c:if test="${scheduleRecord.day.toLowerCase() == 'friday'}">
                                 <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
                                 <c:if test="${scheduleRecord.group.name == groupRecord.name}">
                                     <li>
-                                        <a data-start="${scheduleRecord.time.toString()}" data-end="9:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject}</em>
+                                        <a data-start="${scheduleRecord.time.toString()}" data-end="${scheduleRecord.time.hours + 1}:${scheduleRecord.time.minutes+30}:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject} <br/> ${scheduleRecord.teacher.user.firstName} ${scheduleRecord.teacher.user.lastName}</em>
                                         </a>
                                     </li>
                                 </c:if>

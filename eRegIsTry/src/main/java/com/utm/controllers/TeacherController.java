@@ -76,8 +76,7 @@ public class TeacherController {
 
         Teacher teacher = this.teacherService.createTeacher(user);
         this.teacherService.saveTeacher(teacher);
-
-        return new ModelAndView("redirect:/");
+        return new ModelAndView("redirect:/teacher/update/?teacherId=" + teacher.getId());
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)

@@ -2,13 +2,16 @@ package com.utm.controllers;
 
 import com.utm.editors.GroupEditor;
 import com.utm.editors.SubjectEditor;
+import com.utm.editors.TeacherEditor;
 import com.utm.editors.TimeEditor;
 import com.utm.entities.Group;
 import com.utm.entities.Schedule;
 import com.utm.entities.Subject;
+import com.utm.entities.Teacher;
 import com.utm.services.GroupService;
 import com.utm.services.ScheduleService;
 import com.utm.services.SubjectService;
+import com.utm.services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,10 +35,15 @@ public class ScheduleController {
     private SubjectService subjectService;
     private GroupService groupService;
     private ScheduleService scheduleService;
+    private TeacherService teacherService;
 
     private SubjectEditor subjectEditor;
     private GroupEditor groupEditor;
     private TimeEditor timeEditor;
+    private TeacherEditor teacherEditor;
+
+    @Autowired
+    public void setTeacherEditor(TeacherEditor teacherEditor) { this.teacherEditor = teacherEditor; }
 
     @Autowired
     public void setTimeEditor(TimeEditor timeEditor) {
@@ -67,11 +75,15 @@ public class ScheduleController {
         this.groupService = groupService;
     }
 
+    @Autowired
+    public void setTeacherService(TeacherService teacherService) { this.teacherService = teacherService; }
+
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(Subject.class, this.subjectEditor);
         binder.registerCustomEditor(Group.class, this.groupEditor);
         binder.registerCustomEditor(Time.class, this.timeEditor);
+        binder.registerCustomEditor(Teacher.class, this.teacherEditor);
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.GET)
@@ -81,6 +93,7 @@ public class ScheduleController {
         model.addAttribute("schedule", schedule);
         model.addAttribute("subjects", this.subjectService.getAllSubjects());
         model.addAttribute("groups", this.groupService.getAllGroups());
+        model.addAttribute("teachers", this.teacherService.getAllTeachers());
 
         return "schedule/create";
     }
@@ -91,6 +104,7 @@ public class ScheduleController {
             ModelMap model = new ModelMap();
             model.addAttribute("schedule", schedule);
             model.addAttribute("subjects", this.subjectService.getAllSubjects());
+            model.addAttribute("teachers", this.teacherService.getAllTeachers());
             model.addAttribute("groups", this.groupService.getAllGroups());
             return new ModelAndView("schedule/create", model);
         }
@@ -107,6 +121,7 @@ public class ScheduleController {
 
         model.addAttribute("subjects", this.subjectService.getAllSubjects());
         model.addAttribute("groups", this.groupService.getAllGroups());
+        model.addAttribute("teachers", this.teacherService.getAllTeachers());
         model.addAttribute("schedule", schedule);
 
         return "schedule/update";
@@ -118,6 +133,7 @@ public class ScheduleController {
             ModelMap model = new ModelMap();
             model.addAttribute("subjects", this.subjectService.getAllSubjects());
             model.addAttribute("groups", this.groupService.getAllGroups());
+            model.addAttribute("teachers", this.teacherService.getAllTeachers());
             model.addAttribute("schedule", schedule);
             return new ModelAndView("schedule/update", model);
         }
