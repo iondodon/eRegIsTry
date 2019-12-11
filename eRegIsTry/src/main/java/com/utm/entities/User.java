@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -49,6 +50,11 @@ public class User implements Serializable, UserDetails {
 	@Column(nullable=false, length=45)
 	private String username;
 
+	@Pattern(regexp = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)])", message = "doesn't match email pattern")
+	@NotNull(message = "is required")
+	@Column(nullable=false, length=100)
+	private String email;
+
 	//bi-directional one-to-one association to Administrator
 	@OneToOne(mappedBy = "user", fetch = FetchType.EAGER)
 	private Administrator administrator;
@@ -73,6 +79,10 @@ public class User implements Serializable, UserDetails {
 			}
 		)
 	private List<Role> roles;
+
+	@NotNull
+	@Column(nullable=false)
+	private boolean active;
 
 	public User() {
 		this.roles = new ArrayList<>();
@@ -185,5 +195,21 @@ public class User implements Serializable, UserDetails {
 
 	public void setPasswordConfirmation(String passwordConfirmation) {
 		this.passwordConfirmation = passwordConfirmation;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 }

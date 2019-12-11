@@ -14,6 +14,7 @@ class SessionService {
         this.sessionFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Administrator.class)
+                .addAnnotatedClass(PasswordResetToken.class)
                 .addAnnotatedClass(Group.class)
                 .addAnnotatedClass(Lesson.class)
                 .addAnnotatedClass(Registry.class)

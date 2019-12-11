@@ -13,7 +13,7 @@
         <property name="connection.password">eronat98</property>
 
         <!-- JDBC connection pool settings ... using built-in test pool -->
-        <property name="connection.pool_size">1</property>
+        <property name="connection.pool_size">2</property>
 
         <!-- Select our SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -35,6 +35,8 @@
         <mapping class="com.utm.entities.Administrator"/>
         <mapping class="com.utm.entities.Student"/>
         <mapping class="com.utm.entities.Teacher"/>
+        <mapping class="com.utm.entities.PasswordResetToken"/>
+        <mapping class="com.utm.entities.ActivateAccountToken"/>
     </session-factory>
 
 </hibernate-configuration>
