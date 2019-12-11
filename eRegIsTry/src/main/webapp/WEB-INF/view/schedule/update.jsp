@@ -137,6 +137,17 @@
         </div>
         <br/>
 
+        <div class="block" >
+            <label for="teacher">Select teacher:</label>
+            <form:select path="teacher">
+                <form:option value="-1" >Select teacher</form:option>
+                <%--@elvariable id="teachers" type="java.util.List"--%>
+                <form:options items="${teachers}" itemLabel="user.username" itemValue="id" />
+            </form:select>
+            <form:errors path="teacher" cssClass="error" />
+        </div>
+        <br/>
+
         <input type="submit" value="Update Schedule" name="submitBtn">
     </form:form>
 </div>

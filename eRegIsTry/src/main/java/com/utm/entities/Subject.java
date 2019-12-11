@@ -36,6 +36,10 @@ public class Subject implements Serializable {
 	@OneToMany(mappedBy="subject")
 	private List<Schedule> schedules;
 
+
+	@OneToMany(mappedBy="baseSubject")
+	private List<Teacher> teachers;
+
 	public Subject() {
 		this.schedules = new ArrayList<>();
 	}
@@ -63,6 +67,10 @@ public class Subject implements Serializable {
 	public void setLessons(List<Lesson> lessons) {
 		this.lessons = lessons;
 	}
+
+	public List<Teacher> getTeachers() { return teachers; }
+
+	public void setTeachers(List<Teacher> teachers) { this.teachers = teachers;	}
 
 	public Lesson addLesson(Lesson lesson) {
 		getLessons().add(lesson);

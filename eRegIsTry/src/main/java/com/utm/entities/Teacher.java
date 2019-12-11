@@ -21,7 +21,7 @@ public class Teacher implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "id_base_subject")
 	private Subject baseSubject;
 

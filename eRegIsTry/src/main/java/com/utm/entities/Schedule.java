@@ -36,6 +36,10 @@ public class Schedule implements Serializable {
 	@JoinColumn(name="id_subject", nullable=false)
 	private Subject subject;
 
+	@ManyToOne
+	@JoinColumn(name="id_teacher", nullable=true)
+	private Teacher teacher;
+
 
 	public Schedule() {
 	}
@@ -79,4 +83,8 @@ public class Schedule implements Serializable {
 	public void setSubject(Subject subject) {
 		this.subject = subject;
 	}
+
+	public Teacher getTeacher() { return teacher; }
+
+	public void setTeacher(Teacher teacher) { this.teacher = teacher; }
 }

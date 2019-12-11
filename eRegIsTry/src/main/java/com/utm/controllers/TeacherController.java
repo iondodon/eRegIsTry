@@ -92,7 +92,8 @@ public class TeacherController {
         JavaMailSender mailSender = mailService.getJavaMailSender();
         mailSender.send(mailService.constructActivateAccountTokenEmail(token, user));
 
-        return new ModelAndView("redirect:/");
+        return new ModelAndView("redirect:/teacher/update/?teacherId=" + teacher.getId());
+
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)

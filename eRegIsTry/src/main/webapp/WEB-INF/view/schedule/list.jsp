@@ -6,8 +6,36 @@
     <title>List schedule records</title>
     <style> <%@include file="/WEB-INF/resource/stil.css"%></style>
     <style> <%@include file="/WEB-INF/resource/style.css"%></style>
+    <style> <%@ include file="assets/css/style.css" %></style>
+    <style> <%@ include file="assets/js/util.js" %></style>
+    <style> <%@ include file= "assets/js/main.js"%></style>
+    <style> <%@ include file= "assets/js/doc.js"%></style>
+    <%--    <style><%@include file="/WEB-INF/resource/stil.css"%></style>--%>
+    <%--     document.getElementsByTagName("html")[0].className += " js";--%>
+
+    <style> <%@include file="/WEB-INF/resource/stil.css"%></style>
+    <style>
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left:225px;
+            z-index: 1;
+        }</style>
+
+    <style>
+        div.navigation{
+        display:    table-row;
+        position: fixed;
+        z-index: 1;
+        right: 0;
+        left: 0;
+    }</style>
+
+
 </head>
 <body>
+<div class="navigation">
 <%--  ADMIN MENU--%>
 <security:authorize access="hasRole('ROLE_ADMINISTRATOR')">
     <div class="navbar">
@@ -94,32 +122,190 @@
 
     </div>
 </security:authorize>
+</div>
 
-<table class="blueTable">
-    <thead>
-    <tr>
-        <td>Group name}</td>
-        <td>Subject}</td>
-        <td>Day}</td>
-        <td>Time</td>
-    </tr>
-    </thead>
-</table>
+
+
 <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
 <%--@elvariable id="scheduleRecords" type="java.util.List"--%>
-<c:forEach items="${scheduleRecords}" var="scheduleRecord">
-<table class="blueTable">
-    <tbody>
-    <tr>
-        <td>${scheduleRecord.group.name}</td>
-        <td>${scheduleRecord.subject.subject}</td>
-        <td>${scheduleRecord.day}</td>
-        <td>${scheduleRecord.time.toString()}</td>
-        <td>....</td>
-    </tr>
-    </tbody>
-</table>
-</c:forEach>
+<div style=" position:static; padding-top:100px">
+<div class="cd-schedule__top-info"><span>Monday</span></div>
+</div>
+<ul>
+    <c:if test="${groupRecords.size() > 4}">
+        <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} )">
+            </c:if>
+                <c:if test="${groupRecords.size() <= 4}">
+                    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} * 4)">
+                        </c:if>
+                            <ul>
+                                ${scheduleRecord.subject.teachers}
+                                    <c:forEach items="${groupRecords}" var="groupRecord">
+                                        <li class="cd-schedule__event">
+                                            <ul>
+                                                <div class="sticky"> ${groupRecord.name}</div>
+                                                <c:forEach items="${scheduleRecords}" var="scheduleRecord">
+                                                    <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
+                                                    <c:if test="${scheduleRecord.day.toLowerCase() == 'monday'}">
+                                                        <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
+                                                        <c:if test="${scheduleRecord.group.name == groupRecord.name}">
+                                                            <li>
+                                                                <a data-start="${scheduleRecord.time.toString()}" data-end="${scheduleRecord.time.hours + 1}:${scheduleRecord.time.minutes+30}:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                                                    <em class="cd-schedule__name">${scheduleRecord.subject.subject} <br/> ${scheduleRecord.teacher.user.firstName} ${scheduleRecord.teacher.user.lastName}</em>
+                                                                </a>
+                                                            </li>
+                                                        </c:if>
+                                                    </c:if>
+                                                </c:forEach>
+                                            </ul>
+                                        </li>
+                                    </c:forEach>
+                                </ul>
+                            </li>
+                        </ul>
 
+<div style=" position:static; padding-top:100px">
+    <div class="cd-schedule__top-info"><span>Tuesday</span></div>
+</div>
+<ul>
+    <c:if test="${groupRecords.size() > 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} )">
+        </c:if>
+        <c:if test="${groupRecords.size() <= 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} * 4)">
+        </c:if>
+        <ul>
+            ${scheduleRecord.subject.teachers}
+            <c:forEach items="${groupRecords}" var="groupRecord">
+                <li class="cd-schedule__event">
+                    <ul>
+                        <div class="sticky"> ${groupRecord.name}</div>
+                        <c:forEach items="${scheduleRecords}" var="scheduleRecord">
+                            <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
+                            <c:if test="${scheduleRecord.day.toLowerCase() == 'tuesday'}">
+                                <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
+                                <c:if test="${scheduleRecord.group.name == groupRecord.name}">
+                                    <li>
+                                        <a data-start="${scheduleRecord.time.toString()}" data-end="${scheduleRecord.time.hours + 1}:${scheduleRecord.time.minutes+30}:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject} <br/> ${scheduleRecord.teacher.user.firstName} ${scheduleRecord.teacher.user.lastName}</em>
+                                        </a>
+                                    </li>
+                                </c:if>
+                            </c:if>
+                        </c:forEach>
+                    </ul>
+                </li>
+            </c:forEach>
+        </ul>
+    </li>
+</ul>
+
+<div style=" position:static; padding-top:100px">
+    <div class="cd-schedule__top-info"><span>Wednesday</span></div>
+</div>
+<ul>
+    <c:if test="${groupRecords.size() > 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} )">
+        </c:if>
+        <c:if test="${groupRecords.size() <= 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} * 4)">
+        </c:if>
+        <ul>
+            ${scheduleRecord.subject.teachers}
+            <c:forEach items="${groupRecords}" var="groupRecord">
+                <li class="cd-schedule__event">
+                    <ul>
+                        <div class="sticky"> ${groupRecord.name}</div>
+                        <c:forEach items="${scheduleRecords}" var="scheduleRecord">
+                            <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
+                            <c:if test="${scheduleRecord.day.toLowerCase() == 'wednesday'}">
+                                <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
+                                <c:if test="${scheduleRecord.group.name == groupRecord.name}">
+                                    <li>
+                                        <a data-start="${scheduleRecord.time.toString()}" data-end="${scheduleRecord.time.hours + 1}:${scheduleRecord.time.minutes+30}:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject} <br/> ${scheduleRecord.teacher.user.firstName} ${scheduleRecord.teacher.user.lastName}</em>
+                                        </a>
+                                    </li>
+                                </c:if>
+                            </c:if>
+                        </c:forEach>
+                    </ul>
+                </li>
+            </c:forEach>
+        </ul>
+    </li>
+</ul>
+
+<div style=" position:static; padding-top:100px">
+    <div class="cd-schedule__top-info"><span>Thursday</span></div>
+</div>
+<ul>
+    <c:if test="${groupRecords.size() > 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} )">
+        </c:if>
+        <c:if test="${groupRecords.size() <= 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} * 4)">
+        </c:if>
+        <ul>
+            ${scheduleRecord.subject.teachers}
+            <c:forEach items="${groupRecords}" var="groupRecord">
+                <li class="cd-schedule__event">
+                    <ul>
+                        <div class="sticky"> ${groupRecord.name}</div>
+                        <c:forEach items="${scheduleRecords}" var="scheduleRecord">
+                            <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
+                            <c:if test="${scheduleRecord.day.toLowerCase() == 'thursday'}">
+                                <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
+                                <c:if test="${scheduleRecord.group.name == groupRecord.name}">
+                                    <li>
+                                        <a data-start="${scheduleRecord.time.toString()}" data-end="${scheduleRecord.time.hours + 1}:${scheduleRecord.time.minutes+30}:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject} <br/> ${scheduleRecord.teacher.user.firstName} ${scheduleRecord.teacher.user.lastName}</em>
+                                        </a>
+                                    </li>
+                                </c:if>
+                            </c:if>
+                        </c:forEach>
+                    </ul>
+                </li>
+            </c:forEach>
+        </ul>
+    </li>
+</ul>
+
+<div style=" position:static; padding-top:100px">
+    <div class="cd-schedule__top-info"><span>Friday</span></div>
+</div>
+<ul>
+    <c:if test="${groupRecords.size() > 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} )">
+        </c:if>
+        <c:if test="${groupRecords.size() <= 4}">
+    <li class="cd-schedule__group" style="width: calc(350px * ${groupRecords.size()} * 4)">
+        </c:if>
+        <ul>
+            ${scheduleRecord.subject.teachers}
+            <c:forEach items="${groupRecords}" var="groupRecord">
+                <li class="cd-schedule__event">
+                    <ul>
+                        <div class="sticky"> ${groupRecord.name}</div>
+                        <c:forEach items="${scheduleRecords}" var="scheduleRecord">
+                            <%--@elvariable id="scheduleRecord" type="com.utm.entities.Schedule"--%>
+                            <c:if test="${scheduleRecord.day.toLowerCase() == 'friday'}">
+                                <%--@elvariable id="groupRecord" type="com.utm.entities.Group"--%>
+                                <c:if test="${scheduleRecord.group.name == groupRecord.name}">
+                                    <li>
+                                        <a data-start="${scheduleRecord.time.toString()}" data-end="${scheduleRecord.time.hours + 1}:${scheduleRecord.time.minutes+30}:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                            <em class="cd-schedule__name">${scheduleRecord.subject.subject} <br/> ${scheduleRecord.teacher.user.firstName} ${scheduleRecord.teacher.user.lastName}</em>
+                                        </a>
+                                    </li>
+                                </c:if>
+                            </c:if>
+                        </c:forEach>
+                    </ul>
+                </li>
+            </c:forEach>
+        </ul>
+    </li>
+</ul>
 </body>
 </html>
