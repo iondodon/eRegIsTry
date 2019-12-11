@@ -2,46 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae4a5d61-9d01-40e4-9d87-d05ee9383644" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db/eRegIsTryModelDiaram.mwb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/eRegIsTryModelDiaram.mwb.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/dtos/PasswordDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/ActivateAccountToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/PasswordResetToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/security/config/CustomAuthenticationProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/MailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/security.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/accountActivated.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/forgotPassword.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/updatePassword.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/eregistry_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/eregistry_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ion.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/createDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/createDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/eRegIsTry_Model_v.4.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eregistry.iml" beforeDir="false" afterPath="$PROJECT_DIR$/eregistry.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/AdministratorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/AdministratorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/security/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/security/config/SecurityWebApplicationInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/security/config/SecurityWebApplicationInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/AdministratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/AdministratorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/TeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/utm/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utm/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/administrator/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/administrator/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/student/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/student/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/teacher/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/utm/controllers/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/utm/controllers/StudentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-security-demo/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-security-demo/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +20,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="mydb: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -95,7 +72,12 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@fc85f608" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
