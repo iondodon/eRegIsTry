@@ -24,8 +24,11 @@
     <h5 ><i>Password:</i></h5>
 </div>
 
-<div class="forgotLink">
-    <a href="http://" target="_blank">Forgot your password?</a>
+<%--<div class="forgotLink">--%>
+<%--    <a href="http://" target="_blank">Forgot your password?</a>--%>
+<%--</div>--%>
+<div class="forgot_password.css">
+    <a href="<c:url value="/user/forgotPassword"/>">Forgot your password?</a>
 </div>
 
 <div class="register">
